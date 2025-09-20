@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Search, Filter, Package, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,62 +12,93 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
+
+interface Product {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  image_url: string;
+  features: string[];
+}
 
 const Products = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+  const { toast } = useToast();
 
-  // Mock product data - will be replaced with Supabase data
-  const products = [
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const fetchProducts = async () => {
+    const { data, error } = await supabase
+      .from("products")
+      .select("*")
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      console.error("Error fetching products:", error);
+      // Fallback to mock data if no products in database
+      setProducts([
     {
-      id: 1,
+      id: "1",
       name: "Vitamin D3 Complex",
       category: "Nutritional Supplements",
       description: "High-potency Vitamin D3 supplement for bone health and immune support.",
-      image: "💊",
+      image_url: "",
       features: ["5000 IU per capsule", "Enhanced absorption", "GMP certified"],
     },
     {
-      id: 2,
+      id: "2",
       name: "Omega-3 Fish Oil",
       category: "Nutritional Supplements",
       description: "Premium fish oil supplement rich in EPA and DHA for heart and brain health.",
-      image: "🐟",
+      image_url: "",
       features: ["1000mg per capsule", "Molecularly distilled", "No fishy aftertaste"],
     },
     {
-      id: 3,
+      id: "3",
       name: "Multivitamin Complex",
       category: "Nutritional Supplements",
       description: "Complete daily multivitamin with essential vitamins and minerals.",
-      image: "💊",
+      image_url: "",
       features: ["24 essential nutrients", "Time-release formula", "Easy to swallow"],
     },
     {
-      id: 4,
+      id: "4",
       name: "Herbal Immunity Booster",
       category: "Herbal Supplements",
       description: "Natural immune system support with traditional Ayurvedic herbs.",
-      image: "🌿",
+      image_url: "",
       features: ["100% natural", "Ayurvedic formula", "No artificial additives"],
     },
     {
-      id: 5,
+      id: "5",
       name: "Joint Care Formula",
       category: "Specialized Formulations",
       description: "Advanced joint support with glucosamine, chondroitin, and MSM.",
-      image: "🦴",
+      image_url: "",
       features: ["Triple action formula", "Clinically tested", "Fast absorption"],
     },
     {
-      id: 6,
+      id: "6",
       name: "Probiotic Complex",
       category: "Pharmaceutical Products",
       description: "Multi-strain probiotic for digestive health and gut microbiome support.",
-      image: "🧬",
+      image_url: "",
       features: ["15 billion CFU", "10 probiotic strains", "Shelf-stable"],
     },
-  ];
+      ]);
+    } else {
+      setProducts(data || []);
+    }
+    setLoading(false);
+  };
 
   const categories = ["All", "Nutritional Supplements", "Herbal Supplements", "Pharmaceutical Products", "Specialized Formulations"];
 
@@ -78,47 +109,123 @@ const Products = () => {
     return matchesSearch && matchesCategory;
   });
 
-  const RequestQuoteDialog = ({ product }: { product: any }) => (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button className="btn-hero">Request Price</Button>
-      </DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>Request Price Quote</DialogTitle>
-          <DialogDescription>
-            Get a detailed price quote for {product.name}. Our team will contact you within 24 hours.
-          </DialogDescription>
-        </DialogHeader>
-        <div className="space-y-4">
-          <div className="p-4 bg-muted rounded-lg">
-            <h4 className="font-semibold">{product.name}</h4>
-            <p className="text-sm text-muted-foreground">{product.description}</p>
-          </div>
-          <div className="space-y-3">
-            <Input placeholder="Your Name" />
-            <Input placeholder="Email Address" type="email" />
-            <Input placeholder="Company Name" />
-            <Input placeholder="Phone Number" />
-            <textarea 
-              className="w-full p-3 border rounded-md resize-none"
-              rows={3}
-              placeholder="Additional requirements or questions..."
-            />
-          </div>
-          <div className="flex flex-col space-y-2">
-            <Button className="btn-hero">
-              <Mail className="mr-2 h-4 w-4" />
-              Send Quote Request
-            </Button>
-            <div className="text-center text-sm text-muted-foreground">
-              Or call us directly: +977-9851112329
+  const RequestQuoteDialog = ({ product }: { product: Product }) => {
+    const [formData, setFormData] = useState({
+      name: "",
+      email: "",
+      company: "",
+      phone: "",
+      message: "",
+    });
+    const [sending, setSending] = useState(false);
+
+    const handleInputChange = (field: string, value: string) => {
+      setFormData(prev => ({ ...prev, [field]: value }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault();
+      setSending(true);
+
+      try {
+        const { error } = await supabase.functions.invoke('send-contact-email', {
+          body: {
+            ...formData,
+            type: 'quote',
+            productName: product.name
+          }
+        });
+
+        if (error) throw error;
+
+        toast({
+          title: "Quote Request Sent!",
+          description: "We'll get back to you with pricing within 24 hours.",
+        });
+
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          phone: "",
+          message: "",
+        });
+      } catch (error: any) {
+        toast({
+          title: "Error",
+          description: "Failed to send request. Please try again or call us directly.",
+          variant: "destructive",
+        });
+      } finally {
+        setSending(false);
+      }
+    };
+
+    return (
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button className="btn-hero">Request Price</Button>
+        </DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Request Price Quote</DialogTitle>
+            <DialogDescription>
+              Get a detailed price quote for {product.name}. Our team will contact you within 24 hours.
+            </DialogDescription>
+          </DialogHeader>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="p-4 bg-muted rounded-lg">
+              <h4 className="font-semibold">{product.name}</h4>
+              <p className="text-sm text-muted-foreground">{product.description}</p>
             </div>
-          </div>
-        </div>
-      </DialogContent>
-    </Dialog>
-  );
+            <div className="space-y-3">
+              <Input 
+                placeholder="Your Name" 
+                value={formData.name}
+                onChange={(e) => handleInputChange('name', e.target.value)}
+                required
+              />
+              <Input 
+                placeholder="Email Address" 
+                type="email" 
+                value={formData.email}
+                onChange={(e) => handleInputChange('email', e.target.value)}
+                required
+              />
+              <Input 
+                placeholder="Company Name" 
+                value={formData.company}
+                onChange={(e) => handleInputChange('company', e.target.value)}
+              />
+              <Input 
+                placeholder="Phone Number" 
+                value={formData.phone}
+                onChange={(e) => handleInputChange('phone', e.target.value)}
+              />
+              <textarea 
+                className="w-full p-3 border rounded-md resize-none"
+                rows={3}
+                placeholder="Additional requirements or questions..."
+                value={formData.message}
+                onChange={(e) => handleInputChange('message', e.target.value)}
+                required
+              />
+            </div>
+            <div className="flex flex-col space-y-2">
+              <Button type="submit" className="btn-hero" disabled={sending}>
+                <Mail className="mr-2 h-4 w-4" />
+                {sending ? "Sending..." : "Send Quote Request"}
+              </Button>
+              <div className="text-center text-sm text-muted-foreground">
+                Or call us directly: +977-9851112329
+              </div>
+            </div>
+          </form>
+        </DialogContent>
+      </Dialog>
+    );
+  };
 
   return (
     <div className="min-h-screen">
@@ -170,7 +277,17 @@ const Products = () => {
       {/* Products Grid */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          {filteredProducts.length === 0 ? (
+          {loading ? (
+            <div className="text-center py-20">
+              <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-primary mx-auto mb-4"></div>
+              <h3 className="font-poppins font-semibold text-xl text-foreground mb-2">
+                Loading Products
+              </h3>
+              <p className="text-muted-foreground">
+                Please wait while we fetch our latest products...
+              </p>
+            </div>
+          ) : filteredProducts.length === 0 ? (
             <div className="text-center py-20">
               <Package className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
               <h3 className="font-poppins font-semibold text-xl text-foreground mb-2">
@@ -186,7 +303,17 @@ const Products = () => {
                 <Card key={product.id} className="card-product">
                   <CardContent className="p-6">
                     <div className="text-center mb-4">
-                      <div className="text-6xl mb-3">{product.image}</div>
+                      {product.image_url ? (
+                        <img 
+                          src={product.image_url} 
+                          alt={product.name}
+                          className="w-20 h-20 object-cover rounded-lg mx-auto mb-3"
+                        />
+                      ) : (
+                        <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mx-auto mb-3">
+                          <Package className="h-10 w-10 text-muted-foreground" />
+                        </div>
+                      )}
                       <Badge variant="outline" className="mb-2">
                         {product.category}
                       </Badge>
