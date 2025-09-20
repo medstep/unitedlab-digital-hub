@@ -88,7 +88,7 @@ const Products = () => {
     {
       id: "6",
       name: "Probiotic Complex",
-      category: "Pharmaceutical Products",
+      category: "Nutraceutical Products",
       description: "Multi-strain probiotic for digestive health and gut microbiome support.",
       image_url: "",
       features: ["15 billion CFU", "10 probiotic strains", "Shelf-stable"],
@@ -100,7 +100,7 @@ const Products = () => {
     setLoading(false);
   };
 
-  const categories = ["All", "Nutritional Supplements", "Herbal Supplements", "Pharmaceutical Products", "Specialized Formulations"];
+  const categories = ["All", "Nutritional Supplements", "Herbal Supplements", "Nutraceutical Products", "Specialized Formulations"];
 
   const filteredProducts = products.filter(product => {
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -237,8 +237,8 @@ const Products = () => {
               Our Product Portfolio
             </h1>
             <p className="text-xl leading-relaxed opacity-90">
-              Discover our comprehensive range of high-quality pharmaceutical products, 
-              supplements, and specialized health solutions.
+              Discover our comprehensive range of high-quality nutraceutical products, 
+              supplements, and specialized wellness solutions.
             </p>
           </div>
         </div>
@@ -353,7 +353,7 @@ const Products = () => {
               Need Custom Formulations?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              We offer custom pharmaceutical manufacturing services for specialized requirements. 
+              We offer custom nutraceutical manufacturing services for specialized requirements. 
               Contact us to discuss your specific needs and get a tailored solution.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

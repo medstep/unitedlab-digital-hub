@@ -20,36 +20,36 @@ const Navigation = () => {
   return (
     <>
       {/* Top Contact Bar */}
-      <div className="bg-trust text-trust-foreground py-2 px-4 text-sm">
+      <div className="bg-primary/5 text-muted-foreground py-2 px-4 text-sm border-b border-primary/10">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-2">
-              <Phone className="h-4 w-4" />
+              <Phone className="h-3.5 w-3.5" />
               <span>+977-9851112329</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Mail className="h-4 w-4" />
+              <Mail className="h-3.5 w-3.5" />
               <span>unitedlabnepal@gmail.com</span>
             </div>
           </div>
           <div className="hidden md:block text-sm">
-            📍 Birgunj, Nepal | Est. 2025
+            Birgunj, Nepal | Est. 2025
           </div>
         </div>
       </div>
 
       {/* Main Navigation */}
-      <nav className="bg-card border-b border-border sticky top-0 z-50 backdrop-blur-sm bg-card/95">
+      <nav className="bg-background/95 border-b border-border sticky top-0 z-50 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">UL</span>
+              <div className="w-9 h-9 bg-primary rounded-md flex items-center justify-center">
+                <span className="text-primary-foreground font-bold text-lg">UL</span>
               </div>
               <div className="font-poppins">
-                <div className="font-bold text-lg text-foreground">United Laboratories</div>
-                <div className="text-sm text-muted-foreground">Nepal Pvt. Ltd.</div>
+                <div className="font-semibold text-lg text-foreground">United Laboratories</div>
+                <div className="text-xs text-muted-foreground">Nepal Pvt. Ltd.</div>
               </div>
             </Link>
 

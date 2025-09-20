@@ -8,118 +8,121 @@
 
 @layer base {
   :root {
-    /* Brand Colors - Professional Pharmaceutical Palette */
-    --background: 0 0% 100%;
-    --foreground: 210 10% 15%;
+    /* Minimalistic Professional Palette */
+    --background: 0 0% 99%;
+    --foreground: 220 13% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 10% 15%;
+    --card-foreground: 220 13% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 10% 15%;
+    --popover-foreground: 220 13% 18%;
 
-    /* Primary: Deep Medical Green */
-    --primary: 136 65% 15%;
+    /* Primary: Professional Blue */
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 98%;
-    --primary-light: 136 45% 25%;
-    --primary-lighter: 136 35% 35%;
+    --primary-light: 217 71% 70%;
+    --primary-lighter: 217 51% 80%;
 
-    /* Secondary: Professional Blue */
-    --secondary: 217 91% 60%;
+    /* Secondary: Vibrant Teal */
+    --secondary: 173 80% 40%;
     --secondary-foreground: 0 0% 98%;
-    --secondary-light: 217 71% 70%;
+    --secondary-light: 173 60% 50%;
 
     /* Trust & Quality Colors */
-    --trust: 136 25% 45%;
+    --trust: 142 76% 36%;
     --trust-foreground: 0 0% 98%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    /* Accent Colors */
+    --accent-orange: 25 95% 53%;
+    --accent-purple: 262 83% 58%;
+    --accent-green: 142 76% 36%;
 
-    --accent: 136 20% 92%;
-    --accent-foreground: 136 65% 15%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --destructive: 0 84% 60%;
+    --accent: 220 14% 95%;
+    --accent-foreground: 220 25% 25%;
+
+    --destructive: 0 65% 51%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 136 65% 15%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 25% 25%;
 
-    /* Professional Gradients */
+    /* Subtle Professional Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
-    --gradient-trust: linear-gradient(180deg, hsl(var(--background)), hsl(var(--accent)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted) / 0.3));
+    --gradient-trust: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted) / 0.2));
 
-    /* Shadows */
-    --shadow-card: 0 4px 6px -1px hsl(var(--primary) / 0.1), 0 2px 4px -1px hsl(var(--primary) / 0.06);
-    --shadow-hero: 0 20px 25px -5px hsl(var(--primary) / 0.2), 0 10px 10px -5px hsl(var(--primary) / 0.1);
+    /* Refined Shadows */
+    --shadow-card: 0 1px 3px 0 hsl(var(--primary) / 0.1), 0 1px 2px 0 hsl(var(--primary) / 0.06);
+    --shadow-hero: 0 10px 15px -3px hsl(var(--primary) / 0.1), 0 4px 6px -2px hsl(var(--primary) / 0.05);
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
+    --sidebar-foreground: 220 13% 18%;
+    --sidebar-primary: 220 25% 25%;
     --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
+    --sidebar-accent: 220 14% 95%;
+    --sidebar-accent-foreground: 220 25% 25%;
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 220 25% 25%;
   }
 
   .dark {
-    /* Dark Mode - Professional Pharmaceutical Theme */
-    --background: 210 20% 8%;
+    /* Dark Mode - Minimalistic Professional Theme */
+    --background: 220 27% 8%;
     --foreground: 0 0% 95%;
 
-    --card: 210 15% 12%;
+    --card: 220 20% 11%;
     --card-foreground: 0 0% 95%;
 
-    --popover: 210 15% 12%;
+    --popover: 220 20% 11%;
     --popover-foreground: 0 0% 95%;
 
-    /* Primary remains green but lighter in dark mode */
-    --primary: 136 55% 35%;
-    --primary-foreground: 0 0% 98%;
-    --primary-light: 136 45% 45%;
-    --primary-lighter: 136 35% 55%;
+    /* Primary: Lighter blue for dark mode */
+    --primary: 217 81% 65%;
+    --primary-foreground: 220 27% 8%;
+    --primary-light: 217 61% 75%;
+    --primary-lighter: 217 41% 85%;
 
-    /* Secondary blue adjusted for dark */
-    --secondary: 217 81% 55%;
-    --secondary-foreground: 0 0% 98%;
-    --secondary-light: 217 61% 65%;
+    /* Secondary: Lighter teal for dark mode */
+    --secondary: 173 70% 50%;
+    --secondary-foreground: 220 27% 8%;
+    --secondary-light: 173 50% 60%;
 
     /* Trust colors for dark mode */
-    --trust: 136 30% 55%;
-    --trust-foreground: 210 20% 8%;
+    --trust: 142 66% 46%;
+    --trust-foreground: 220 27% 8%;
 
-    --muted: 210 15% 15%;
-    --muted-foreground: 215 15% 65%;
+    /* Accent Colors for dark mode */
+    --accent-orange: 25 85% 63%;
+    --accent-purple: 262 73% 68%;
+    --accent-green: 142 66% 46%;
 
-    --accent: 136 15% 20%;
-    --accent-foreground: 136 55% 75%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 9% 65%;
 
-    --destructive: 0 74% 55%;
+    --accent: 220 15% 18%;
+    --accent-foreground: 220 30% 75%;
+
+    --destructive: 0 65% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 210 15% 20%;
-    --input: 210 15% 20%;
-    --ring: 136 55% 35%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 220 30% 55%;
+    --sidebar-background: 220 27% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 220 30% 55%;
+    --sidebar-primary-foreground: 220 27% 8%;
+    --sidebar-accent: 220 15% 18%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 220 30% 55%;
   }
 }
 
@@ -132,16 +135,22 @@
     @apply bg-background text-foreground font-inter;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-poppins;
   }
 }
 
 @layer components {
-  /* Professional Button Variants */
+
+  /* Colorful Button Variants */
   .btn-hero {
-    @apply bg-gradient-to-r from-primary to-primary-light text-primary-foreground hover:shadow-lg;
-    @apply transition-all duration-300 transform hover:-translate-y-0.5;
+    @apply bg-primary text-primary-foreground hover:bg-primary-light;
+    @apply transition-all duration-200 shadow-sm hover:shadow-md;
   }
 
   .btn-trust {
@@ -154,18 +163,23 @@
     @apply transition-all duration-200;
   }
 
-  /* Card Styles */
+  .btn-accent-orange {
+    @apply bg-accent-orange text-white hover:bg-accent-orange/90;
+    @apply transition-all duration-200;
+  }
+
+  /* Clean Card Styles */
   .card-professional {
-    @apply bg-gradient-to-br from-card to-muted/30 border border-border/50;
-    @apply shadow-md hover:shadow-lg transition-all duration-300;
+    @apply bg-card border border-border/60;
+    @apply shadow-sm hover:shadow-md transition-all duration-200;
   }
 
   .card-product {
-    @apply bg-card border border-border rounded-xl overflow-hidden;
-    @apply hover:shadow-card hover:-translate-y-1 transition-all duration-300;
+    @apply bg-card border border-border rounded-lg overflow-hidden;
+    @apply hover:shadow-md hover:border-border transition-all duration-200;
   }
 
-  /* Hero Section Styles */
+  /* Subtle Background Styles */
   .hero-gradient {
     background: var(--gradient-hero);
   }
@@ -174,9 +188,9 @@
     background: var(--gradient-trust);
   }
 
-  /* Professional Animations */
+  /* Refined Animations */
   .fade-in-up {
-    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+    @apply opacity-0 translate-y-4 transition-all duration-500 ease-out;
   }
 
   .fade-in-up.animate {
@@ -184,6 +198,6 @@
   }
 
   .professional-hover {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
+    @apply transition-all duration-200 hover:shadow-md;
   }
 }

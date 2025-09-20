@@ -6,12 +6,12 @@ const About = () => {
     {
       name: "Lal Babu Prasad",
       role: "Co-Founder & CEO",
-      description: "20+ years of experience in pharmaceutical manufacturing and business development.",
+      description: "20+ years of experience in nutraceutical manufacturing and business development.",
     },
     {
       name: "Manish Goyel",
       role: "Co-Founder & CTO",
-      description: "Expert in pharmaceutical R&D, quality control, and regulatory compliance.",
+      description: "Expert in nutraceutical R&D, quality control, and regulatory compliance.",
     },
   ];
 
@@ -29,7 +29,7 @@ const About = () => {
     {
       year: "2025",
       title: "Production Launch",
-      description: "Commenced manufacturing of pharmaceutical products",
+      description: "Commenced manufacturing of nutraceutical products",
     },
   ];
 
@@ -43,8 +43,8 @@ const About = () => {
               About United Laboratories Nepal
             </h1>
             <p className="text-xl leading-relaxed opacity-90">
-              We are committed to improving healthcare in Nepal through innovative 
-              pharmaceutical manufacturing and unwavering quality standards.
+              We are committed to improving wellness in Nepal through innovative 
+              nutraceutical manufacturing and unwavering quality standards.
             </p>
           </div>
         </div>
@@ -61,18 +61,18 @@ const About = () => {
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
                   United Laboratories Nepal was born from a vision to bridge the gap between 
-                  high-quality pharmaceutical products and accessibility in Nepal. Founded in 2025 
+                  high-quality nutraceutical products and accessibility in Nepal. Founded in 2025 
                   by industry veterans Lal Babu Prasad and Manish Goyel, our company represents 
-                  decades of combined experience in pharmaceutical excellence.
+                  decades of combined experience in nutraceutical excellence.
                 </p>
                 <p>
                   Located strategically in Birgunj, Nepal's industrial gateway, our state-of-the-art 
-                  facility is designed to meet international standards while serving local healthcare needs. 
-                  We combine traditional pharmaceutical wisdom with modern manufacturing technologies.
+                  facility is designed to meet international standards while serving local wellness needs. 
+                  We combine traditional nutritional wisdom with modern manufacturing technologies.
                 </p>
                 <p>
-                  Our commitment extends beyond manufacturing - we are dedicated to advancing healthcare 
-                  education, supporting medical research, and contributing to Nepal's pharmaceutical 
+                  Our commitment extends beyond manufacturing - we are dedicated to advancing wellness 
+                  education, supporting nutritional research, and contributing to Nepal's nutraceutical 
                   independence and growth.
                 </p>
               </div>
@@ -120,7 +120,7 @@ const About = () => {
               Meet Our Founders
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Led by industry veterans with a shared vision for pharmaceutical excellence in Nepal.
+              Led by industry veterans with a shared vision for nutraceutical excellence in Nepal.
             </p>
           </div>
 
@@ -158,8 +158,8 @@ const About = () => {
                   <h3 className="font-poppins font-bold text-2xl text-foreground">Our Mission</h3>
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
-                  To manufacture and supply high-quality, affordable pharmaceutical products 
-                  that improve health outcomes and enhance the quality of life for people 
+                  To manufacture and supply high-quality, affordable nutraceutical products 
+                  that improve wellness outcomes and enhance the quality of life for people 
                   across Nepal and beyond. We are committed to maintaining the highest 
                   standards of safety, efficacy, and reliability in all our products.
                 </p>
@@ -175,10 +175,10 @@ const About = () => {
                   <h3 className="font-poppins font-bold text-2xl text-foreground">Our Vision</h3>
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
-                  To become Nepal's leading pharmaceutical company, recognized for innovation, 
+                  To become Nepal's leading nutraceutical company, recognized for innovation, 
                   quality, and social responsibility. We envision a future where access to 
-                  essential medicines is universal, and where our products contribute 
-                  significantly to global health and wellness.
+                  essential nutritional supplements is universal, and where our products contribute 
+                  significantly to global wellness and health.
                 </p>
               </CardContent>
             </Card>
@@ -220,7 +220,7 @@ const About = () => {
                 </div>
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                  <span className="text-muted-foreground">Access to skilled pharmaceutical workforce</span>
+                  <span className="text-muted-foreground">Access to skilled nutraceutical workforce</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
@@ -235,7 +235,7 @@ const About = () => {
                 Manufacturing Excellence
               </h4>
               <p className="text-muted-foreground">
-                State-of-the-art facility designed for optimal pharmaceutical production
+                State-of-the-art facility designed for optimal nutraceutical production
               </p>
             </div>
           </div>

@@ -27,7 +27,7 @@ interface ProductFormProps {
 const categories = [
   "Nutritional Supplements",
   "Herbal Supplements", 
-  "Pharmaceutical Products",
+  "Nutraceutical Products",
   "Specialized Formulations"
 ];
 

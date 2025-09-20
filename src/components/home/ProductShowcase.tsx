@@ -7,31 +7,35 @@ const ProductShowcase = () => {
   const categories = [
     {
       icon: Pill,
-      title: "Pharmaceutical Products",
-      description: "High-quality medicines and therapeutic solutions for various health conditions.",
-      items: ["Pain Relief", "Antibiotics", "Cardiovascular", "Respiratory"],
-      color: "bg-primary/10 text-primary",
+      title: "Nutraceutical Products",
+      description: "High-quality nutritional supplements and wellness solutions for optimal health.",
+      items: ["Wellness Support", "Immune Boosters", "Energy Enhancers", "Vitality Products"],
+      color: "bg-primary/15 text-primary",
+      borderColor: "border-primary/20 hover:border-primary/40",
     },
     {
       icon: Leaf,
       title: "Herbal Supplements",
       description: "Natural health products combining traditional wisdom with modern science.",
       items: ["Ayurvedic Formulas", "Plant Extracts", "Natural Remedies", "Immune Support"],
-      color: "bg-secondary/10 text-secondary",
+      color: "bg-trust/15 text-trust",
+      borderColor: "border-trust/20 hover:border-trust/40",
     },
     {
       icon: Heart,
       title: "Nutritional Supplements",
       description: "Essential vitamins, minerals, and nutrients for optimal health and wellness.",
       items: ["Multivitamins", "Protein Supplements", "Mineral Complexes", "Health Boosters"],
-      color: "bg-trust/10 text-trust",
+      color: "bg-secondary/15 text-secondary",
+      borderColor: "border-secondary/20 hover:border-secondary/40",
     },
     {
       icon: Brain,
       title: "Specialized Formulations",
       description: "Advanced therapeutic products for specific health needs and conditions.",
       items: ["Neurological Support", "Hormonal Balance", "Digestive Health", "Joint Care"],
-      color: "bg-destructive/10 text-destructive",
+      color: "bg-accent-purple/15 text-accent-purple",
+      borderColor: "border-accent-purple/20 hover:border-accent-purple/40",
     },
   ];
 
@@ -43,8 +47,8 @@ const ProductShowcase = () => {
             Our Product Categories
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            From essential medicines to specialized supplements, we manufacture a comprehensive 
-            range of pharmaceutical products to meet diverse healthcare needs.
+            From essential nutritional supplements to specialized formulations, we manufacture a comprehensive 
+            range of nutraceutical products to meet diverse wellness needs.
           </p>
         </div>
 
@@ -52,7 +56,7 @@ const ProductShowcase = () => {
           {categories.map((category, index) => {
             const Icon = category.icon;
             return (
-              <Card key={index} className="card-product group">
+              <Card key={index} className={`card-product group border ${category.borderColor} transition-all duration-200`}>
                 <CardContent className="p-8">
                   <div className="flex items-start space-x-4">
                     <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${category.color}`}>
@@ -66,9 +70,13 @@ const ProductShowcase = () => {
                         {category.description}
                       </p>
                       <div className="grid grid-cols-2 gap-2">
-                        {category.items.map((item) => (
+                        {category.items.map((item, itemIndex) => (
                           <div key={item} className="flex items-center text-sm">
-                            <div className="w-2 h-2 bg-primary rounded-full mr-2"></div>
+                            <div className={`w-1.5 h-1.5 rounded-full mr-2 ${
+                              itemIndex === 0 ? 'bg-primary' :
+                              itemIndex === 1 ? 'bg-secondary' :
+                              itemIndex === 2 ? 'bg-trust' : 'bg-accent-orange'
+                            }`}></div>
                             <span className="text-muted-foreground">{item}</span>
                           </div>
                         ))}
@@ -97,7 +105,7 @@ const ProductShowcase = () => {
             </Link>
           </div>
           <p className="text-sm text-muted-foreground mt-4">
-            Need a custom formulation? Contact us for specialized pharmaceutical solutions.
+            Need a custom formulation? Contact us for specialized nutraceutical solutions.
           </p>
         </div>
       </div>
