@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[80vh] bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
+    <section id="home" className="relative min-h-[80vh] bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         {/* Subtle radial blur background */}

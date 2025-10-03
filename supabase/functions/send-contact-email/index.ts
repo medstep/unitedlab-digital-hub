@@ -1,7 +1,8 @@
-import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import { Resend } from "npm:resend@2.0.0";
+// @ts-ignore
+import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
-const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
+// @ts-ignore
+const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -26,6 +27,12 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
+    // Check if API key is available
+    if (!RESEND_API_KEY) {
+      console.error("RESEND_API_KEY is not set");
+      throw new Error("Email service not configured");
+    }
+
     const {
       name,
       email,
@@ -38,8 +45,13 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Received contact request:", { name, email, type, productName });
 
-    const subject = type === "quote" 
-      ? `Price Quote Request for ${productName}` 
+    // Validate required fields
+    if (!name || !email || !message) {
+      throw new Error("Missing required fields: name, email, or message");
+    }
+
+    const subject = type === "quote"
+      ? `Price Quote Request for ${productName}`
       : "New Contact Form Submission";
 
     const emailContent = `
@@ -56,42 +68,90 @@ const handler = async (req: Request): Promise<Response> => {
       <p><em>This message was sent from the United Laboratories Nepal website contact form.</em></p>
     `;
 
-    // Send email to company
-    const emailResponse = await resend.emails.send({
-      from: "United Lab Nepal <noreply@unitedlab.com>",
-      to: ["unitedlabnepal@gmail.com"],
+    // Log API key status (first 10 chars only for security)
+    console.log("API Key available:", RESEND_API_KEY ? `${RESEND_API_KEY.substring(0, 10)}...` : 'NOT SET');
+
+    const emailPayload = {
+      from: 'United Lab Nepal <onboarding@resend.dev>',
+      to: ['sank.raun@gmail.com'],
       subject: subject,
       html: emailContent,
-      replyTo: email,
+      reply_to: email,
+    };
+
+    console.log("Sending email with payload:", JSON.stringify(emailPayload, null, 2));
+
+    // Send email to company using Resend API
+    const emailResponse = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${RESEND_API_KEY}`,
+      },
+      body: JSON.stringify(emailPayload),
     });
 
-    console.log("Email sent successfully:", emailResponse);
+    console.log("Email response status:", emailResponse.status);
+    console.log("Email response headers:", Object.fromEntries(emailResponse.headers.entries()));
+
+    const emailResult = await emailResponse.json();
+    console.log("Email response body:", JSON.stringify(emailResult, null, 2));
+
+    if (!emailResponse.ok) {
+      console.error("Failed to send email:", emailResult);
+      throw new Error(`Failed to send email: ${JSON.stringify(emailResult)}`);
+    }
+
+    console.log("Email sent successfully to sank.raun@gmail.com");
 
     // Send confirmation email to user
-    const confirmationResponse = await resend.emails.send({
-      from: "United Lab Nepal <noreply@unitedlab.com>",
-      to: [email],
-      subject: "Thank you for contacting United Laboratories Nepal",
-      html: `
-        <h2>Thank you for your inquiry!</h2>
-        <p>Dear ${name},</p>
-        <p>We have received your ${type === 'quote' ? 'price quote request' : 'message'} and will get back to you within 24 hours.</p>
-        ${productName ? `<p>Product: ${productName}</p>` : ''}
-        <p>Our team at United Laboratories Nepal will review your request and respond promptly.</p>
-        <br>
-        <p>Best regards,<br>
-        United Laboratories Nepal Team<br>
-        📞 +977-9851112329<br>
-        ✉️ unitedlabnepal@gmail.com</p>
-      `,
+    const confirmationResponse = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${RESEND_API_KEY}`,
+      },
+      body: JSON.stringify({
+        from: 'United Lab Nepal <onboarding@resend.dev>',
+        to: [email],
+        subject: 'Thank you for contacting United Laboratories Nepal',
+        html: `
+          <h2>Thank you for your inquiry!</h2>
+          <p>Dear ${name},</p>
+          <p>We have received your ${type === 'quote' ? 'price quote request' : 'message'} and will get back to you within 24 hours.</p>
+          ${productName ? `<p>Product: ${productName}</p>` : ''}
+          <p>Our team at United Laboratories Nepal will review your request and respond promptly.</p>
+          <br>
+          <p>Best regards,<br>
+          United Laboratories Nepal Team<br>
+          📞 +977-9851112329<br>
+          ✉️ unitedlabnepal@gmail.com</p>
+        `,
+      }),
     });
 
-    console.log("Confirmation email sent:", confirmationResponse);
+    const confirmationResult = await confirmationResponse.json();
+    console.log("Confirmation email response:", confirmationResult);
+
+    if (!confirmationResponse.ok) {
+      console.error("Failed to send confirmation email:", confirmationResult);
+      // Don't throw error here, main email was sent successfully
+    } else {
+      console.log("Confirmation email sent successfully");
+    }
 
     return new Response(
-      JSON.stringify({ 
-        success: true, 
-        message: "Emails sent successfully" 
+      JSON.stringify({
+        success: true,
+        message: "Function executed successfully",
+        debug: {
+          apiKeySet: !!RESEND_API_KEY,
+          apiKeyPrefix: RESEND_API_KEY ? RESEND_API_KEY.substring(0, 10) : 'NOT_SET',
+          emailResponseStatus: emailResponse.status,
+          emailResult: emailResult,
+          confirmationResult: confirmationResult,
+          formData: { name, email, phone, company, type }
+        }
       }),
       {
         status: 200,
@@ -104,15 +164,15 @@ const handler = async (req: Request): Promise<Response> => {
   } catch (error: any) {
     console.error("Error in send-contact-email function:", error);
     return new Response(
-      JSON.stringify({ 
+      JSON.stringify({
         error: error.message,
-        success: false 
+        success: false
       }),
       {
         status: 500,
-        headers: { 
-          "Content-Type": "application/json", 
-          ...corsHeaders 
+        headers: {
+          "Content-Type": "application/json",
+          ...corsHeaders
         },
       }
     );

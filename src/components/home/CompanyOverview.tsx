@@ -34,7 +34,7 @@ const CompanyOverview = () => {
   ];
 
   return (
-    <section className="relative py-20 bg-gradient-to-br from-blue-50 via-white to-cyan-50 overflow-hidden">
+    <section id="about" className="relative py-20 bg-gradient-to-br from-blue-50 via-white to-cyan-50 overflow-hidden">
       {/* Animated Background Elements - matching hero section */}
       <div className="absolute inset-0">
         {/* Subtle radial blur background */}
