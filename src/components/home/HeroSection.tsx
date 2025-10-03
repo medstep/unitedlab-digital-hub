@@ -19,106 +19,71 @@ const HeroSection = () => {
         {/* Gradient Overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-slate-800/50 to-slate-900/70"></div>
 
-        {/* Decorative Elements */}
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/8 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/8 rounded-full blur-3xl"></div>
+        {/* Subtle Decorative Elements */}
+        <div className="absolute top-1/3 left-1/3 w-32 h-32 bg-blue-400/5 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-48 h-48 bg-cyan-400/5 rounded-full blur-2xl"></div>
       </div>
 
       {/* Main Hero Content */}
-      <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 mb-8 text-sm font-medium text-white/90">
-            <Award className="h-4 w-4 mr-2 text-blue-400" />
-            Est. 2025 • GMP Certified • ISO Compliant
-          </div>
-
+      <div className="container mx-auto px-6 py-32 relative z-10">
+        <div className="max-w-4xl mx-auto text-center">
           {/* Main Heading */}
-          <h1 className="font-poppins font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-8 leading-tight drop-shadow-lg">
+          <h1 className="font-poppins font-bold text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight drop-shadow-lg">
             Premium Nutraceutical
             <br />
             <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
               Manufacturing
-            </span> in Nepal
+            </span>
+            <span> in Nepal</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-200 mb-12 leading-relaxed max-w-4xl mx-auto font-light drop-shadow-md">
-            United Laboratories Nepal is your trusted partner for high-quality nutraceuticals,
-            supplements, and nutritional products with decades of industry expertise.
+          <p className="text-xl text-gray-200 mb-10 leading-relaxed max-w-2xl mx-auto font-light drop-shadow-md">
+            Your trusted partner for high-quality nutraceuticals and supplements in Nepal.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-24">
             <Link to="/products">
-              <Button size="lg" className="btn-hero group min-w-[200px] h-14 text-lg shadow-lg hover:shadow-xl">
-                Explore Products
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <Button size="lg" className="btn-hero group min-w-[180px] h-12 text-base">
+                Our Products
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
             <Link to="/contact">
-              <Button size="lg" variant="outline" className="min-w-[200px] h-14 text-lg glass-card hover:bg-primary hover:text-primary-foreground border-primary/30">
+              <Button size="lg" variant="outline" className="min-w-[180px] h-12 text-base bg-white/10 border-white/30 text-white hover:bg-white hover:text-slate-900">
                 Get Quote
               </Button>
             </Link>
           </div>
         </div>
 
-        {/* Stats Section */}
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {/* Stat 1 */}
-            <div className="text-center p-8 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/15 hover:border-blue-400/50 hover:scale-105 transition-all duration-300 shadow-xl">
-              <div className="w-16 h-16 bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <Building2 className="h-8 w-8 text-blue-400" />
+        {/* Key Features */}
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Building2 className="h-6 w-6 text-blue-400" />
               </div>
-              <div className="font-poppins font-bold text-3xl text-blue-400 mb-2">Modern</div>
-              <div className="text-sm text-gray-300 font-medium">Manufacturing Facility</div>
+              <h3 className="font-semibold text-white mb-2">Modern Facility</h3>
+              <p className="text-gray-300 text-sm">State-of-the-art manufacturing</p>
             </div>
 
-            {/* Stat 2 */}
-            <div className="text-center p-8 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/15 hover:border-cyan-400/50 hover:scale-105 transition-all duration-300 shadow-xl">
-              <div className="w-16 h-16 bg-cyan-500/20 rounded-xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <Users className="h-8 w-8 text-cyan-400" />
+            <div className="text-center">
+              <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Award className="h-6 w-6 text-green-400" />
               </div>
-              <div className="font-poppins font-bold text-3xl text-cyan-400 mb-2">50+</div>
-              <div className="text-sm text-gray-300 font-medium">Expert Team Members</div>
+              <h3 className="font-semibold text-white mb-2">GMP Certified</h3>
+              <p className="text-gray-300 text-sm">International quality standards</p>
             </div>
 
-            {/* Stat 3 */}
-            <div className="text-center p-8 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/15 hover:border-green-400/50 hover:scale-105 transition-all duration-300 shadow-xl">
-              <div className="w-16 h-16 bg-green-500/20 rounded-xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <Award className="h-8 w-8 text-green-400" />
+            <div className="text-center">
+              <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Users className="h-6 w-6 text-cyan-400" />
               </div>
-              <div className="font-poppins font-bold text-3xl text-green-400 mb-2">100%</div>
-              <div className="text-sm text-gray-300 font-medium">Quality Assured</div>
+              <h3 className="font-semibold text-white mb-2">Expert Team</h3>
+              <p className="text-gray-300 text-sm">Experienced professionals</p>
             </div>
-
-            {/* Stat 4 */}
-            <div className="text-center p-8 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/15 hover:border-orange-400/50 hover:scale-105 transition-all duration-300 shadow-xl">
-              <div className="w-16 h-16 bg-orange-500/20 rounded-xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <Target className="h-8 w-8 text-orange-400" />
-              </div>
-              <div className="font-poppins font-bold text-3xl text-orange-400 mb-2">GMP</div>
-              <div className="text-sm text-gray-300 font-medium">Certified Standards</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Founders Section */}
-        <div className="max-w-4xl mx-auto mt-20 text-center">
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-10 shadow-xl">
-            <h3 className="font-poppins font-bold text-2xl text-blue-400 mb-4">
-              Founded by Industry Veterans
-            </h3>
-            <p className="text-lg text-gray-300 mb-6">
-              <strong className="text-white text-xl">Lal Babu Prasad</strong> and{" "}
-              <strong className="text-white text-xl">Munish Goyel</strong>
-            </p>
-            <p className="text-gray-300 leading-relaxed max-w-2xl mx-auto">
-              Decades of combined experience in nutraceutical manufacturing and quality excellence,
-              bringing world-class expertise to Nepal's wellness industry.
-            </p>
           </div>
         </div>
       </div>

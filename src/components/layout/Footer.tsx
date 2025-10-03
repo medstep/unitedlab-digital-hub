@@ -9,9 +9,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-9 h-9 bg-primary rounded-md flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">UL</span>
-              </div>
+              <img 
+                src="/Logo.png" 
+                alt="United Laboratories Nepal" 
+                className="h-10 w-auto object-contain"
+              />
               <div className="font-poppins">
                 <div className="font-semibold text-lg">United Laboratories</div>
                 <div className="text-sm text-muted-foreground">Nepal Pvt. Ltd.</div>

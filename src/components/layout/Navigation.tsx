@@ -12,50 +12,69 @@ const Navigation = () => {
     { name: "About", path: "/about" },
     { name: "Products", path: "/products" },
     { name: "Quality", path: "/quality" },
-    { name: "Contact", path: "/contact" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="bg-white/90 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-3 items-center h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-slate-900 rounded flex items-center justify-center">
-              <span className="text-white font-bold text-sm">UL</span>
-            </div>
-            <div className="font-poppins">
-              <div className="font-semibold text-lg text-slate-900">United Laboratories</div>
-              <div className="text-xs text-slate-600">Nepal Pvt. Ltd.</div>
-            </div>
-          </Link>
-
-          {/* Desktop Navigation - Centered */}
-          <div className="hidden md:flex items-center justify-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`font-medium text-sm transition-colors duration-200 ${isActive(item.path)
-                  ? "text-slate-900 border-b-2 border-slate-900 pb-1"
-                  : "text-slate-600 hover:text-slate-900"
-                  }`}
-              >
-                {item.name}
-              </Link>
+    <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 relative">
+          {/* Left Side - Navigation Links */}
+          <div className="hidden md:flex items-center">
+            {navItems.map((item, index) => (
+              <div key={item.name} className="flex items-center">
+                <Link
+                  to={item.path}
+                  className={`font-medium text-sm transition-colors duration-200 px-4 ${isActive(item.path)
+                    ? "text-slate-900"
+                    : "text-slate-600 hover:text-slate-900"
+                    }`}
+                >
+                  {item.name}
+                </Link>
+                {index < navItems.length - 1 && (
+                  <div className="w-px h-4 bg-gray-300 mx-2"></div>
+                )}
+              </div>
             ))}
           </div>
 
-          {/* Right Side - Button and Mobile Menu */}
-          <div className="flex items-center justify-end">
-            <Button
-              size="sm"
-              className="hidden md:block bg-slate-900 hover:bg-slate-800 text-white font-medium px-6"
+          {/* Center - Logo (Absolutely positioned for perfect centering) */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center">
+            <Link to="/" className="flex items-center space-x-3">
+              <img
+                src="/Logo.png"
+                alt="United Laboratories Nepal"
+                className="h-14 w-auto object-contain"
+              />
+              <div className="font-poppins">
+                <div className="font-extrabold text-base text-slate-800">United Laboratories</div>
+                <div className="text-xs text-slate-600">Nepal Pvt. Ltd.</div>
+              </div>
+            </Link>
+          </div>
+
+          {/* Right Side - Contact, Button and Mobile Menu */}
+          <div className="flex items-center">
+            <Link
+              to="/contact"
+              className={`hidden md:block font-medium text-sm transition-colors duration-200 px-4 ${isActive("/contact")
+                ? "text-slate-900"
+                : "text-slate-600 hover:text-slate-900"
+                }`}
             >
-              Get Quote
-            </Button>
+              Contact
+            </Link>
+            <div className="hidden md:block w-px h-4 bg-gray-300 mx-2"></div>
+            <Link to="/contact" className="hidden md:block ml-4">
+              <Button
+                size="sm"
+                className="bg-slate-900 hover:bg-slate-800 text-white font-medium px-4 py-2 rounded-md"
+              >
+                Get Quote
+              </Button>
+            </Link>
 
             {/* Mobile Menu Button */}
             <Button

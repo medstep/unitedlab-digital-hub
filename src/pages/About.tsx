@@ -1,146 +1,110 @@
-import { MapPin, Users, Target, Award, Calendar, Factory } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
+import { MapPin, Users, Target, Award, Factory } from "lucide-react";
 
 const About = () => {
-  const founders = [
-    {
-      name: "Lal Babu Prasad",
-      role: "Co-Founder & CEO",
-      description: "20+ years of experience in nutraceutical manufacturing and business development.",
-    },
-    {
-      name: "Manish Goyel",
-      role: "Co-Founder & CTO",
-      description: "Expert in nutraceutical R&D, quality control, and regulatory compliance.",
-    },
-  ];
-
-  const milestones = [
-    {
-      year: "2025",
-      title: "Company Founded",
-      description: "United Laboratories Nepal established in Birgunj",
-    },
-    {
-      year: "2025",
-      title: "GMP Certification",
-      description: "Achieved Good Manufacturing Practice certification",
-    },
-    {
-      year: "2025",
-      title: "Production Launch",
-      description: "Commenced manufacturing of nutraceutical products",
-    },
-  ];
-
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="hero-gradient py-20 text-primary-foreground">
-        <div className="container mx-auto px-4">
+      <section className="relative py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        {/* Background with same styling as homepage */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
+            style={{
+              backgroundImage: 'url(/manufacturing-facility.png)',
+            }}
+          ></div>
+          <div className="absolute inset-0 backdrop-blur-sm bg-black/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-slate-800/50 to-slate-900/70"></div>
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="font-poppins font-bold text-4xl md:text-5xl mb-6">
-              About United Laboratories Nepal
+            <h1 className="font-poppins font-bold text-5xl md:text-6xl text-white mb-6 leading-tight drop-shadow-lg">
+              About <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">United Laboratories</span>
             </h1>
-            <p className="text-xl leading-relaxed opacity-90">
-              We are committed to improving wellness in Nepal through innovative 
-              nutraceutical manufacturing and unwavering quality standards.
+            <p className="text-xl text-gray-200 leading-relaxed max-w-2xl mx-auto font-light drop-shadow-md">
+              Committed to improving wellness in Nepal through innovative nutraceutical manufacturing.
             </p>
           </div>
         </div>
       </section>
 
       {/* Company Story */}
-      <section className="py-20 trust-gradient">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <h2 className="font-poppins font-bold text-3xl md:text-4xl text-foreground mb-6">
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="font-poppins font-bold text-4xl text-slate-900 mb-6">
                 Our Story
               </h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  United Laboratories Nepal was born from a vision to bridge the gap between 
-                  high-quality nutraceutical products and accessibility in Nepal. Founded in 2025 
-                  by industry veterans Lal Babu Prasad and Manish Goyel, our company represents 
-                  decades of combined experience in nutraceutical excellence.
-                </p>
-                <p>
-                  Located strategically in Birgunj, Nepal's industrial gateway, our state-of-the-art 
-                  facility is designed to meet international standards while serving local wellness needs. 
-                  We combine traditional nutritional wisdom with modern manufacturing technologies.
-                </p>
-                <p>
-                  Our commitment extends beyond manufacturing - we are dedicated to advancing wellness 
-                  education, supporting nutritional research, and contributing to Nepal's nutraceutical 
-                  independence and growth.
-                </p>
-              </div>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                United Laboratories Nepal was founded in 2025 by industry veterans Lal Babu Prasad and Munish Goyel,
+                bringing decades of combined experience in nutraceutical excellence to Nepal.
+              </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-6">
-              <Card className="card-professional">
-                <CardContent className="p-6 text-center">
-                  <Factory className="h-8 w-8 text-primary mx-auto mb-3" />
-                  <div className="font-poppins font-bold text-2xl text-foreground mb-2">Modern</div>
-                  <div className="text-sm text-muted-foreground">Manufacturing Facility</div>
-                </CardContent>
-              </Card>
-              <Card className="card-professional">
-                <CardContent className="p-6 text-center">
-                  <Award className="h-8 w-8 text-primary mx-auto mb-3" />
-                  <div className="font-poppins font-bold text-2xl text-foreground mb-2">GMP</div>
-                  <div className="text-sm text-muted-foreground">Certified Quality</div>
-                </CardContent>
-              </Card>
-              <Card className="card-professional">
-                <CardContent className="p-6 text-center">
-                  <Users className="h-8 w-8 text-primary mx-auto mb-3" />
-                  <div className="font-poppins font-bold text-2xl text-foreground mb-2">50+</div>
-                  <div className="text-sm text-muted-foreground">Expert Team</div>
-                </CardContent>
-              </Card>
-              <Card className="card-professional">
-                <CardContent className="p-6 text-center">
-                  <Target className="h-8 w-8 text-primary mx-auto mb-3" />
-                  <div className="font-poppins font-bold text-2xl text-foreground mb-2">100%</div>
-                  <div className="text-sm text-muted-foreground">Quality Focus</div>
-                </CardContent>
-              </Card>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-blue-50 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Factory className="h-8 w-8 text-blue-600" />
+                </div>
+                <h3 className="font-semibold text-slate-900 mb-2">Modern Facility</h3>
+                <p className="text-slate-600 text-sm">State-of-the-art manufacturing in Birgunj</p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 bg-green-50 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Award className="h-8 w-8 text-green-600" />
+                </div>
+                <h3 className="font-semibold text-slate-900 mb-2">GMP Certified</h3>
+                <p className="text-slate-600 text-sm">International quality standards</p>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 bg-cyan-50 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Users className="h-8 w-8 text-cyan-600" />
+                </div>
+                <h3 className="font-semibold text-slate-900 mb-2">Expert Team</h3>
+                <p className="text-slate-600 text-sm">50+ experienced professionals</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Founders Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-poppins font-bold text-3xl md:text-4xl text-foreground mb-4">
-              Meet Our Founders
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Led by industry veterans with a shared vision for nutraceutical excellence in Nepal.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {founders.map((founder, index) => (
-              <Card key={index} className="card-professional professional-hover">
-                <CardContent className="p-8 text-center">
-                  <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Users className="h-12 w-12 text-primary" />
+      {/* Mission & Vision */}
+      <section className="py-24 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <div className="bg-white rounded-lg p-8 shadow-sm">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mr-4">
+                    <Target className="h-6 w-6 text-blue-600" />
                   </div>
-                  <h3 className="font-poppins font-bold text-xl text-foreground mb-2">
-                    {founder.name}
-                  </h3>
-                  <div className="text-primary font-medium mb-4">{founder.role}</div>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {founder.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+                  <h3 className="font-poppins font-bold text-2xl text-slate-900">Our Mission</h3>
+                </div>
+                <p className="text-slate-600 leading-relaxed">
+                  To manufacture high-quality, affordable nutraceutical products that improve wellness
+                  outcomes and enhance quality of life for people across Nepal and beyond.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-lg p-8 shadow-sm">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center mr-4">
+                    <Award className="h-6 w-6 text-green-600" />
+                  </div>
+                  <h3 className="font-poppins font-bold text-2xl text-slate-900">Our Vision</h3>
+                </div>
+                <p className="text-slate-600 leading-relaxed">
+                  To become Nepal's leading nutraceutical company, recognized for innovation,
+                  quality, and social responsibility in advancing global wellness.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -158,9 +122,9 @@ const About = () => {
                   <h3 className="font-poppins font-bold text-2xl text-foreground">Our Mission</h3>
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
-                  To manufacture and supply high-quality, affordable nutraceutical products 
-                  that improve wellness outcomes and enhance the quality of life for people 
-                  across Nepal and beyond. We are committed to maintaining the highest 
+                  To manufacture and supply high-quality, affordable nutraceutical products
+                  that improve wellness outcomes and enhance the quality of life for people
+                  across Nepal and beyond. We are committed to maintaining the highest
                   standards of safety, efficacy, and reliability in all our products.
                 </p>
               </CardContent>
@@ -175,9 +139,9 @@ const About = () => {
                   <h3 className="font-poppins font-bold text-2xl text-foreground">Our Vision</h3>
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
-                  To become Nepal's leading nutraceutical company, recognized for innovation, 
-                  quality, and social responsibility. We envision a future where access to 
-                  essential nutritional supplements is universal, and where our products contribute 
+                  To become Nepal's leading nutraceutical company, recognized for innovation,
+                  quality, and social responsibility. We envision a future where access to
+                  essential nutritional supplements is universal, and where our products contribute
                   significantly to global wellness and health.
                 </p>
               </CardContent>
@@ -187,56 +151,58 @@ const About = () => {
       </section>
 
       {/* Location */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-poppins font-bold text-3xl md:text-4xl text-foreground mb-4">
-              Our Location
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Strategically located in Birgunj, Nepal's industrial hub
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="flex items-center mb-6">
-                <MapPin className="h-8 w-8 text-primary mr-4" />
-                <div>
-                  <h3 className="font-poppins font-bold text-xl text-foreground">Birgunj, Nepal</h3>
-                  <p className="text-muted-foreground">Province 2, Nepal</p>
-                </div>
-              </div>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Our manufacturing facility is located in Birgunj, one of Nepal's most important 
-                industrial and commercial centers. This strategic location provides excellent 
-                connectivity for raw material sourcing and product distribution across Nepal 
-                and neighboring regions.
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="font-poppins font-bold text-4xl text-slate-900 mb-4">
+                Our Location
+              </h2>
+              <p className="text-lg text-slate-600">
+                Strategically located in Birgunj, Nepal's industrial hub
               </p>
-              <div className="space-y-3">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                  <span className="text-muted-foreground">Close proximity to major transportation networks</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                  <span className="text-muted-foreground">Access to skilled nutraceutical workforce</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                  <span className="text-muted-foreground">Strategic position for regional expansion</span>
-                </div>
-              </div>
             </div>
 
-            <div className="bg-muted rounded-lg p-8 text-center">
-              <div className="text-6xl mb-4">🏭</div>
-              <h4 className="font-poppins font-semibold text-lg text-foreground mb-2">
-                Manufacturing Excellence
-              </h4>
-              <p className="text-muted-foreground">
-                State-of-the-art facility designed for optimal nutraceutical production
-              </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mr-4">
+                    <MapPin className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-poppins font-bold text-xl text-slate-900">Birgunj, Nepal</h3>
+                    <p className="text-slate-600">Province 2, Nepal</p>
+                  </div>
+                </div>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  Our manufacturing facility is strategically positioned in Birgunj, providing excellent
+                  connectivity for raw material sourcing and product distribution across Nepal and neighboring regions.
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                    <span className="text-slate-600">Major transportation networks</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                    <span className="text-slate-600">Skilled workforce access</span>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                    <span className="text-slate-600">Regional expansion potential</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-slate-50 rounded-lg p-8 text-center">
+                <div className="text-6xl mb-4">🏭</div>
+                <h4 className="font-poppins font-semibold text-lg text-slate-900 mb-2">
+                  Manufacturing Excellence
+                </h4>
+                <p className="text-slate-600">
+                  State-of-the-art facility designed for optimal production
+                </p>
+              </div>
             </div>
           </div>
         </div>
