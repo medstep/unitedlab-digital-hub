@@ -73,7 +73,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const emailPayload = {
       from: 'United Lab Nepal <onboarding@resend.dev>',
-      to: ['medstep.official@gmail.com'],
+      to: ['sank.raun@gmail.com'],
       subject: subject,
       html: emailContent,
       reply_to: email,
