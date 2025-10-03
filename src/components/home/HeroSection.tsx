@@ -102,7 +102,14 @@ const HeroSection = () => {
 
             {/* CTA Buttons below image */}
             <div className="flex flex-col sm:flex-row gap-4 pt-6 justify-center animate-fade-in-up" style={{ animationDelay: '1.2s' }}>
-              <Link to="/products">
+              <button
+                onClick={() => {
+                  const element = document.querySelector('#product-showcase');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 <Button
                   size="lg"
                   className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
@@ -110,7 +117,7 @@ const HeroSection = () => {
                   Explore Products
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
-              </Link>
+              </button>
               <Link to="/contact">
                 <Button
                   size="lg"

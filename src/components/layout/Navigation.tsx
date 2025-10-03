@@ -9,9 +9,9 @@ const Navigation = () => {
   const navigate = useNavigate();
 
   const navItems = [
-    { name: "Home", path: "/", isScroll: true, scrollToTop: true },
+    { name: "Home", path: "#home", isScroll: true, scrollToTop: true },
     { name: "About", path: "#about", isScroll: true },
-    { name: "Products", path: "/products" },
+    { name: "Products", path: "#products", isScroll: true },
     { name: "Gallery", path: "/gallery" },
   ];
 

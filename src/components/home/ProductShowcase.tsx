@@ -36,7 +36,7 @@ const ProductShowcase = () => {
   ];
 
   return (
-    <section className="relative py-20 bg-gradient-to-br from-cyan-50 via-white to-blue-50 overflow-hidden">
+    <section id="product-showcase" className="relative py-20 bg-gradient-to-br from-cyan-50 via-white to-blue-50 overflow-hidden">
       {/* Animated Background Elements - matching hero section */}
       <div className="absolute inset-0">
         {/* Subtle radial blur background */}

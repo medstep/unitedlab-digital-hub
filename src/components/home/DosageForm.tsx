@@ -62,7 +62,7 @@ const DosageForm = () => {
     ];
 
     return (
-        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
+        <section id="products" className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
             {/* Animated Background Elements - matching hero section */}
             <div className="absolute inset-0">
                 {/* Subtle radial blur background */}
@@ -90,7 +90,7 @@ const DosageForm = () => {
                     </div>
 
                     <h2 className="font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-slate-900 mb-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                        Dosage{" "}
+                        Products & Dosage{" "}
                         <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 bg-clip-text text-transparent animate-gradient">
                             Forms
                         </span>
