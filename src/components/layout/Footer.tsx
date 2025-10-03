@@ -1,7 +1,35 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const Footer = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleScrollLink = (targetId: string, scrollToTop = false) => {
+    if (scrollToTop) {
+      // Handle Home link - scroll to top
+      if (location.pathname !== '/') {
+        // If not on home page, navigate to home
+        navigate('/');
+      } else {
+        // If on home page, scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    } else {
+      // Handle other scroll links
+      if (location.pathname !== '/') {
+        // Navigate to home with hash
+        navigate('/' + targetId);
+      } else {
+        // If we're on home page, scroll to the section
+        const element = document.querySelector(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+  };
+
   return (
     <footer className="bg-muted text-foreground border-t border-border">
       <div className="container mx-auto px-4 py-12">
@@ -29,15 +57,36 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-poppins font-semibold text-lg">Quick Links</h3>
             <div className="space-y-2">
-              {["Home", "About", "Products", "Quality", "Contact"].map((item) => (
-                <Link
-                  key={item}
-                  to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                  className="block text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
-                >
-                  {item}
-                </Link>
-              ))}
+              <button
+                onClick={() => handleScrollLink('#home', true)}
+                className="block text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 text-left"
+              >
+                Home
+              </button>
+              <button
+                onClick={() => handleScrollLink('#about')}
+                className="block text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 text-left"
+              >
+                About
+              </button>
+              <button
+                onClick={() => handleScrollLink('#products')}
+                className="block text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 text-left"
+              >
+                Products
+              </button>
+              <Link
+                to="/gallery"
+                className="block text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+              >
+                Gallery
+              </Link>
+              <Link
+                to="/contact"
+                className="block text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+              >
+                Contact
+              </Link>
             </div>
           </div>
 
@@ -45,17 +94,24 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-poppins font-semibold text-lg">Products</h3>
             <div className="space-y-2">
-              {[
-                "Nutritional Supplements",
-                "Nutraceutical Products",
-                "Vitamins & Minerals",
-                "Herbal Products",
-                "Wellness Supplements"
-              ].map((item) => (
-                <div key={item} className="text-sm text-muted-foreground">
-                  {item}
-                </div>
-              ))}
+              <div className="text-sm text-muted-foreground">
+                Tablets & Capsules
+              </div>
+              <div className="text-sm text-muted-foreground">
+                Syrups & Liquids
+              </div>
+              <div className="text-sm text-muted-foreground">
+                Herbal Extracts
+              </div>
+              <div className="text-sm text-muted-foreground">
+                Protein Supplements
+              </div>
+              <div className="text-sm text-muted-foreground">
+                Oral Drops & Oral Sprays
+              </div>
+              <div className="text-sm text-muted-foreground">
+                Sachets
+              </div>
             </div>
           </div>
 
