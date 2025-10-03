@@ -31,7 +31,7 @@ const HeroSection = () => {
             {/* Badge */}
             <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-sm animate-fade-in" style={{ animationDelay: '0.2s' }}>
               <Star className="h-4 w-4 mr-2" />
-              Est. 2025 • GMP Certified • ISO Compliant
+              Est. 2025 • WHO-GMP Certified • ISO Compliant
             </div>
 
             {/* Main Heading */}
@@ -58,7 +58,7 @@ const HeroSection = () => {
             <div className="space-y-3 animate-fade-in-up" style={{ animationDelay: '1s' }}>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="h-5 w-5 text-green-500" />
-                <span className="text-slate-700 font-medium">GMP Certified Manufacturing</span>
+                <span className="text-slate-700 font-medium">WHO-GMP Certified Manufacturing</span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircle className="h-5 w-5 text-green-500" />
@@ -133,7 +133,7 @@ const HeroSection = () => {
                 <div className="text-sm text-slate-600">Quality Assured</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-cyan-600">GMP</div>
+                <div className="text-2xl font-bold text-cyan-600">WHO-GMP</div>
                 <div className="text-sm text-slate-600">Certified</div>
               </div>
               <div className="text-center">

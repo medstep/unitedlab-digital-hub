@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Pill, Leaf, Heart, Brain } from "lucide-react";
+import { ArrowRight, Pill, Leaf, Heart, Brain, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -10,45 +10,73 @@ const ProductShowcase = () => {
       title: "Nutraceutical Products",
       description: "High-quality nutritional supplements and wellness solutions for optimal health.",
       items: ["Wellness Support", "Immune Boosters", "Energy Enhancers", "Vitality Products"],
-      color: "bg-primary/15 text-primary",
-      borderColor: "border-primary/20 hover:border-primary/40",
+      color: "bg-blue-100 text-blue-600",
+      delay: "0.2s",
     },
     {
       icon: Leaf,
       title: "Herbal Supplements",
       description: "Natural health products combining traditional wisdom with modern science.",
       items: ["Ayurvedic Formulas", "Plant Extracts", "Natural Remedies", "Immune Support"],
-      color: "bg-trust/15 text-trust",
-      borderColor: "border-trust/20 hover:border-trust/40",
+      color: "bg-green-100 text-green-600",
+      delay: "0.4s",
     },
     {
       icon: Heart,
       title: "Nutritional Supplements",
       description: "Essential vitamins, minerals, and nutrients for optimal health and wellness.",
       items: ["Multivitamins", "Protein Supplements", "Mineral Complexes", "Health Boosters"],
-      color: "bg-secondary/15 text-secondary",
-      borderColor: "border-secondary/20 hover:border-secondary/40",
+      color: "bg-red-100 text-red-600",
+      delay: "0.6s",
     },
     {
       icon: Brain,
       title: "Specialized Formulations",
       description: "Advanced therapeutic products for specific health needs and conditions.",
       items: ["Neurological Support", "Hormonal Balance", "Digestive Health", "Joint Care"],
-      color: "bg-accent-purple/15 text-accent-purple",
-      borderColor: "border-accent-purple/20 hover:border-accent-purple/40",
+      color: "bg-purple-100 text-purple-600",
+      delay: "0.8s",
     },
   ];
 
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="font-poppins font-bold text-3xl md:text-4xl text-foreground mb-4">
-            Our Product Categories
+    <section className="relative py-20 bg-gradient-to-br from-cyan-50 via-white to-blue-50 overflow-hidden">
+      {/* Animated Background Elements - matching hero section */}
+      <div className="absolute inset-0">
+        {/* Subtle radial blur background */}
+        <div className="absolute inset-0 bg-gradient-radial from-blue-100/25 via-transparent to-cyan-100/20 blur-sm"></div>
+        <div className="absolute top-1/4 left-1/3 w-[110%] h-[110%] bg-gradient-radial from-white/35 via-blue-50/20 to-transparent blur-2xl opacity-50"></div>
+
+        {/* Floating geometric shapes */}
+        <div className="absolute top-20 left-16 w-18 h-18 bg-blue-100 rounded-full opacity-50 animate-pulse"></div>
+        <div className="absolute top-40 right-24 w-14 h-14 bg-cyan-100 rounded-lg opacity-40 animate-bounce" style={{ animationDelay: '1.2s' }}></div>
+        <div className="absolute bottom-40 left-24 w-16 h-16 bg-green-100 rounded-full opacity-45 animate-pulse" style={{ animationDelay: '2.2s' }}></div>
+        <div className="absolute bottom-24 right-20 w-20 h-20 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-full opacity-35 animate-bounce" style={{ animationDelay: '0.7s' }}></div>
+        <div className="absolute top-1/2 left-8 w-12 h-12 bg-purple-100 rounded-lg opacity-40 animate-pulse" style={{ animationDelay: '1.8s' }}></div>
+
+        {/* Enhanced gradient orbs */}
+        <div className="absolute top-1/6 right-1/6 w-84 h-84 bg-gradient-to-r from-cyan-200/22 to-blue-200/22 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/6 left-1/6 w-76 h-76 bg-gradient-to-r from-blue-200/22 to-green-200/18 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.6s' }}></div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-16 animate-fade-in-up">
+          {/* Badge */}
+          <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-sm mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <Star className="h-4 w-4 mr-2" />
+            Premium Quality • WHO-GMP Certified • Made in Nepal
+          </div>
+
+          <h2 className="font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-slate-900 mb-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            Our Product{" "}
+            <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 bg-clip-text text-transparent animate-gradient">
+              Categories
+            </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            From essential nutritional supplements to specialized formulations, we manufacture a comprehensive 
-            range of nutraceutical products to meet diverse wellness needs.
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full mx-auto mb-6 animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+            From essential nutritional supplements to specialized formulations, we manufacture a comprehensive
+            range of nutraceutical products to meet diverse wellness needs across <span className="text-blue-600 font-semibold">Nepal</span>.
           </p>
         </div>
 
@@ -56,28 +84,27 @@ const ProductShowcase = () => {
           {categories.map((category, index) => {
             const Icon = category.icon;
             return (
-              <Card key={index} className={`card-product group border ${category.borderColor} transition-all duration-200`}>
+              <Card key={index} className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 animate-fade-in-up group" style={{ animationDelay: category.delay }}>
                 <CardContent className="p-8">
                   <div className="flex items-start space-x-4">
-                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${category.color}`}>
-                      <Icon className="h-6 w-6" />
+                    <div className={`w-14 h-14 rounded-xl flex items-center justify-center ${category.color} shadow-md`}>
+                      <Icon className="h-7 w-7" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-poppins font-semibold text-xl mb-3 text-foreground group-hover:text-primary transition-colors">
+                      <h3 className="font-poppins font-semibold text-xl mb-3 text-slate-900 group-hover:text-blue-600 transition-colors">
                         {category.title}
                       </h3>
-                      <p className="text-muted-foreground mb-4 leading-relaxed">
+                      <p className="text-slate-600 mb-4 leading-relaxed">
                         {category.description}
                       </p>
                       <div className="grid grid-cols-2 gap-2">
                         {category.items.map((item, itemIndex) => (
                           <div key={item} className="flex items-center text-sm">
-                            <div className={`w-1.5 h-1.5 rounded-full mr-2 ${
-                              itemIndex === 0 ? 'bg-primary' :
-                              itemIndex === 1 ? 'bg-secondary' :
-                              itemIndex === 2 ? 'bg-trust' : 'bg-accent-orange'
-                            }`}></div>
-                            <span className="text-muted-foreground">{item}</span>
+                            <div className={`w-2 h-2 rounded-full mr-2 ${itemIndex === 0 ? 'bg-blue-500' :
+                                itemIndex === 1 ? 'bg-green-500' :
+                                  itemIndex === 2 ? 'bg-cyan-500' : 'bg-purple-500'
+                              }`}></div>
+                            <span className="text-slate-600">{item}</span>
                           </div>
                         ))}
                       </div>
@@ -90,25 +117,77 @@ const ProductShowcase = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center">
+        <div className="text-center animate-fade-in-up" style={{ animationDelay: '1s' }}>
           <div className="inline-flex flex-col sm:flex-row gap-4">
             <Link to="/products">
-              <Button size="lg" className="btn-hero group">
+              <Button size="lg" className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
                 View All Products
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
             <Link to="/contact">
-              <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+              <Button size="lg" variant="outline" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-lg">
                 Request Product Catalog
               </Button>
             </Link>
           </div>
-          <p className="text-sm text-muted-foreground mt-4">
-            Need a custom formulation? Contact us for specialized nutraceutical solutions.
+          <p className="text-slate-600 mt-6 animate-fade-in" style={{ animationDelay: '1.2s' }}>
+            Need a custom formulation? Contact us for specialized nutraceutical solutions made in <span className="text-blue-600 font-semibold">Nepal</span>.
           </p>
         </div>
       </div>
+
+      {/* Custom CSS for animations - matching hero section */}
+      <style>{`
+        @keyframes fade-in-up {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        
+        @keyframes gradient {
+          0%, 100% {
+            background-size: 200% 200%;
+            background-position: left center;
+          }
+          50% {
+            background-size: 200% 200%;
+            background-position: right center;
+          }
+        }
+        
+        .animate-fade-in-up {
+          animation: fade-in-up 0.8s ease-out forwards;
+          opacity: 0;
+        }
+        
+        .animate-fade-in {
+          animation: fade-in 0.8s ease-out forwards;
+          opacity: 0;
+        }
+        
+        .animate-gradient {
+          animation: gradient 3s ease-in-out infinite;
+        }
+        
+        .bg-gradient-radial {
+          background: radial-gradient(circle, var(--tw-gradient-stops));
+        }
+      `}</style>
     </section>
   );
 };
