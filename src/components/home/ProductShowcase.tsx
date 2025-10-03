@@ -6,35 +6,31 @@ import { Card, CardContent } from "@/components/ui/card";
 const ProductShowcase = () => {
   const categories = [
     {
-      icon: Pill,
-      title: "Nutraceutical Products",
-      description: "High-quality nutritional supplements and wellness solutions for optimal health.",
-      items: ["Wellness Support", "Immune Boosters", "Energy Enhancers", "Vitality Products"],
-      color: "bg-blue-100 text-blue-600",
+      icon: Heart,
+      title: "By Health Concern",
+      description: "Targeted solutions for specific health conditions and wellness concerns.",
+      color: "bg-red-100 text-red-600",
       delay: "0.2s",
     },
     {
-      icon: Leaf,
-      title: "Herbal Supplements",
-      description: "Natural health products combining traditional wisdom with modern science.",
-      items: ["Ayurvedic Formulas", "Plant Extracts", "Natural Remedies", "Immune Support"],
-      color: "bg-green-100 text-green-600",
+      icon: Brain,
+      title: "Age-Related",
+      description: "Specialized formulations designed for different life stages and age groups.",
+      color: "bg-purple-100 text-purple-600",
       delay: "0.4s",
     },
     {
-      icon: Heart,
-      title: "Nutritional Supplements",
-      description: "Essential vitamins, minerals, and nutrients for optimal health and wellness.",
-      items: ["Multivitamins", "Protein Supplements", "Mineral Complexes", "Health Boosters"],
-      color: "bg-red-100 text-red-600",
+      icon: Leaf,
+      title: "Herbal Extracts",
+      description: "Pure plant-based extracts combining traditional wisdom with modern science.",
+      color: "bg-green-100 text-green-600",
       delay: "0.6s",
     },
     {
-      icon: Brain,
-      title: "Specialized Formulations",
-      description: "Advanced therapeutic products for specific health needs and conditions.",
-      items: ["Neurological Support", "Hormonal Balance", "Digestive Health", "Joint Care"],
-      color: "bg-purple-100 text-purple-600",
+      icon: Pill,
+      title: "Supplements & Superfoods",
+      description: "Essential vitamins, minerals, and nutrient-dense superfoods for daily health maintenance.",
+      color: "bg-blue-100 text-blue-600",
       delay: "0.8s",
     },
   ];
@@ -68,9 +64,9 @@ const ProductShowcase = () => {
           </div>
 
           <h2 className="font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-slate-900 mb-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            Our Product{" "}
+            Specialize or customize your{" "}
             <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 bg-clip-text text-transparent animate-gradient">
-              Categories
+              Products by:
             </span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full mx-auto mb-6 animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
@@ -86,7 +82,7 @@ const ProductShowcase = () => {
             return (
               <Card key={index} className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 animate-fade-in-up group" style={{ animationDelay: category.delay }}>
                 <CardContent className="p-8">
-                  <div className="flex items-start space-x-4">
+                  <div className="flex items-start space-x-4 mb-6">
                     <div className={`w-14 h-14 rounded-xl flex items-center justify-center ${category.color} shadow-md`}>
                       <Icon className="h-7 w-7" />
                     </div>
@@ -94,21 +90,16 @@ const ProductShowcase = () => {
                       <h3 className="font-poppins font-semibold text-xl mb-3 text-slate-900 group-hover:text-blue-600 transition-colors">
                         {category.title}
                       </h3>
-                      <p className="text-slate-600 mb-4 leading-relaxed">
+                      <p className="text-slate-600 leading-relaxed">
                         {category.description}
                       </p>
-                      <div className="grid grid-cols-2 gap-2">
-                        {category.items.map((item, itemIndex) => (
-                          <div key={item} className="flex items-center text-sm">
-                            <div className={`w-2 h-2 rounded-full mr-2 ${itemIndex === 0 ? 'bg-blue-500' :
-                                itemIndex === 1 ? 'bg-green-500' :
-                                  itemIndex === 2 ? 'bg-cyan-500' : 'bg-purple-500'
-                              }`}></div>
-                            <span className="text-slate-600">{item}</span>
-                          </div>
-                        ))}
-                      </div>
                     </div>
+                  </div>
+                  <div className="flex justify-end">
+                    <Link to="/products" className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm px-4 py-2 rounded-lg transition-all duration-300 group shadow-md hover:shadow-lg">
+                      <span className="mr-2">View Products</span>
+                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -125,11 +116,7 @@ const ProductShowcase = () => {
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-            <Link to="/contact">
-              <Button size="lg" variant="outline" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-lg">
-                Request Product Catalog
-              </Button>
-            </Link>
+           
           </div>
           <p className="text-slate-600 mt-6 animate-fade-in" style={{ animationDelay: '1.2s' }}>
             Need a custom formulation? Contact us for specialized nutraceutical solutions made in <span className="text-blue-600 font-semibold">Nepal</span>.

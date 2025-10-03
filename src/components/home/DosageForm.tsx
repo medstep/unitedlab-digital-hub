@@ -108,9 +108,75 @@ const DosageForm = () => {
                         return (
                             <Card key={index} className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 animate-fade-in-up group" style={{ animationDelay: form.delay }}>
                                 <CardContent className="p-6 text-center">
-                                    <div className={`w-16 h-16 ${form.color} rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                                        <Icon className="h-8 w-8" />
-                                    </div>
+                                    {form.title === "Tablets" ? (
+                                        <div className="w-62 h-62 mx-auto mb-4 rounded-xl overflow-hidden shadow-md group-hover:scale-110 transition-transform duration-300">
+                                            <img
+                                                src="/tablets.png"
+                                                alt="Tablets"
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    ) : form.title === "Hard Gelatin Capsules" ? (
+                                        <div className="w-62 h-62 mx-auto mb-4 rounded-xl overflow-hidden shadow-md group-hover:scale-110 transition-transform duration-300">
+                                            <img
+                                                src="/Capsules.png"
+                                                alt="Hard Gelatin Capsules"
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    ) : form.title === "Proteins" ? (
+                                        <div className="w-62 h-62 mx-auto mb-4 rounded-xl overflow-hidden shadow-md group-hover:scale-110 transition-transform duration-300">
+                                            <img
+                                                src="/Protein.png"
+                                                alt="Proteins"
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    ) : form.title === "Syrup-Liquid" ? (
+                                        <div className="w-62 h-62 mx-auto mb-4 rounded-xl overflow-hidden shadow-md group-hover:scale-110 transition-transform duration-300">
+                                            <img
+                                                src="/Syrup.png"
+                                                alt="Syrup-Liquid"
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    ) : form.title === "Oral Drops" ? (
+                                        <div className="w-62 h-62 mx-auto mb-4 rounded-xl overflow-hidden shadow-md group-hover:scale-110 transition-transform duration-300">
+                                            <img
+                                                src="/Oral.png"
+                                                alt="Oral Drops"
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    ) : form.title === "Sachet Powder" ? (
+                                        <div className="w-62 h-62 mx-auto mb-4 rounded-xl overflow-hidden shadow-md group-hover:scale-110 transition-transform duration-300">
+                                            <img
+                                                src="/Sachet.png"
+                                                alt="Sachet Powder"
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    ) : form.title === "Oral Spray" ? (
+                                        <div className="w-62 h-62 mx-auto mb-4 rounded-xl overflow-hidden shadow-md group-hover:scale-110 transition-transform duration-300">
+                                            <img
+                                                src="/Spray.png"
+                                                alt="Oral Spray"
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    ) : form.title === "Fiber Supplement" ? (
+                                        <div className="w-62 h-62 mx-auto mb-4 rounded-xl overflow-hidden shadow-md group-hover:scale-110 transition-transform duration-300">
+                                            <img
+                                                src="/Fiber.png"
+                                                alt="Fiber Supplement"
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    ) : (
+                                        <div className={`w-16 h-16 ${form.color} rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                                            <Icon className="h-8 w-8" />
+                                        </div>
+                                    )}
                                     <h3 className="font-poppins font-semibold text-lg mb-3 text-slate-900 group-hover:text-blue-600 transition-colors">
                                         {form.title}
                                     </h3>
