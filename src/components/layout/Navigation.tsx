@@ -17,7 +17,7 @@ const Navigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <nav className="bg-white/95 backdrop-blur-md border-b border-gray-200/50 sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 relative">
           {/* Left Side - Navigation Links */}
@@ -26,15 +26,18 @@ const Navigation = () => {
               <div key={item.name} className="flex items-center">
                 <Link
                   to={item.path}
-                  className={`font-medium text-sm transition-colors duration-200 px-4 ${isActive(item.path)
-                    ? "text-slate-900"
-                    : "text-slate-600 hover:text-slate-900"
+                  className={`relative font-semibold text-sm transition-all duration-300 px-4 py-2 rounded-lg group ${isActive(item.path)
+                    ? "text-blue-600 bg-blue-50"
+                    : "text-slate-700 hover:text-blue-600 hover:bg-blue-50/50"
                     }`}
                 >
                   {item.name}
+                  {/* Animated underline */}
+                  <span className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-blue-600 transition-all duration-300 ${isActive(item.path) ? "w-6" : "w-0 group-hover:w-6"
+                    }`}></span>
                 </Link>
                 {index < navItems.length - 1 && (
-                  <div className="w-px h-4 bg-gray-300 mx-2"></div>
+                  <div className="w-px h-5 bg-gray-200 mx-3"></div>
                 )}
               </div>
             ))}
@@ -42,15 +45,15 @@ const Navigation = () => {
 
           {/* Center - Logo (Absolutely positioned for perfect centering) */}
           <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center">
-            <Link to="/" className="flex items-center space-x-3">
+            <Link to="/" className="flex items-center space-x-3 group transition-all duration-300 hover:scale-105">
               <img
                 src="/Logo.png"
                 alt="United Laboratories Nepal"
-                className="h-14 w-auto object-contain"
+                className="h-14 w-auto object-contain transition-all duration-300 group-hover:brightness-110"
               />
               <div className="font-poppins">
-                <div className="font-extrabold text-base text-slate-800">United Laboratories</div>
-                <div className="text-xs text-slate-600">Nepal Pvt. Ltd.</div>
+                <div className="font-bold text-base text-slate-900 group-hover:text-blue-600 transition-colors duration-300">United Laboratories</div>
+                <div className="text-xs text-slate-600 group-hover:text-blue-500 transition-colors duration-300">Nepal Pvt. Ltd.</div>
               </div>
             </Link>
           </div>
@@ -59,18 +62,21 @@ const Navigation = () => {
           <div className="flex items-center">
             <Link
               to="/contact"
-              className={`hidden md:block font-medium text-sm transition-colors duration-200 px-4 ${isActive("/contact")
-                ? "text-slate-900"
-                : "text-slate-600 hover:text-slate-900"
+              className={`hidden md:block relative font-semibold text-sm transition-all duration-300 px-4 py-2 rounded-lg group ${isActive("/contact")
+                ? "text-blue-600 bg-blue-50"
+                : "text-slate-700 hover:text-blue-600 hover:bg-blue-50/50"
                 }`}
             >
               Contact
+              {/* Animated underline */}
+              <span className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-blue-600 transition-all duration-300 ${isActive("/contact") ? "w-6" : "w-0 group-hover:w-6"
+                }`}></span>
             </Link>
-            <div className="hidden md:block w-px h-4 bg-gray-300 mx-2"></div>
-            <Link to="/contact" className="hidden md:block ml-4">
+            <div className="hidden md:block w-px h-5 bg-gray-200 mx-3"></div>
+            <Link to="/contact" className="hidden md:block ml-2">
               <Button
                 size="sm"
-                className="bg-slate-900 hover:bg-slate-800 text-white font-medium px-4 py-2 rounded-md"
+                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300"
               >
                 Get Quote
               </Button>
@@ -80,7 +86,7 @@ const Navigation = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden text-slate-600 hover:text-slate-900"
+              className="md:hidden text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-300"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -90,25 +96,35 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-gray-100 bg-white">
-            <div className="flex flex-col space-y-1">
+          <div className="md:hidden py-6 border-t border-gray-100 bg-white/95 backdrop-blur-md shadow-lg">
+            <div className="flex flex-col space-y-2">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`font-medium px-4 py-3 text-sm transition-colors duration-200 ${isActive(item.path)
-                    ? "text-slate-900 bg-slate-50"
-                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+                  className={`font-semibold px-6 py-3 text-sm rounded-lg mx-4 transition-all duration-300 ${isActive(item.path)
+                    ? "text-blue-600 bg-blue-50 shadow-sm"
+                    : "text-slate-700 hover:text-blue-600 hover:bg-blue-50/50"
                     }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="px-4 pt-3">
+              <Link
+                to="/contact"
+                className={`font-semibold px-6 py-3 text-sm rounded-lg mx-4 transition-all duration-300 ${isActive("/contact")
+                  ? "text-blue-600 bg-blue-50 shadow-sm"
+                  : "text-slate-700 hover:text-blue-600 hover:bg-blue-50/50"
+                  }`}
+                onClick={() => setIsOpen(false)}
+              >
+                Contact
+              </Link>
+              <div className="px-4 pt-4">
                 <Button
                   size="sm"
-                  className="w-full bg-slate-900 hover:bg-slate-800 text-white font-medium"
+                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300"
                 >
                   Get Quote
                 </Button>
