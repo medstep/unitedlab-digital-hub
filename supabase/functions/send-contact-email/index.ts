@@ -73,7 +73,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const emailPayload = {
       from: 'United Lab Nepal <onboarding@resend.dev>',
-      to: ['sank.raun@gmail.com'],
+      to: ['medstep.official@gmail.com'], // Changed to verified email - verify domain at resend.com/domains to send to other emails
       subject: subject,
       html: emailContent,
       reply_to: email,
