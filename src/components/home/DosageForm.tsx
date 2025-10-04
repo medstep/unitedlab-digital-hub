@@ -181,15 +181,7 @@ const DosageForm = () => {
                     })}
                 </div>
 
-                {/* Additional Info */}
-                <div className="text-center mt-20 animate-fade-in-up bg-slate-50 rounded-2xl p-12 max-w-5xl mx-auto border border-slate-200" style={{ animationDelay: '1s' }}>
-                    <h3 className="font-poppins font-semibold text-2xl text-slate-900 mb-6">
-                        Advanced Manufacturing Capabilities
-                    </h3>
-                    <p className="text-slate-600 max-w-3xl mx-auto leading-relaxed text-lg">
-                        Our state-of-the-art manufacturing facility in <span className="text-slate-900 font-medium">Birgunj, Nepal</span> is equipped with advanced technology to produce all these dosage forms under strict GMP guidelines, ensuring consistent quality and efficacy.
-                    </p>
-                </div>
+                
             </div>
 
             {/* Custom CSS for animations */}
