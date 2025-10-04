@@ -4,39 +4,38 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-[76vh] bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0">
+    <section id="home" className="relative min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden -mt-20 pt-20">
+      {/* Extended Background Behind Navigation */}
+      <div className="absolute inset-0 -top-20">
         {/* Subtle radial blur background */}
         <div className="absolute inset-0 bg-gradient-radial from-blue-100/30 via-transparent to-cyan-100/20 blur-sm"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-radial from-white/40 via-blue-50/20 to-transparent blur-2xl opacity-60"></div>
 
-        {/* Floating geometric shapes */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-blue-100 rounded-full opacity-60 animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-16 h-16 bg-cyan-100 rounded-lg opacity-40 animate-bounce" style={{ animationDelay: '1s' }}></div>
+        {/* Floating geometric shapes - adjusted positions for extended background */}
+        <div className="absolute top-24 left-10 w-20 h-20 bg-blue-100 rounded-full opacity-60 animate-pulse"></div>
+        <div className="absolute top-44 right-20 w-16 h-16 bg-cyan-100 rounded-lg opacity-40 animate-bounce" style={{ animationDelay: '1s' }}></div>
         <div className="absolute bottom-40 left-20 w-12 h-12 bg-blue-200 rounded-full opacity-50 animate-pulse" style={{ animationDelay: '2s' }}></div>
         <div className="absolute bottom-20 right-40 w-24 h-24 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-full opacity-30 animate-bounce" style={{ animationDelay: '0.5s' }}></div>
 
         {/* Enhanced gradient orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-200/25 to-cyan-200/25 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-200/25 to-cyan-200/25 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-cyan-200/25 to-blue-200/25 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+        
+        {/* Additional background elements for navigation area */}
+        <div className="absolute top-0 left-1/3 w-64 h-64 bg-gradient-to-r from-cyan-100/20 to-blue-100/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '0.8s' }}></div>
+        <div className="absolute top-10 right-1/4 w-48 h-48 bg-gradient-to-r from-blue-100/15 to-slate-100/15 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1.2s' }}></div>
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 pt-6 pb-6  relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center min-h-[calc(85vh-4rem)]">
+      <div className="container mx-auto px-4 pt-6 pb-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center min-h-[calc(90vh-4rem)]">
 
           {/* Left Side - Text Content */}
           <div className="space-y-8 animate-fade-in-up lg:pr-8 relative z-20">
-            {/* Badge */}
-            <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-sm animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <Star className="h-4 w-4 mr-2" />
-              Est. 2025 • WHO-GMP Certified • ISO Compliant
-            </div>
-
+            
             {/* Main Heading */}
             <div className="space-y-2 relative">
-              <h1 className="font-poppins font-bold text-2xl lg:text-3xl xl:text-5xl text-slate-900 leading-tight animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+              <h1 className="font-poppins font-bold text-2xl lg:text-3xl xl:text-6xl text-slate-900 leading-tight animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                 Third Party<span> </span>
 
                 <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 bg-clip-text text-transparent animate-gradient lg:relative lg:z-30">

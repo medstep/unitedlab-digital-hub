@@ -2,6 +2,7 @@ import HeroSection from "@/components/home/HeroSection";
 import CompanyOverview from "@/components/home/CompanyOverview";
 import DosageForm from "@/components/home/DosageForm";
 import ProductShowcase from "@/components/home/ProductShowcase";
+import PackagingSection from "@/components/home/PackagingSection";
 import ManufacturingProcess from "@/components/home/ManufacturingProcess";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import GetInTouchSection from "@/components/home/GetInTouchSection";
@@ -14,6 +15,7 @@ const Home = () => {
       <CompanyOverview />
       <DosageForm />
       <ProductShowcase />
+      <PackagingSection />
       <ManufacturingProcess />
       <TestimonialsSection />
       <GetInTouchSection />
