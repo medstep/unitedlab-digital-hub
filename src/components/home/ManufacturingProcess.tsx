@@ -90,7 +90,7 @@ const ManufacturingProcess = () => {
     ];
 
     return (
-        <section className="relative py-20 bg-gradient-to-br from-orange-50 via-white to-red-50 overflow-hidden">
+        <section className="relative py-18 bg-gradient-to-br from-orange-50 via-white to-red-50 overflow-hidden">
             {/* Animated Background Elements */}
             <div className="absolute inset-0">
                 {/* Subtle radial blur background */}
@@ -108,19 +108,19 @@ const ManufacturingProcess = () => {
                 <div className="absolute bottom-1/6 right-1/6 w-76 h-76 bg-gradient-to-r from-red-200/22 to-orange-200/18 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.6s' }}></div>
             </div>
 
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="text-center mb-16 animate-fade-in-up">
+            <div className="container mx-auto px-6 py-8 relative z-10">
+                <div className="text-center mb-14 animate-fade-in-up">
 
 
-                    <h2 className="font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-slate-900 mb-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+                    <h2 className="font-poppins font-bold text-2xl md:text-3xl lg:text-4xl text-slate-900 mb-5 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                         Process For Third Party{" "}
                         <span className="bg-gradient-to-r from-orange-600 via-red-500 to-orange-700 bg-clip-text text-transparent animate-gradient">
                             Nutraceutical Manufacturing
                         </span>{" "}
                         Services
                     </h2>
-                    <div className="w-24 h-1 bg-gradient-to-r from-orange-600 to-red-500 rounded-full mx-auto mb-6 animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
-                    <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+                    <div className="w-20 h-1 bg-gradient-to-r from-orange-600 to-red-500 rounded-full mx-auto mb-5 animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
+                    <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
                         With our manufacturing services, we focus on delivering high-quality nutraceuticals at affordable rates.
                         United Laboratories has built a reputation nationally and globally by combining excellence with efficiency.
                         Here's a step-by-step insight into how we manage the third-party nutraceutical manufacturing process in{" "}
@@ -129,38 +129,38 @@ const ManufacturingProcess = () => {
                 </div>
 
                 {/* Process Steps Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
                     {processSteps.map((step, index) => {
                         const Icon = step.icon;
                         return (
                             <Card key={index} className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 animate-fade-in-up group" style={{ animationDelay: step.delay }}>
-                                <CardContent className="p-8">
+                                <CardContent className="p-7">
                                     {/* Step Badge */}
-                                    <div className="flex items-center justify-between mb-6">
+                                    <div className="flex items-center justify-between mb-5">
                                         <div className="bg-gradient-to-r from-orange-600 to-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                                             {step.step}
                                         </div>
-                                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${step.color} shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                                            <Icon className="h-6 w-6" />
+                                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${step.color} shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                                            <Icon className="h-5 w-5" />
                                         </div>
                                     </div>
 
                                     {/* Title */}
-                                    <h3 className="font-poppins font-bold text-xl mb-4 text-slate-900 group-hover:text-orange-600 transition-colors">
+                                    <h3 className="font-poppins font-bold text-lg mb-3 text-slate-900 group-hover:text-orange-600 transition-colors">
                                         {step.title}
                                     </h3>
 
                                     {/* Description */}
-                                    <p className="text-slate-600 leading-relaxed mb-6 text-sm">
+                                    <p className="text-slate-600 leading-relaxed mb-5 text-xs">
                                         {step.description}
                                     </p>
 
                                     {/* Points */}
-                                    <ul className="space-y-3">
+                                    <ul className="space-y-2">
                                         {step.points.map((point, pointIndex) => (
-                                            <li key={pointIndex} className="flex items-start space-x-3">
+                                            <li key={pointIndex} className="flex items-start space-x-2">
                                                 <div className="w-2 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                                                <span className="text-slate-600 text-sm leading-relaxed">{point}</span>
+                                                <span className="text-slate-600 text-xs leading-relaxed">{point}</span>
                                             </li>
                                         ))}
                                     </ul>
@@ -171,32 +171,32 @@ const ManufacturingProcess = () => {
                 </div>
 
                 {/* Bottom Info */}
-                <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
-                    <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
-                        <h3 className="font-poppins font-bold text-2xl text-slate-900 mb-4">
+                <div className="text-center mt-14 animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
+                    <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-7 shadow-lg max-w-4xl mx-auto">
+                        <h3 className="font-poppins font-bold text-xl text-slate-900 mb-3">
                             Why Choose United Laboratories Nepal?
                         </h3>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-center">
                             <div className="space-y-2">
                                 <div className="w-16 h-16 bg-gradient-to-r from-orange-100 to-red-100 rounded-full flex items-center justify-center mx-auto">
-                                    <Factory className="h-8 w-8 text-orange-600" />
+                                    <Factory className="h-7 w-7 text-orange-600" />
                                 </div>
                                 <h4 className="font-semibold text-slate-900">WHO-GMP Certified</h4>
-                                <p className="text-sm text-slate-600">International quality standards in Birgunj, Nepal</p>
+                                <p className="text-xs text-slate-600">International quality standards in Birgunj, Nepal</p>
                             </div>
                             <div className="space-y-2">
                                 <div className="w-16 h-16 bg-gradient-to-r from-orange-100 to-red-100 rounded-full flex items-center justify-center mx-auto">
-                                    <Truck className="h-8 w-8 text-orange-600" />
+                                    <Truck className="h-7 w-7 text-orange-600" />
                                 </div>
                                 <h4 className="font-semibold text-slate-900">Pan-Nepal Delivery</h4>
-                                <p className="text-sm text-slate-600">Fast delivery across all 7 provinces</p>
+                                <p className="text-xs text-slate-600">Fast delivery across all 7 provinces</p>
                             </div>
                             <div className="space-y-2">
                                 <div className="w-16 h-16 bg-gradient-to-r from-orange-100 to-red-100 rounded-full flex items-center justify-center mx-auto">
-                                    <CheckCircle className="h-8 w-8 text-orange-600" />
+                                    <CheckCircle className="h-7 w-7 text-orange-600" />
                                 </div>
                                 <h4 className="font-semibold text-slate-900">Quality Assured</h4>
-                                <p className="text-sm text-slate-600">Rigorous QC at every manufacturing step</p>
+                                <p className="text-xs text-slate-600">Rigorous QC at every manufacturing step</p>
                             </div>
                         </div>
                     </div>

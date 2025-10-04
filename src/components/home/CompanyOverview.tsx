@@ -34,82 +34,92 @@ const CompanyOverview = () => {
   ];
 
   return (
-    <section id="about" className="relative py-20 bg-gradient-to-br from-blue-50 via-white to-cyan-50 overflow-hidden">
-      {/* Animated Background Elements - matching hero section */}
+    <section id="about" className="relative py-18 bg-white">
+      {/* Professional Background Pattern */}
       <div className="absolute inset-0">
-        {/* Subtle radial blur background */}
-        <div className="absolute inset-0 bg-gradient-radial from-cyan-100/20 via-transparent to-blue-100/15 blur-sm"></div>
-        <div className="absolute top-1/3 right-1/4 w-[100%] h-[100%] bg-gradient-radial from-white/30 via-cyan-50/15 to-transparent blur-2xl opacity-50"></div>
+        <div className="absolute inset-0 opacity-[0.02]">
+          <div className="absolute top-0 left-0 w-full h-full" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23334155' fill-opacity='0.3'%3E%3Cpath d='M50 50c13.807 0 25-11.193 25-25S63.807 0 50 0 25 11.193 25 25s11.193 25 25 25zm0 25c13.807 0 25-11.193 25-25S63.807 50 50 50s-25 11.193-25 25 11.193 25 25 25zM25 25c0 13.807-11.193 25-25 25S-25 38.807-25 25s11.193-25 25-25 25 11.193 25 25zm50 0c0 13.807-11.193 25-25 25s-25-11.193-25-25 11.193-25 25-25 25 11.193 25 25z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}></div>
+        </div>
 
-        {/* Floating geometric shapes */}
-        <div className="absolute top-16 right-16 w-16 h-16 bg-cyan-100 rounded-full opacity-40 animate-pulse"></div>
-        <div className="absolute top-32 left-20 w-12 h-12 bg-blue-100 rounded-lg opacity-50 animate-bounce" style={{ animationDelay: '1.5s' }}></div>
-        <div className="absolute bottom-32 right-32 w-20 h-20 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-full opacity-30 animate-pulse" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-16 left-16 w-14 h-14 bg-blue-200 rounded-full opacity-40 animate-bounce" style={{ animationDelay: '0.8s' }}></div>
-
-        {/* Enhanced gradient orbs */}
-        <div className="absolute top-1/5 left-1/5 w-80 h-80 bg-gradient-to-r from-cyan-200/20 to-blue-200/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/5 right-1/5 w-72 h-72 bg-gradient-to-r from-blue-200/20 to-cyan-200/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.8s' }}></div>
+        {/* Subtle accent lines */}
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16 animate-fade-in-up">
-
-          <h2 className="font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-slate-900 mb-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+      <div className="container mx-auto px-6 py-14 relative z-10">
+        <div className="text-center mb-14 animate-fade-in-up">
+          <h2 className="font-poppins font-bold text-2xl md:text-3xl lg:text-4xl text-slate-900 mb-5 animate-fade-in-up tracking-tight" style={{ animationDelay: '0.4s' }}>
             About United Laboratories{" "}
-            <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 bg-clip-text text-transparent animate-gradient">
+            <span className="text-blue-600">
               Nepal
             </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full mx-auto mb-6 animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
-          <h3><p> 
-                United Laboratories <span className="text-blue-600 font-semibold">Nepal</span> was founded in 2025 with a clear mission: to provide
-                Nepal and the region with access to high-quality, affordable nutraceutical products.
-              </p>
-              <p>
-                Our founders, <strong className="text-slate-900">LB Gupta</strong> and{" "}
-                <strong className="text-slate-900">Munish Goyel</strong>, bring together decades
-                of experience in nutraceutical manufacturing, quality control, and business development.
-              </p>
-              <p>
-                Located in the strategic industrial hub of <strong className="text-slate-900">Birgunj</strong>, our facility is designed to
-                meet international GMP standards while serving the growing wellness needs of <span className="text-blue-600 font-semibold">Nepal</span>.
-              </p>
-              </h3>
+
+          <div className="w-12 h-0.5 bg-blue-600 mx-auto mb-9 animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
+
+          <div className="max-w-3xl mx-auto space-y-5 text-sm text-slate-600 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+            <p className="font-light">
+              United Laboratories <span className="text-slate-900 font-medium">Nepal</span> was founded in 2025 with a clear mission: to provide
+              Nepal and the region with access to high-quality, affordable nutraceutical products.
+            
+            
+              Our founders, <strong className="text-slate-900 font-semibold">LB Gupta</strong> and{" "}
+              <strong className="text-slate-900 font-semibold">Munish Goyel</strong>, bring together decades
+              of experience in nutraceutical manufacturing, quality control, and business development.
+            
+            
+              Located in the strategic industrial hub of <strong className="text-slate-900 font-semibold">Birgunj</strong>, our facility is designed to
+              meet international GMP standards while serving the growing wellness needs of <span className="text-slate-900 font-medium">Nepal</span>.
+            </p>
+          </div>
         </div>
 
-       
         
+
         {/* Founders Section */}
-        <div className="text-center animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
-          <h3 className="font-poppins font-bold text-2xl md:text-3xl text-slate-900 mb-8">
-            Meet Our Founders
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+        <div className="bg-slate-50 rounded-2xl p-10 max-w-4xl mx-auto border border-slate-200 animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
+          <div className="text-center mb-10">
+            <h3 className="font-poppins font-semibold text-2xl text-slate-900 mb-3">
+              Leadership Team
+            </h3>
+            <p className="text-slate-600 text-base font-light max-w-xl mx-auto">
+              Our experienced founders bring decades of expertise in nutraceutical manufacturing and business development.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
             {/* Founder 1 */}
-            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              <div className="w-32 h-32 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg">
-                <div className="w-28 h-28 bg-gradient-to-br from-slate-200 to-slate-300 rounded-full flex items-center justify-center">
-                  <Users className="h-12 w-12 text-slate-500" />
-                </div>
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300">
+              <div className="w-16 h-16 bg-slate-100 rounded-2xl mx-auto mb-5 flex items-center justify-center">
+                <Users className="h-8 w-8 text-slate-600" />
               </div>
-              <h4 className="font-poppins font-bold text-xl text-slate-900 mb-2">
-                LB Gupta
-              </h4>
-              <p className="text-slate-600 text-sm">Co-Founder & MD</p>
+              <div className="text-center">
+                <h4 className="font-poppins font-semibold text-xl text-slate-900 mb-2">
+                  LB Gupta
+                </h4>
+                <p className="text-blue-600 font-medium mb-3">Co-Founder & Managing Director</p>
+                <p className="text-slate-600 text-xs leading-relaxed">
+                  Decades of experience in pharmaceutical manufacturing and quality assurance, leading our strategic vision and operations.
+                </p>
+              </div>
             </div>
 
             {/* Founder 2 */}
-            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              <div className="w-32 h-32 bg-gradient-to-br from-cyan-100 to-cyan-200 rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg">
-                <div className="w-28 h-28 bg-gradient-to-br from-slate-200 to-slate-300 rounded-full flex items-center justify-center">
-                  <Users className="h-12 w-12 text-slate-500" />
-                </div>
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300">
+              <div className="w-16 h-16 bg-slate-100 rounded-2xl mx-auto mb-5 flex items-center justify-center">
+                <Users className="h-8 w-8 text-slate-600" />
               </div>
-              <h4 className="font-poppins font-bold text-xl text-slate-900 mb-2">
-                Munish Goyel
-              </h4>
-              <p className="text-slate-600 text-sm">Co-Founder</p>
+              <div className="text-center">
+                <h4 className="font-poppins font-semibold text-xl text-slate-900 mb-2">
+                  Munish Goyel
+                </h4>
+                <p className="text-blue-600 font-medium mb-3">Co-Founder & Director</p>
+                <p className="text-slate-600 text-xs leading-relaxed">
+                  Expert in business development and market expansion, driving our growth strategy and partnership initiatives.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -117,12 +127,12 @@ const CompanyOverview = () => {
 
       </div>
 
-      {/* Custom CSS for animations - matching hero section */}
+      {/* Custom CSS for animations */}
       <style>{`
         @keyframes fade-in-up {
           from {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px);
           }
           to {
             opacity: 1;
@@ -139,33 +149,14 @@ const CompanyOverview = () => {
           }
         }
         
-        @keyframes gradient {
-          0%, 100% {
-            background-size: 200% 200%;
-            background-position: left center;
-          }
-          50% {
-            background-size: 200% 200%;
-            background-position: right center;
-          }
-        }
-        
         .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out forwards;
+          animation: fade-in-up 0.6s ease-out forwards;
           opacity: 0;
         }
         
         .animate-fade-in {
-          animation: fade-in 0.8s ease-out forwards;
+          animation: fade-in 0.6s ease-out forwards;
           opacity: 0;
-        }
-        
-        .animate-gradient {
-          animation: gradient 3s ease-in-out infinite;
-        }
-        
-        .bg-gradient-radial {
-          background: radial-gradient(circle, var(--tw-gradient-stops));
         }
       `}</style>
     </section>

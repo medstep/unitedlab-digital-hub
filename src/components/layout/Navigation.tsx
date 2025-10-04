@@ -60,7 +60,7 @@ const Navigation = () => {
   return (
     <nav className="bg-white/95 backdrop-blur-md border-b border-gray-200/50 sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 relative">
+        <div className="flex items-center justify-between h-14 relative">
           {/* Left Side - Navigation Links */}
           <div className="hidden md:flex items-center">
             {navItems.map((item, index) => (
@@ -105,10 +105,10 @@ const Navigation = () => {
               <img
                 src="/fav.png"
                 alt="United Laboratories Nepal"
-                className="h-14 w-auto object-contain transition-all duration-300 group-hover:brightness-110"
+                className="h-12 w-auto object-contain transition-all duration-300 group-hover:brightness-110"
               />
               <div className="font-poppins">
-                <div className="font-extrabold text-base text-slate-900 group-hover:text-blue-600 transition-colors duration-300">United Laboratories</div>
+                <div className="font-extrabold text-sm text-slate-900 group-hover:text-blue-600 transition-colors duration-300">United Laboratories</div>
                 <div className="text-xs text-slate-600 group-hover:text-blue-500 transition-colors duration-300">Nepal Pvt. Ltd.</div>
               </div>
             </Link>
@@ -152,8 +152,8 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-6 border-t border-gray-100 bg-white/95 backdrop-blur-md shadow-lg">
-            <div className="flex flex-col space-y-2">
+          <div className="md:hidden py-5 border-t border-gray-100 bg-white/95 backdrop-blur-md shadow-lg">
+            <div className="flex flex-col space-y-1">
               {navItems.map((item) => (
                 item.isScroll ? (
                   <button
@@ -162,7 +162,7 @@ const Navigation = () => {
                       handleNavClick(item);
                       setIsOpen(false);
                     }}
-                    className={`font-semibold px-6 py-3 text-sm rounded-lg mx-4 transition-all duration-300 text-left ${location.pathname === '/' && location.hash === item.path
+                    className={`font-semibold px-5 py-2 text-sm rounded-lg mx-3 transition-all duration-300 text-left ${location.pathname === '/' && location.hash === item.path
                       ? "text-blue-600 bg-blue-50 shadow-sm"
                       : "text-slate-700 hover:text-blue-600 hover:bg-blue-50/50"
                       }`}
@@ -173,7 +173,7 @@ const Navigation = () => {
                   <Link
                     key={item.name}
                     to={item.path}
-                    className={`font-semibold px-6 py-3 text-sm rounded-lg mx-4 transition-all duration-300 ${isActive(item.path)
+                    className={`font-semibold px-5 py-2 text-sm rounded-lg mx-3 transition-all duration-300 ${isActive(item.path)
                       ? "text-blue-600 bg-blue-50 shadow-sm"
                       : "text-slate-700 hover:text-blue-600 hover:bg-blue-50/50"
                       }`}
@@ -185,7 +185,7 @@ const Navigation = () => {
               ))}
               <Link
                 to="/contact"
-                className={`font-semibold px-6 py-3 text-sm rounded-lg mx-4 transition-all duration-300 ${isActive("/contact")
+                className={`font-semibold px-5 py-2 text-sm rounded-lg mx-3 transition-all duration-300 ${isActive("/contact")
                   ? "text-blue-600 bg-blue-50 shadow-sm"
                   : "text-slate-700 hover:text-blue-600 hover:bg-blue-50/50"
                   }`}
@@ -193,10 +193,10 @@ const Navigation = () => {
               >
                 Contact
               </Link>
-              <div className="px-4 pt-4">
+              <div className="px-3 pt-3">
                 <Button
                   size="sm"
-                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-2 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300"
                 >
                   Get Quote
                 </Button>

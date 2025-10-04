@@ -60,82 +60,78 @@ const TestimonialsSection = () => {
     ];
 
     return (
-        <section className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
-            {/* Animated Background Elements */}
+        <section className="relative py-20 bg-white">
+            {/* Professional Background Pattern */}
             <div className="absolute inset-0">
-                {/* Subtle radial blur background */}
-                <div className="absolute inset-0 bg-gradient-radial from-blue-100/20 via-transparent to-slate-100/15 blur-sm"></div>
-                <div className="absolute top-1/3 left-1/4 w-[100%] h-[100%] bg-gradient-radial from-white/30 via-slate-50/15 to-transparent blur-2xl opacity-50"></div>
-
-                {/* Floating geometric shapes */}
-                <div className="absolute top-20 right-20 w-16 h-16 bg-slate-100 rounded-full opacity-40 animate-pulse"></div>
-                <div className="absolute top-40 left-24 w-12 h-12 bg-blue-100 rounded-lg opacity-50 animate-bounce" style={{ animationDelay: '1.5s' }}></div>
-                <div className="absolute bottom-40 right-28 w-18 h-18 bg-cyan-100 rounded-full opacity-45 animate-pulse" style={{ animationDelay: '2.2s' }}></div>
-                <div className="absolute bottom-24 left-20 w-20 h-20 bg-gradient-to-r from-slate-100 to-blue-100 rounded-full opacity-35 animate-bounce" style={{ animationDelay: '0.8s' }}></div>
-
-                {/* Enhanced gradient orbs */}
-                <div className="absolute top-1/6 right-1/6 w-80 h-80 bg-gradient-to-r from-slate-200/18 to-blue-200/18 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-1/6 left-1/6 w-72 h-72 bg-gradient-to-r from-blue-200/18 to-slate-200/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.8s' }}></div>
+                <div className="absolute inset-0 opacity-[0.015]">
+                    <div className="absolute top-0 left-0 w-full h-full" style={{
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23334155' fill-opacity='0.6'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+                    }}></div>
+                </div>
+                
+                {/* Subtle accent lines */}
+                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
-                <div className="text-center mb-16 animate-fade-in-up">
-                    {/* Badge */}
-                    <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-sm mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                        <Star className="h-4 w-4 mr-2" />
+                <div className="text-center mb-18 animate-fade-in-up">
+                    {/* Professional Badge */}
+                    <div className="inline-flex items-center bg-slate-100 border border-slate-200 text-slate-700 px-6 py-3 rounded-lg text-sm font-medium shadow-sm mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                        <Star className="h-4 w-4 mr-2 text-blue-600" />
                         Trusted Partners • 500+ Satisfied Clients • Excellence Delivered
                     </div>
 
-                    <h2 className="font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-slate-900 mb-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+                    <h2 className="font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-slate-900 mb-7 animate-fade-in-up tracking-tight" style={{ animationDelay: '0.4s' }}>
                         What Our{" "}
-                        <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 bg-clip-text text-transparent animate-gradient">
+                        <span className="text-blue-600">
                             Partners Say
                         </span>
                     </h2>
-                    <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full mx-auto mb-6 animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
-                    <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+                    
+                    <div className="w-14 h-0.5 bg-blue-600 mx-auto mb-7 animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
+                    
+                    <p className="text-base text-slate-600 max-w-4xl mx-auto leading-relaxed font-light animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
                         Hear from our valued partners across India and Nepal who trust United Laboratories
                         for their nutraceutical manufacturing needs.
                     </p>
                 </div>
 
                 {/* Testimonials Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-7xl mx-auto">
                     {testimonials.map((testimonial, index) => (
-                        <Card key={index} className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 animate-fade-in-up group" style={{ animationDelay: testimonial.delay }}>
-                            <CardContent className="p-8">
-                                {/* Quote Icon */}
-                                <div className="flex justify-between items-start mb-6">
-                                    <Quote className="h-8 w-8 text-blue-600/30 transform rotate-180" />
+                        <Card key={index} className="bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300 animate-fade-in-up group" style={{ animationDelay: testimonial.delay }}>
+                            <CardContent className="p-7">
+                                {/* Quote Icon and Rating */}
+                                <div className="flex justify-between items-start mb-5">
+                                    <Quote className="h-5 w-5 text-slate-300" />
                                     <div className="flex space-x-1">
-                                        {[...Array(testimonial.rating)].map((_, i) => (
-                                            <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                                        {[...Array(5)].map((_, i) => (
+                                            <Star key={i} className={`h-4 w-4 ${i < testimonial.rating ? 'fill-blue-600 text-blue-600' : 'text-slate-200'}`} />
                                         ))}
                                     </div>
                                 </div>
 
                                 {/* Testimonial Text */}
-                                <p className="text-slate-600 leading-relaxed mb-6 italic">
+                                <p className="text-slate-600 leading-relaxed mb-7 text-sm">
                                     "{testimonial.testimonial}"
                                 </p>
 
                                 {/* Author Info */}
-                                <div className="flex items-center space-x-4">
-                                    <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-full flex items-center justify-center shadow-md">
-                                        <div className="w-10 h-10 bg-gradient-to-br from-slate-200 to-slate-300 rounded-full flex items-center justify-center">
-                                            <span className="text-slate-600 font-semibold text-sm">
-                                                {testimonial.name.split(' ').map(n => n[0]).join('')}
-                                            </span>
-                                        </div>
+                                <div className="flex items-start space-x-3 pt-5 border-t border-slate-100">
+                                    <div className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <span className="text-slate-600 font-semibold text-sm">
+                                            {testimonial.name.split(' ').map(n => n[0]).join('')}
+                                        </span>
                                     </div>
-                                    <div>
-                                        <h4 className="font-poppins font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">
+                                    <div className="min-w-0 flex-1">
+                                        <h4 className="font-poppins font-semibold text-slate-900 text-base mb-1">
                                             {testimonial.name}
                                         </h4>
-                                        <p className="text-sm text-slate-600 font-medium">
+                                        <p className="text-sm text-slate-600 font-medium mb-1">
                                             {testimonial.title}
                                         </p>
-                                        <p className="text-xs text-slate-500">
+                                        <p className="text-xs text-slate-500 leading-tight">
                                             {testimonial.company}
                                         </p>
                                     </div>
@@ -146,12 +142,12 @@ const TestimonialsSection = () => {
                 </div>
 
                 {/* Bottom CTA */}
-                <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
-                    <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg max-w-2xl mx-auto">
-                        <h3 className="font-poppins font-bold text-2xl text-slate-900 mb-4">
+                <div className="text-center mt-20 animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
+                    <div className="bg-slate-50 rounded-2xl p-12 max-w-4xl mx-auto border border-slate-200">
+                        <h3 className="font-poppins font-semibold text-2xl text-slate-900 mb-4">
                             Ready to Partner with Us?
                         </h3>
-                        <p className="text-slate-600 mb-6 leading-relaxed">
+                        <p className="text-slate-600 mb-8 leading-relaxed text-lg">
                             Join hundreds of satisfied partners who trust United Laboratories Nepal
                             for their nutraceutical manufacturing needs.
                         </p>
@@ -163,7 +159,7 @@ const TestimonialsSection = () => {
                                         element.scrollIntoView({ behavior: 'smooth' });
                                     }
                                 }}
-                                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                                className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
                             >
                                 Get Started Today
                             </button>
@@ -171,7 +167,7 @@ const TestimonialsSection = () => {
                                 onClick={() => {
                                     window.location.href = 'tel:+977-9851112329';
                                 }}
-                                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold px-8 py-3 rounded-xl transition-all duration-300 hover:shadow-lg"
+                                className="border border-slate-300 text-slate-700 hover:bg-slate-100 font-medium px-8 py-4 rounded-lg transition-all duration-300"
                             >
                                 Call: +977-9851112329
                             </button>
@@ -185,7 +181,7 @@ const TestimonialsSection = () => {
         @keyframes fade-in-up {
           from {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px);
           }
           to {
             opacity: 1;
@@ -202,33 +198,14 @@ const TestimonialsSection = () => {
           }
         }
         
-        @keyframes gradient {
-          0%, 100% {
-            background-size: 200% 200%;
-            background-position: left center;
-          }
-          50% {
-            background-size: 200% 200%;
-            background-position: right center;
-          }
-        }
-        
         .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out forwards;
+          animation: fade-in-up 0.6s ease-out forwards;
           opacity: 0;
         }
         
         .animate-fade-in {
-          animation: fade-in 0.8s ease-out forwards;
+          animation: fade-in 0.6s ease-out forwards;
           opacity: 0;
-        }
-        
-        .animate-gradient {
-          animation: gradient 3s ease-in-out infinite;
-        }
-        
-        .bg-gradient-radial {
-          background: radial-gradient(circle, var(--tw-gradient-stops));
         }
       `}</style>
         </section>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp, HelpCircle, Star } from "lucide-react";
+import { ChevronDown, ChevronUp, HelpCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const FAQSection = () => {
@@ -41,75 +41,73 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-gray-50 overflow-hidden">
-      {/* Animated Background Elements */}
+    <section className="relative py-16 bg-slate-50">
+      {/* Professional Background Pattern */}
       <div className="absolute inset-0">
-        {/* Subtle radial blur background */}
-        <div className="absolute inset-0 bg-gradient-radial from-gray-100/25 via-transparent to-slate-100/20 blur-sm"></div>
-        <div className="absolute top-1/4 left-1/3 w-[110%] h-[110%] bg-gradient-radial from-white/35 via-gray-50/20 to-transparent blur-2xl opacity-50"></div>
-
-        {/* Floating geometric shapes */}
-        <div className="absolute top-20 right-20 w-16 h-16 bg-gray-100 rounded-full opacity-40 animate-pulse"></div>
-        <div className="absolute top-40 left-24 w-12 h-12 bg-slate-100 rounded-lg opacity-50 animate-bounce" style={{ animationDelay: '1.5s' }}></div>
-        <div className="absolute bottom-40 right-28 w-18 h-18 bg-blue-100 rounded-full opacity-45 animate-pulse" style={{ animationDelay: '2.2s' }}></div>
-        <div className="absolute bottom-24 left-20 w-20 h-20 bg-gradient-to-r from-gray-100 to-slate-100 rounded-full opacity-35 animate-bounce" style={{ animationDelay: '0.8s' }}></div>
-
-        {/* Enhanced gradient orbs */}
-        <div className="absolute top-1/6 left-1/6 w-80 h-80 bg-gradient-to-r from-gray-200/18 to-slate-200/18 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/6 right-1/6 w-72 h-72 bg-gradient-to-r from-slate-200/18 to-gray-200/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.8s' }}></div>
+        <div className="absolute inset-0 opacity-[0.015]">
+          <div className="absolute top-0 left-0 w-full h-full" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23334155' fill-opacity='0.4'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2l-2 2V0zm0 4l4-4h2l-6 6V4zm0 4l8-8h2L40 10V8zm0 4L52 0h2L40 14v-2zm0 4L56 0h2L40 18v-2zm0 4L60 0h2L40 22v-2zm0 4L64 0h2L40 26v-2zm0 4L68 0h2L40 30v-2zm0 4L72 0h2L40 34v-2zm0 4L76 0h2L40 38v-2zm0 4L80 0v2L42 40h-2zm4 0L80 4v2L46 40h-2zm4 0L80 8v2L50 40h-2zm4 0l28-28v2L54 40h-2zm4 0l24-24v2L58 40h-2zm4 0l20-20v2L62 40h-2zm4 0l16-16v2L66 40h-2zm4 0l12-12v2L70 40h-2zm4 0l8-8v2l-6 6h-2zm4 0l4-4v2L78 40h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}></div>
+        </div>
+        
+        {/* Subtle accent lines */}
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16 animate-fade-in-up">
-          {/* Badge */}
-          <div className="inline-flex items-center bg-slate-100 text-slate-800 px-4 py-2 rounded-full text-sm font-semibold shadow-sm mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <HelpCircle className="h-4 w-4 mr-2" />
+        <div className="text-center mb-14 animate-fade-in-up">
+          {/* Professional Badge */}
+          <div className="inline-flex items-center bg-white border border-slate-200 text-slate-700 px-5 py-2 rounded-lg text-xs font-medium shadow-sm mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <HelpCircle className="h-4 w-4 mr-2 text-blue-600" />
             Expert Answers • Common Questions • Industry Insights
           </div>
 
-          <h2 className="font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-slate-900 mb-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <h2 className="font-poppins font-bold text-2xl md:text-3xl lg:text-4xl text-slate-900 mb-6 animate-fade-in-up tracking-tight" style={{ animationDelay: '0.4s' }}>
             Frequently Asked Questions{" "}
-            <span className="bg-gradient-to-r from-slate-600 via-gray-500 to-slate-700 bg-clip-text text-transparent animate-gradient">
+            <span className="text-blue-600">
               about Nutraceuticals
             </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-slate-600 to-gray-500 rounded-full mx-auto mb-6 animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+          
+          <div className="w-12 h-0.5 bg-blue-600 mx-auto mb-6 animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
+          
+          <p className="text-sm text-slate-600 max-w-4xl mx-auto leading-relaxed font-light animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
             Get answers to the most common questions about nutraceutical manufacturing, 
             quality standards, and our services at United Laboratories Nepal.
           </p>
         </div>
 
         {/* FAQ Items */}
-        <div className="max-w-4xl mx-auto space-y-4">
+        <div className="max-w-5xl mx-auto space-y-2">
           {faqs.map((faq, index) => (
-            <Card key={index} className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-up" style={{ animationDelay: `${0.2 + index * 0.1}s` }}>
+            <Card key={index} className="bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300 animate-fade-in-up" style={{ animationDelay: `${0.2 + index * 0.1}s` }}>
               <CardContent className="p-0">
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full text-left p-6 flex items-center justify-between hover:bg-slate-50/50 transition-colors duration-200 rounded-lg"
+                  className="w-full text-left p-5 flex items-center justify-between hover:bg-slate-50 transition-colors duration-200"
                 >
-                  <div className="flex items-center space-x-4">
-                    <div className="w-8 h-8 bg-gradient-to-r from-slate-100 to-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-slate-600 font-semibold text-sm">{index + 1}</span>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-7 h-7 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-slate-600 font-semibold text-xs">{index + 1}</span>
                     </div>
-                    <h3 className="font-poppins font-semibold text-lg text-slate-900 pr-4">
+                    <h3 className="font-poppins font-semibold text-base text-slate-900 pr-4 leading-tight">
                       {faq.question}
                     </h3>
                   </div>
-                  <div className="flex-shrink-0">
+                  <div className="flex-shrink-0 ml-4">
                     {openFAQ === index ? (
-                      <ChevronUp className="h-5 w-5 text-slate-600" />
+                      <ChevronUp className="h-4 w-4 text-slate-500" />
                     ) : (
-                      <ChevronDown className="h-5 w-5 text-slate-600" />
+                      <ChevronDown className="h-4 w-4 text-slate-500" />
                     )}
                   </div>
                 </button>
                 
                 {openFAQ === index && (
-                  <div className="px-6 pb-6 animate-fade-in">
-                    <div className="ml-12 pt-4 border-t border-slate-100">
-                      <p className="text-slate-600 leading-relaxed">
+                  <div className="px-5 pb-5 animate-fade-in">
+                    <div className="ml-11 pt-4 border-t border-slate-100">
+                      <p className="text-slate-600 leading-relaxed text-xs">
                         {faq.answer}
                       </p>
                     </div>
@@ -120,6 +118,38 @@ const FAQSection = () => {
           ))}
         </div>
 
+        {/* Additional Support Section */}
+        <div className="text-center mt-16 animate-fade-in-up bg-white rounded-2xl p-8 max-w-4xl mx-auto border border-slate-200 shadow-sm" style={{ animationDelay: '1s' }}>
+          <h3 className="font-poppins font-semibold text-xl text-slate-900 mb-3">
+            Still Have Questions?
+          </h3>
+          <p className="text-slate-600 mb-6 leading-relaxed text-base">
+            Our expert team is here to help you with any specific questions about nutraceutical manufacturing, 
+            quality standards, or custom formulations.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <button
+              onClick={() => {
+                const element = document.querySelector('#home');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 text-sm"
+            >
+              Contact Our Experts
+            </button>
+            <button
+              onClick={() => {
+                window.location.href = 'tel:+977-9851112329';
+              }}
+              className="border border-slate-300 text-slate-700 hover:bg-slate-100 font-medium px-6 py-3 rounded-lg transition-all duration-300 text-sm"
+            >
+              Call: +977-9851112329
+            </button>
+          </div>
+        </div>
+
         
       </div>
 
@@ -128,7 +158,7 @@ const FAQSection = () => {
         @keyframes fade-in-up {
           from {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px);
           }
           to {
             opacity: 1;
@@ -145,33 +175,14 @@ const FAQSection = () => {
           }
         }
         
-        @keyframes gradient {
-          0%, 100% {
-            background-size: 200% 200%;
-            background-position: left center;
-          }
-          50% {
-            background-size: 200% 200%;
-            background-position: right center;
-          }
-        }
-        
         .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out forwards;
+          animation: fade-in-up 0.6s ease-out forwards;
           opacity: 0;
         }
         
         .animate-fade-in {
-          animation: fade-in 0.8s ease-out forwards;
+          animation: fade-in 0.6s ease-out forwards;
           opacity: 0;
-        }
-        
-        .animate-gradient {
-          animation: gradient 3s ease-in-out infinite;
-        }
-        
-        .bg-gradient-radial {
-          background: radial-gradient(circle, var(--tw-gradient-stops));
         }
       `}</style>
     </section>

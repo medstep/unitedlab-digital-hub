@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-[80vh] bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
+    <section id="home" className="relative min-h-[76vh] bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         {/* Subtle radial blur background */}
@@ -23,11 +23,11 @@ const HeroSection = () => {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-6 pt-4 pb-2 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-start min-h-[calc(90vh-4rem)]">
+      <div className="container mx-auto px-4 pt-6 pb-6  relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center min-h-[calc(85vh-4rem)]">
 
           {/* Left Side - Text Content */}
-          <div className="space-y-10 animate-fade-in-up lg:pr-0 relative z-20">
+          <div className="space-y-8 animate-fade-in-up lg:pr-8 relative z-20">
             {/* Badge */}
             <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-sm animate-fade-in" style={{ animationDelay: '0.2s' }}>
               <Star className="h-4 w-4 mr-2" />
@@ -35,48 +35,94 @@ const HeroSection = () => {
             </div>
 
             {/* Main Heading */}
-            <div className="space-y-4 relative">
-              <h1 className="font-poppins font-bold text-3xl lg:text-4xl xl:text-6xl text-slate-900 leading-tight animate-fade-in-up lg:pr-20 xl:pr-32" style={{ animationDelay: '0.4s' }}>
-                Third Party
-                <br />
-                <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 bg-clip-text text-transparent animate-gradient lg:relative lg:z-30">
-                  Nutraceutical
+            <div className="space-y-2 relative">
+              <h1 className="font-poppins font-bold text-2xl lg:text-3xl xl:text-5xl text-slate-900 leading-tight animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+                Third Party<span> </span> 
+                
+                  <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 bg-clip-text text-transparent animate-gradient lg:relative lg:z-30">
+                     Nutraceutical
                 </span>
                 <br />
                 <span className="lg:relative lg:z-30">Manufacturing</span>
               </h1>
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
+              <div className="w-18 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
             </div>
 
             {/* Subtitle */}
-            <p className="text-xl text-slate-600 leading-relaxed max-w-lg animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+            <p className="text-base text-slate-600 leading-relaxed max-w-md animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
               Your trusted partner for high-quality nutraceuticals and supplements in <span className="text-blue-600 font-semibold">Nepal</span>.
               Combining innovation with excellence since 2025.
             </p>
 
             {/* Key Points */}
-            <div className="space-y-3 animate-fade-in-up" style={{ animationDelay: '1s' }}>
-              <div className="flex items-center space-x-3">
-                <CheckCircle className="h-5 w-5 text-green-500" />
-                <span className="text-slate-700 font-medium">WHO-GMP Certified Manufacturing</span>
+            <div className="space-y-1 animate-fade-in-up" style={{ animationDelay: '1s' }}>
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="h-4 w-4 text-green-500" />
+                <span className="text-slate-700 font-medium text-sm">WHO-GMP Certified Manufacturing</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <CheckCircle className="h-5 w-5 text-green-500" />
-                <span className="text-slate-700 font-medium">International Quality Standards</span>
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="h-4 w-4 text-green-500" />
+                <span className="text-slate-700 font-medium text-sm">International Quality Standards</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <CheckCircle className="h-5 w-5 text-green-500" />
-                <span className="text-slate-700 font-medium">Expert Team of 50+ Professionals</span>
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="h-4 w-4 text-green-500" />
+                <span className="text-slate-700 font-medium text-sm">Expert Team of 50+ Professionals</span>
               </div>
             </div>
 
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-2 pt-4 animate-fade-in-up" style={{ animationDelay: '1.2s' }}>
+              <button
+                onClick={() => {
+                  const element = document.querySelector('#product-showcase');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                <Button
+                  size="lg"
+                  className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                >
+                  Explore Products
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </button>
+              <Link to="/contact">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:shadow-lg"
+                >
+                  Get Quote
+                </Button>
+              </Link>
+            </div>
 
-
+            {/* Stats */}
+            <div className="grid grid-cols-4 gap-4 pt-6 animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
+              <div className="text-center">
+                <div className="text-lg font-bold text-blue-600">50+</div>
+                <div className="text-xs text-slate-600">Expert Team</div>
+              </div>
+              <div className="text-center">
+                <div className="text-lg font-bold text-green-600">100%</div>
+                <div className="text-xs text-slate-600">Quality Assured</div>
+              </div>
+              <div className="text-center">
+                <div className="text-lg font-bold text-cyan-600">WHO-GMP</div>
+                <div className="text-sm text-slate-600">Certified</div>
+              </div>
+              <div className="text-center">
+                <div className="text-lg font-bold text-red-600">ISO</div>
+                <div className="text-sm text-slate-600">Certified</div>
+              </div>
+            </div>
 
           </div>
 
           {/* Right Side - Hero Image */}
-          <div className="relative animate-fade-in-right lg:-ml-20 xl:-ml-32 lg:-mt-4 z-10" style={{ animationDelay: '0.6s' }}>
+          <div className="relative animate-fade-in-right lg:-ml-8 xl:-ml-16 z-10" style={{ animationDelay: '0.6s' }}>
             <div className="relative">
               {/* Subtle decorative elements behind image */}
               <div className="absolute -top-2 -right-2 w-full h-full bg-gradient-to-br from-blue-50 to-cyan-50 transform rotate-1 opacity-60"></div>
@@ -91,63 +137,16 @@ const HeroSection = () => {
                 <img
                   src="/Hero.png"
                   alt="United Laboratories Nepal Manufacturing"
-                  className="w-[85%] h-auto object-cover rounded-3xl shadow-2xl shadow-blue-200/50 mx-auto"
+                  className="w-[90%] h-auto object-cover rounded-3xl shadow-2xl shadow-blue-200/50 mx-auto"
                   style={{
-                    maskImage: 'radial-gradient(ellipse at center, black 60%, transparent 100%)',
-                    WebkitMaskImage: 'radial-gradient(ellipse at center, black 60%, transparent 100%)'
+                    maskImage: 'radial-gradient(ellipse at center, black 70%, transparent 100%)',
+                    WebkitMaskImage: 'radial-gradient(ellipse at center, black 70%, transparent 100%)'
                   }}
                 />
               </div>
             </div>
 
-            {/* CTA Buttons below image */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-6 justify-center animate-fade-in-up" style={{ animationDelay: '1.2s' }}>
-              <button
-                onClick={() => {
-                  const element = document.querySelector('#product-showcase');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-              >
-                <Button
-                  size="lg"
-                  className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-                >
-                  Explore Products
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </button>
-              <Link to="/contact">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-lg"
-                >
-                  Get Quote
-                </Button>
-              </Link>
-            </div>
 
-            {/* Stats below buttons */}
-            <div className="grid grid-cols-4 gap-6 pt-8 animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">50+</div>
-                <div className="text-sm text-slate-600">Expert Team</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-green-600">100%</div>
-                <div className="text-sm text-slate-600">Quality Assured</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-cyan-600">WHO-GMP</div>
-                <div className="text-sm text-slate-600">Certified</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-red-600">ISO</div>
-                <div className="text-sm text-slate-600">Certified</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

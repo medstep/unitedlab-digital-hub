@@ -73,7 +73,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const emailPayload = {
       from: 'United Lab Nepal <onboarding@resend.dev>',
-      to: ['sank.raun@gmail.com'],
+      to: ['medstep.official@gmail.com'],
       subject: subject,
       html: emailContent,
       reply_to: email,
@@ -102,7 +102,7 @@ const handler = async (req: Request): Promise<Response> => {
       throw new Error(`Failed to send email: ${JSON.stringify(emailResult)}`);
     }
 
-    console.log("Email sent successfully to sank.raun@gmail.com");
+    console.log("Email sent successfully to medstep.officail@gmail.com");
 
     // Send confirmation email to user
     const confirmationResponse = await fetch('https://api.resend.com/emails', {

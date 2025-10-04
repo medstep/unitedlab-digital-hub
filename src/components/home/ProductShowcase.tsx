@@ -36,69 +36,62 @@ const ProductShowcase = () => {
   ];
 
   return (
-    <section id="product-showcase" className="relative py-20 bg-gradient-to-br from-cyan-50 via-white to-blue-50 overflow-hidden">
-      {/* Animated Background Elements - matching hero section */}
+    <section id="product-showcase" className="relative py-18 bg-gradient-to-b from-slate-50 to-white">
+      {/* Professional Background Pattern */}
       <div className="absolute inset-0">
-        {/* Subtle radial blur background */}
-        <div className="absolute inset-0 bg-gradient-radial from-blue-100/25 via-transparent to-cyan-100/20 blur-sm"></div>
-        <div className="absolute top-1/4 left-1/3 w-[110%] h-[110%] bg-gradient-radial from-white/35 via-blue-50/20 to-transparent blur-2xl opacity-50"></div>
+        <div className="absolute inset-0 opacity-[0.02]">
+          <div className="absolute top-0 left-0 w-full h-full" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23334155' fill-opacity='0.8'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E")`,
+          }}></div>
+        </div>
 
-        {/* Floating geometric shapes */}
-        <div className="absolute top-20 left-16 w-18 h-18 bg-blue-100 rounded-full opacity-50 animate-pulse"></div>
-        <div className="absolute top-40 right-24 w-14 h-14 bg-cyan-100 rounded-lg opacity-40 animate-bounce" style={{ animationDelay: '1.2s' }}></div>
-        <div className="absolute bottom-40 left-24 w-16 h-16 bg-green-100 rounded-full opacity-45 animate-pulse" style={{ animationDelay: '2.2s' }}></div>
-        <div className="absolute bottom-24 right-20 w-20 h-20 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-full opacity-35 animate-bounce" style={{ animationDelay: '0.7s' }}></div>
-        <div className="absolute top-1/2 left-8 w-12 h-12 bg-purple-100 rounded-lg opacity-40 animate-pulse" style={{ animationDelay: '1.8s' }}></div>
-
-        {/* Enhanced gradient orbs */}
-        <div className="absolute top-1/6 right-1/6 w-84 h-84 bg-gradient-to-r from-cyan-200/22 to-blue-200/22 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/6 left-1/6 w-76 h-76 bg-gradient-to-r from-blue-200/22 to-green-200/18 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.6s' }}></div>
+        {/* Subtle accent lines */}
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16 animate-fade-in-up">
-          {/* Badge */}
-          <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold shadow-sm mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <Star className="h-4 w-4 mr-2" />
-            Premium Quality • WHO-GMP Certified • Made in Nepal
-          </div>
+      <div className="container mx-auto px-6 py-8 relative z-10">
+        <div className="text-center mb-18 animate-fade-in-up">
+          
 
-          <h2 className="font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-slate-900 mb-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <h2 className="font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-slate-900 mb-7 animate-fade-in-up tracking-tight" style={{ animationDelay: '0.4s' }}>
             Specialize or customize your{" "}
-            <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 bg-clip-text text-transparent animate-gradient">
+            <span className="text-blue-600">
               Products by:
             </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full mx-auto mb-6 animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+
+          <div className="w-14 h-0.5 bg-blue-600 mx-auto mb-7 animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
+
+          <p className="text-base text-slate-600 max-w-4xl mb-5 mx-auto leading-relaxed font-light animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
             From essential nutritional supplements to specialized formulations, we manufacture a comprehensive
-            range of nutraceutical products to meet diverse wellness needs across <span className="text-blue-600 font-semibold">Nepal</span>.
+            range of nutraceutical products to meet diverse wellness needs across <span className="text-slate-900 font-medium">Nepal</span>.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14 max-w-6xl mx-auto">
           {categories.map((category, index) => {
             const Icon = category.icon;
             return (
-              <Card key={index} className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 animate-fade-in-up group" style={{ animationDelay: category.delay }}>
-                <CardContent className="p-8">
-                  <div className="flex items-start space-x-4 mb-6">
-                    <div className={`w-14 h-14 rounded-xl flex items-center justify-center ${category.color} shadow-md`}>
+              <Card key={index} className="bg-white border border-slate-200 shadow-sm hover:shadow-lg hover:border-slate-300 transition-all duration-300 animate-fade-in-up group" style={{ animationDelay: category.delay }}>
+                <CardContent className="p-7">
+                  <div className="flex items-start space-x-5 mb-7">
+                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center ${category.color} shadow-sm group-hover:shadow-md transition-shadow`}>
                       <Icon className="h-7 w-7" />
                     </div>
                     <div className="flex-1">
                       <h3 className="font-poppins font-semibold text-xl mb-3 text-slate-900 group-hover:text-blue-600 transition-colors">
                         {category.title}
                       </h3>
-                      <p className="text-slate-600 leading-relaxed">
+                      <p className="text-slate-600 leading-relaxed text-sm">
                         {category.description}
                       </p>
                     </div>
                   </div>
-                  <div className="flex justify-end">
-                    <Link to="/products" className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm px-4 py-2 rounded-lg transition-all duration-300 group shadow-md hover:shadow-lg">
+                  <div className="flex justify-end pt-3 border-t border-slate-100">
+                    <Link to="/products" className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors group/link">
                       <span className="mr-2">View Products</span>
-                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
                     </Link>
                   </div>
                 </CardContent>
@@ -108,28 +101,30 @@ const ProductShowcase = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center animate-fade-in-up" style={{ animationDelay: '1s' }}>
+        <div className="text-center animate-fade-in-up bg-slate-50 rounded-2xl p-10 max-w-4xl mx-auto border border-slate-200" style={{ animationDelay: '1s' }}>
+          <h3 className="font-poppins font-semibold text-xl text-slate-900 mb-3">
+            Ready to Explore Our Complete Range?
+          </h3>
+          <p className="text-slate-600 mb-7 text-base">
+            Need a custom formulation? Contact us for specialized nutraceutical solutions made in <span className="text-slate-900 font-medium">Nepal</span>.
+          </p>
           <div className="inline-flex flex-col sm:flex-row gap-4">
             <Link to="/products">
-              <Button size="lg" className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+              <Button size="lg" className="group bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
                 View All Products
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-           
           </div>
-          <p className="text-slate-600 mt-6 animate-fade-in" style={{ animationDelay: '1.2s' }}>
-            Need a custom formulation? Contact us for specialized nutraceutical solutions made in <span className="text-blue-600 font-semibold">Nepal</span>.
-          </p>
         </div>
       </div>
 
-      {/* Custom CSS for animations - matching hero section */}
+      {/* Custom CSS for animations */}
       <style>{`
         @keyframes fade-in-up {
           from {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px);
           }
           to {
             opacity: 1;
@@ -146,33 +141,14 @@ const ProductShowcase = () => {
           }
         }
         
-        @keyframes gradient {
-          0%, 100% {
-            background-size: 200% 200%;
-            background-position: left center;
-          }
-          50% {
-            background-size: 200% 200%;
-            background-position: right center;
-          }
-        }
-        
         .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out forwards;
+          animation: fade-in-up 0.6s ease-out forwards;
           opacity: 0;
         }
         
         .animate-fade-in {
-          animation: fade-in 0.8s ease-out forwards;
+          animation: fade-in 0.6s ease-out forwards;
           opacity: 0;
-        }
-        
-        .animate-gradient {
-          animation: gradient 3s ease-in-out infinite;
-        }
-        
-        .bg-gradient-radial {
-          background: radial-gradient(circle, var(--tw-gradient-stops));
         }
       `}</style>
     </section>

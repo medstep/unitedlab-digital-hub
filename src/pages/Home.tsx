@@ -4,6 +4,7 @@ import DosageForm from "@/components/home/DosageForm";
 import ProductShowcase from "@/components/home/ProductShowcase";
 import ManufacturingProcess from "@/components/home/ManufacturingProcess";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
+import GetInTouchSection from "@/components/home/GetInTouchSection";
 import FAQSection from "@/components/home/FAQSection";
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
       <ProductShowcase />
       <ManufacturingProcess />
       <TestimonialsSection />
+      <GetInTouchSection />
       <FAQSection />
     </div>
   );
