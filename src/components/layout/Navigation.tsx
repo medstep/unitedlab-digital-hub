@@ -103,12 +103,12 @@ const Navigation = () => {
           <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center">
             <Link to="/" className="flex items-center space-x-3 group transition-all duration-300 hover:scale-105">
               <img
-                src="/Logo.png"
+                src="/fav.png"
                 alt="United Laboratories Nepal"
                 className="h-14 w-auto object-contain transition-all duration-300 group-hover:brightness-110"
               />
               <div className="font-poppins">
-                <div className="font-bold text-base text-slate-900 group-hover:text-blue-600 transition-colors duration-300">United Laboratories</div>
+                <div className="font-extrabold text-base text-slate-900 group-hover:text-blue-600 transition-colors duration-300">United Laboratories</div>
                 <div className="text-xs text-slate-600 group-hover:text-blue-500 transition-colors duration-300">Nepal Pvt. Ltd.</div>
               </div>
             </Link>
