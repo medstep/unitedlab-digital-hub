@@ -37,15 +37,15 @@ const HeroSection = () => {
             {/* Main Heading */}
             <div className="space-y-2 relative">
               <h1 className="font-poppins font-bold text-2xl lg:text-3xl xl:text-5xl text-slate-900 leading-tight animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                Third Party<span> </span> 
-                
-                  <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 bg-clip-text text-transparent animate-gradient lg:relative lg:z-30">
-                     Nutraceutical
+                Third Party<span> </span>
+
+                <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 bg-clip-text text-transparent animate-gradient lg:relative lg:z-30">
+                  Nutraceutical
                 </span>
                 <br />
                 <span className="lg:relative lg:z-30">Manufacturing</span>
               </h1>
-              <div className="w-18 h-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
+              <div className="w-18 h-1  bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
             </div>
 
             {/* Subtitle */}
