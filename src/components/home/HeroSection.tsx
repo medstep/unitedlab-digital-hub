@@ -71,7 +71,7 @@ const HeroSection = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-2 pt-4 animate-fade-in-up" style={{ animationDelay: '1.2s' }}>
+            <div className="flex flex-row sm:flex-row gap-2 pt-4 animate-fade-in-up" style={{ animationDelay: '1.2s' }}>
               <button
                 onClick={() => {
                   const element = document.querySelector('#product-showcase');
