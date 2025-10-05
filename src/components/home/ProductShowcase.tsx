@@ -60,10 +60,7 @@ const ProductShowcase = () => {
       <div className="container mx-auto px-6 py-8 relative z-10">
         {/* Header Section */}
         <div className="text-center mb-16 animate-fade-in-up">
-          <div className="inline-flex items-center text-slate-600 text-sm font-medium mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <Star className="h-4 w-4 mr-2 text-blue-600" />
-            4 Product Categories • Custom Formulations • Nepal Made
-          </div>
+         
 
           <h2 className="font-poppins font-bold text-3xl md:text-4xl text-slate-900 mb-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             Specialize or customize your{" "}

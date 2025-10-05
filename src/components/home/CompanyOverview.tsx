@@ -146,7 +146,7 @@ const CompanyOverview = () => {
                     <h4 className="font-poppins font-semibold text-lg text-slate-900 mb-2">
                       Munish Goyel
                     </h4>
-                    <p className="text-blue-600 font-medium mb-3 text-sm">Co-Founder & Director</p>
+                    <p className="text-blue-600 font-medium mb-3 text-sm">Co-Founder</p>
                     <p className="text-slate-600 text-xs leading-relaxed">
                       Expert in business development and market expansion, driving our growth strategy and partnership initiatives.
                     </p>
