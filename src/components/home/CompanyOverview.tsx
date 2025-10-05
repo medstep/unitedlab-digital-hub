@@ -156,7 +156,7 @@ const CompanyOverview = () => {
             </div>
           </div>
 
-         
+
         </div>
       </div>
 

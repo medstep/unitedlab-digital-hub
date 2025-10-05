@@ -38,7 +38,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <img 
-                src="/Logo.png" 
+                src="/fav.png" 
                 alt="United Laboratories Nepal" 
                 className="h-10 w-auto object-contain"
               />
