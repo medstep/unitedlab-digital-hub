@@ -41,47 +41,43 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="relative py-16 bg-slate-50">
-      {/* Professional Background Pattern */}
+    <section className="relative py-20 bg-gradient-to-br from-blue-50 via-white to-slate-50">
+
+      {/* Extended Hero Background Blend */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 opacity-[0.015]">
-          <div className="absolute top-0 left-0 w-full h-full" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23334155' fill-opacity='0.4'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2l-2 2V0zm0 4l4-4h2l-6 6V4zm0 4l8-8h2L40 10V8zm0 4L52 0h2L40 14v-2zm0 4L56 0h2L40 18v-2zm0 4L60 0h2L40 22v-2zm0 4L64 0h2L40 26v-2zm0 4L68 0h2L40 30v-2zm0 4L72 0h2L40 34v-2zm0 4L76 0h2L40 38v-2zm0 4L80 0v2L42 40h-2zm4 0L80 4v2L46 40h-2zm4 0L80 8v2L50 40h-2zm4 0l28-28v2L54 40h-2zm4 0l24-24v2L58 40h-2zm4 0l20-20v2L62 40h-2zm4 0l16-16v2L66 40h-2zm4 0l12-12v2L70 40h-2zm4 0l8-8v2l-6 6h-2zm4 0l4-4v2L78 40h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}></div>
-        </div>
+        {/* Seamless gradient continuation from Hero */}
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-50/40 via-white/60 to-slate-50/30"></div>
+        <div className="absolute inset-0 bg-gradient-radial from-white/50 via-blue-50/20 to-transparent"></div>
         
-        {/* Subtle accent lines */}
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+        {/* Subtle floating elements for continuity */}
+        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-blue-100/20 to-slate-100/15 rounded-full blur-2xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-slate-100/15 to-blue-100/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-14 animate-fade-in-up">
-          {/* Professional Badge */}
-          <div className="inline-flex items-center bg-white border border-slate-200 text-slate-700 px-5 py-2 rounded-lg text-xs font-medium shadow-sm mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+        {/* Header Section */}
+        <div className="text-center mb-16 animate-fade-in-up">
+          <div className="inline-flex items-center text-slate-600 text-sm font-medium mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <HelpCircle className="h-4 w-4 mr-2 text-blue-600" />
             Expert Answers • Common Questions • Industry Insights
           </div>
 
-          <h2 className="font-poppins font-bold text-2xl md:text-3xl lg:text-4xl text-slate-900 mb-6 animate-fade-in-up tracking-tight" style={{ animationDelay: '0.4s' }}>
+          <h2 className="font-poppins font-bold text-3xl md:text-4xl text-slate-900 mb-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             Frequently Asked Questions{" "}
             <span className="text-blue-600">
               about Nutraceuticals
             </span>
           </h2>
           
-          <div className="w-12 h-0.5 bg-blue-600 mx-auto mb-6 animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
+          <div className="w-12 h-0.5 bg-blue-600 mx-auto mb-8 animate-expand" style={{ animationDelay: '0.6s' }}></div>
           
-          <p className="text-sm text-slate-600 max-w-4xl mx-auto leading-relaxed font-light animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-            Get answers to the most common questions about nutraceutical manufacturing, 
-            quality standards, and our services at United Laboratories Nepal.
-          </p>
+          
         </div>
 
         {/* FAQ Items */}
         <div className="max-w-5xl mx-auto space-y-2">
           {faqs.map((faq, index) => (
-            <Card key={index} className="bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300 animate-fade-in-up" style={{ animationDelay: `${0.2 + index * 0.1}s` }}>
+            <Card key={index} className="bg-white border border-slate-100 hover:border-blue-200 shadow-sm hover:shadow-md transition-all duration-300 animate-fade-in-up" style={{ animationDelay: `${0.2 + index * 0.1}s` }}>
               <CardContent className="p-0">
                 <button
                   onClick={() => toggleFAQ(index)}
@@ -119,46 +115,61 @@ const FAQSection = () => {
         </div>
 
         {/* Additional Support Section */}
-        <div className="text-center mt-16 animate-fade-in-up bg-white rounded-2xl p-8 max-w-4xl mx-auto border border-slate-200 shadow-sm" style={{ animationDelay: '1s' }}>
-          <h3 className="font-poppins font-semibold text-xl text-slate-900 mb-3">
-            Still Have Questions?
-          </h3>
-          <p className="text-slate-600 mb-6 leading-relaxed text-base">
-            Our expert team is here to help you with any specific questions about nutraceutical manufacturing, 
-            quality standards, or custom formulations.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <button
-              onClick={() => {
-                const element = document.querySelector('#home');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 text-sm"
-            >
-              Contact Our Experts
-            </button>
-            <button
-              onClick={() => {
-                window.location.href = 'tel:+977-9851112329';
-              }}
-              className="border border-slate-300 text-slate-700 hover:bg-slate-100 font-medium px-6 py-3 rounded-lg transition-all duration-300 text-sm"
-            >
-              Call: +977-9851112329
-            </button>
+        <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '1s' }}>
+          <div className="bg-white rounded-xl p-8 max-w-4xl mx-auto border border-slate-100 hover:border-blue-200 transition-all duration-300">
+            <h3 className="font-poppins font-semibold text-xl text-slate-900 mb-4">
+              Still Have Questions?
+            </h3>
+            <p className="text-slate-600 mb-6 text-sm leading-relaxed">
+              Our expert team is here to help you with any specific questions about nutraceutical manufacturing, 
+              quality standards, or custom formulations.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button
+                onClick={() => {
+                  const element = document.querySelector('#get-in-touch');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
+              >
+                Contact Our Experts
+              </button>
+              
+            </div>
           </div>
         </div>
 
         
       </div>
 
-      {/* Custom CSS for animations */}
+      {/* Enhanced CSS for creative animations */}
       <style>{`
+        @keyframes gradient-shift {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        
+        @keyframes bounce-slow {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes expand {
+          0% { width: 0; }
+          100% { width: 3rem; }
+        }
+        
         @keyframes fade-in-up {
           from {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(30px);
           }
           to {
             opacity: 1;
@@ -175,14 +186,36 @@ const FAQSection = () => {
           }
         }
         
+        .animate-gradient-shift {
+          background-size: 200% 200%;
+          animation: gradient-shift 8s ease infinite;
+        }
+        
+        .animate-spin-slow {
+          animation: spin-slow 20s linear infinite;
+        }
+        
+        .animate-bounce-slow {
+          animation: bounce-slow 4s ease-in-out infinite;
+        }
+        
+        .animate-expand {
+          animation: expand 1s ease-out forwards;
+          width: 0;
+        }
+        
         .animate-fade-in-up {
-          animation: fade-in-up 0.6s ease-out forwards;
+          animation: fade-in-up 0.8s ease-out forwards;
           opacity: 0;
         }
         
         .animate-fade-in {
-          animation: fade-in 0.6s ease-out forwards;
+          animation: fade-in 0.8s ease-out forwards;
           opacity: 0;
+        }
+        
+        .bg-gradient-radial {
+          background: radial-gradient(circle, var(--tw-gradient-stops));
         }
       `}</style>
     </section>

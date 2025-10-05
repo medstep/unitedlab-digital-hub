@@ -90,37 +90,35 @@ const ManufacturingProcess = () => {
     ];
 
     return (
-        <section className="relative py-18 bg-gradient-to-br from-orange-50 via-white to-red-50 overflow-hidden">
-            {/* Animated Background Elements */}
+        <section className="relative py-20 bg-gradient-to-br from-orange-50 via-white to-red-50">
+
+            {/* Extended Hero Background Blend with Orange/Red Theme */}
             <div className="absolute inset-0">
-                {/* Subtle radial blur background */}
-                <div className="absolute inset-0 bg-gradient-radial from-orange-100/25 via-transparent to-red-100/20 blur-sm"></div>
-                <div className="absolute top-1/4 right-1/3 w-[110%] h-[110%] bg-gradient-radial from-white/35 via-orange-50/20 to-transparent blur-2xl opacity-50"></div>
-
-                {/* Floating geometric shapes */}
-                <div className="absolute top-20 left-16 w-18 h-18 bg-orange-100 rounded-full opacity-50 animate-pulse"></div>
-                <div className="absolute top-40 right-24 w-14 h-14 bg-red-100 rounded-lg opacity-40 animate-bounce" style={{ animationDelay: '1.2s' }}></div>
-                <div className="absolute bottom-40 left-24 w-16 h-16 bg-blue-100 rounded-full opacity-45 animate-pulse" style={{ animationDelay: '2.2s' }}></div>
-                <div className="absolute bottom-24 right-20 w-20 h-20 bg-gradient-to-r from-orange-100 to-red-100 rounded-full opacity-35 animate-bounce" style={{ animationDelay: '0.7s' }}></div>
-
-                {/* Enhanced gradient orbs */}
-                <div className="absolute top-1/6 left-1/6 w-84 h-84 bg-gradient-to-r from-orange-200/22 to-red-200/22 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-1/6 right-1/6 w-76 h-76 bg-gradient-to-r from-red-200/22 to-orange-200/18 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.6s' }}></div>
+                {/* Seamless gradient continuation maintaining orange/red theme */}
+                <div className="absolute inset-0 bg-gradient-to-b from-orange-50/40 via-white/60 to-red-50/30"></div>
+                <div className="absolute inset-0 bg-gradient-radial from-white/50 via-orange-50/20 to-transparent"></div>
+                
+                {/* Subtle floating elements for continuity with orange/red theme */}
+                <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-r from-orange-100/20 to-red-100/15 rounded-full blur-2xl animate-pulse"></div>
+                <div className="absolute bottom-20 left-20 w-40 h-40 bg-gradient-to-r from-red-100/15 to-orange-100/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
             </div>
 
             <div className="container mx-auto px-6 py-8 relative z-10">
-                <div className="text-center mb-14 animate-fade-in-up">
+                {/* Header Section */}
+                <div className="text-center mb-16 animate-fade-in-up">
+                    
 
-
-                    <h2 className="font-poppins font-bold text-2xl md:text-3xl lg:text-4xl text-slate-900 mb-5 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+                    <h2 className="font-poppins font-bold text-3xl md:text-4xl text-slate-900 mb-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                         Process For Third Party{" "}
                         <span className="bg-gradient-to-r from-orange-600 via-red-500 to-orange-700 bg-clip-text text-transparent animate-gradient">
                             Nutraceutical Manufacturing
                         </span>{" "}
                         Services
                     </h2>
-                    <div className="w-20 h-1 bg-gradient-to-r from-orange-600 to-red-500 rounded-full mx-auto mb-5 animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
-                    <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+
+                    <div className="w-12 h-0.5 bg-gradient-to-r from-orange-600 to-red-500 mx-auto mb-8 animate-expand" style={{ animationDelay: '0.6s' }}></div>
+
+                    <p className="text-slate-600 max-w-2xl mx-auto text-sm leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
                         With our manufacturing services, we focus on delivering high-quality nutraceuticals at affordable rates.
                         United Laboratories has built a reputation nationally and globally by combining excellence with efficiency.
                         Here's a step-by-step insight into how we manage the third-party nutraceutical manufacturing process in{" "}
@@ -133,7 +131,7 @@ const ManufacturingProcess = () => {
                     {processSteps.map((step, index) => {
                         const Icon = step.icon;
                         return (
-                            <Card key={index} className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 animate-fade-in-up group" style={{ animationDelay: step.delay }}>
+                            <Card key={index} className="bg-white border border-slate-100 hover:border-orange-200 shadow-sm hover:shadow-md transition-all duration-300 animate-fade-in-up group" style={{ animationDelay: step.delay }}>
                                 <CardContent className="p-7">
                                     {/* Step Badge */}
                                     <div className="flex items-center justify-between mb-5">
@@ -171,89 +169,127 @@ const ManufacturingProcess = () => {
                 </div>
 
                 {/* Bottom Info */}
-                <div className="text-center mt-14 animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
-                    <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-7 shadow-lg max-w-4xl mx-auto">
-                        <h3 className="font-poppins font-bold text-xl text-slate-900 mb-3">
+                <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
+                    <div className="bg-white rounded-xl p-8 max-w-4xl mx-auto border border-slate-100 hover:border-orange-200 transition-all duration-300">
+                        <h3 className="font-poppins font-semibold text-xl text-slate-900 mb-6">
                             Why Choose United Laboratories Nepal?
                         </h3>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-center">
-                            <div className="space-y-2">
-                                <div className="w-16 h-16 bg-gradient-to-r from-orange-100 to-red-100 rounded-full flex items-center justify-center mx-auto">
-                                    <Factory className="h-7 w-7 text-orange-600" />
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                            <div className="space-y-3">
+                                <div className="w-12 h-12 bg-gradient-to-r from-orange-100 to-red-100 rounded-lg flex items-center justify-center mx-auto">
+                                    <Factory className="h-6 w-6 text-orange-600" />
                                 </div>
-                                <h4 className="font-semibold text-slate-900">WHO-GMP Certified</h4>
-                                <p className="text-xs text-slate-600">International quality standards in Birgunj, Nepal</p>
+                                <h4 className="font-semibold text-slate-900 text-sm">WHO-GMP Certified</h4>
+                                <p className="text-xs text-slate-600 leading-relaxed">International quality standards in Birgunj, Nepal</p>
                             </div>
-                            <div className="space-y-2">
-                                <div className="w-16 h-16 bg-gradient-to-r from-orange-100 to-red-100 rounded-full flex items-center justify-center mx-auto">
-                                    <Truck className="h-7 w-7 text-orange-600" />
+                            <div className="space-y-3">
+                                <div className="w-12 h-12 bg-gradient-to-r from-orange-100 to-red-100 rounded-lg flex items-center justify-center mx-auto">
+                                    <Truck className="h-6 w-6 text-orange-600" />
                                 </div>
-                                <h4 className="font-semibold text-slate-900">Pan-Nepal Delivery</h4>
-                                <p className="text-xs text-slate-600">Fast delivery across all 7 provinces</p>
+                                <h4 className="font-semibold text-slate-900 text-sm">Pan-Nepal Delivery</h4>
+                                <p className="text-xs text-slate-600 leading-relaxed">Fast delivery across all 7 provinces</p>
                             </div>
-                            <div className="space-y-2">
-                                <div className="w-16 h-16 bg-gradient-to-r from-orange-100 to-red-100 rounded-full flex items-center justify-center mx-auto">
-                                    <CheckCircle className="h-7 w-7 text-orange-600" />
+                            <div className="space-y-3">
+                                <div className="w-12 h-12 bg-gradient-to-r from-orange-100 to-red-100 rounded-lg flex items-center justify-center mx-auto">
+                                    <CheckCircle className="h-6 w-6 text-orange-600" />
                                 </div>
-                                <h4 className="font-semibold text-slate-900">Quality Assured</h4>
-                                <p className="text-xs text-slate-600">Rigorous QC at every manufacturing step</p>
+                                <h4 className="font-semibold text-slate-900 text-sm">Quality Assured</h4>
+                                <p className="text-xs text-slate-600 leading-relaxed">Rigorous QC at every manufacturing step</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Custom CSS for animations */}
+            {/* Enhanced CSS for creative animations */}
             <style>{`
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-        
-        @keyframes gradient {
-          0%, 100% {
-            background-size: 200% 200%;
-            background-position: left center;
-          }
-          50% {
-            background-size: 200% 200%;
-            background-position: right center;
-          }
-        }
-        
-        .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out forwards;
-          opacity: 0;
-        }
-        
-        .animate-fade-in {
-          animation: fade-in 0.8s ease-out forwards;
-          opacity: 0;
-        }
-        
-        .animate-gradient {
-          animation: gradient 3s ease-in-out infinite;
-        }
-        
-        .bg-gradient-radial {
-          background: radial-gradient(circle, var(--tw-gradient-stops));
-        }
-      `}</style>
+                @keyframes gradient-shift {
+                  0%, 100% { background-position: 0% 50%; }
+                  50% { background-position: 100% 50%; }
+                }
+                
+                @keyframes spin-slow {
+                  from { transform: rotate(0deg); }
+                  to { transform: rotate(360deg); }
+                }
+                
+                @keyframes bounce-slow {
+                  0%, 100% { transform: translateY(0); }
+                  50% { transform: translateY(-10px); }
+                }
+                
+                @keyframes expand {
+                  0% { width: 0; }
+                  100% { width: 3rem; }
+                }
+                
+                @keyframes fade-in-up {
+                  from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                  }
+                  to {
+                    opacity: 1;
+                    transform: translateY(0);
+                  }
+                }
+                
+                @keyframes fade-in {
+                  from {
+                    opacity: 0;
+                  }
+                  to {
+                    opacity: 1;
+                  }
+                }
+                
+                @keyframes gradient {
+                  0%, 100% {
+                    background-size: 200% 200%;
+                    background-position: left center;
+                  }
+                  50% {
+                    background-size: 200% 200%;
+                    background-position: right center;
+                  }
+                }
+                
+                .animate-gradient-shift {
+                  background-size: 200% 200%;
+                  animation: gradient-shift 8s ease infinite;
+                }
+                
+                .animate-spin-slow {
+                  animation: spin-slow 20s linear infinite;
+                }
+                
+                .animate-bounce-slow {
+                  animation: bounce-slow 4s ease-in-out infinite;
+                }
+                
+                .animate-expand {
+                  animation: expand 1s ease-out forwards;
+                  width: 0;
+                }
+                
+                .animate-fade-in-up {
+                  animation: fade-in-up 0.8s ease-out forwards;
+                  opacity: 0;
+                }
+                
+                .animate-fade-in {
+                  animation: fade-in 0.8s ease-out forwards;
+                  opacity: 0;
+                }
+                
+                .animate-gradient {
+                  animation: gradient 3s ease-in-out infinite;
+                }
+                
+                .bg-gradient-radial {
+                  background: radial-gradient(circle, var(--tw-gradient-stops));
+                }
+            `}</style>
         </section>
     );
 };

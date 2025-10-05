@@ -199,27 +199,46 @@ const GetInTouchSection = () => {
     ];
 
     return (
-        <section className="relative py-18 bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50 overflow-hidden">
-            {/* Professional Background Elements */}
-            <div className="absolute inset-0">
-                {/* Subtle geometric pattern */}
-                <div className="absolute inset-0 opacity-5">
-                    <div className="absolute top-0 left-0 w-full h-full" style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23334155' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                    }}></div>
-                </div>
+        <section id="get-in-touch" className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50">
 
-                {/* Subtle gradient overlays */}
-                <div className="absolute top-1/4 right-1/3 w-96 h-96 bg-gradient-to-r from-blue-100/30 to-slate-100/20 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-r from-slate-100/20 to-blue-100/30 rounded-full blur-3xl"></div>
+            {/* Extended Hero Background Blend */}
+            <div className="absolute inset-0">
+                {/* Seamless gradient continuation from Hero */}
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-50/40 via-white/60 to-blue-50/30"></div>
+                <div className="absolute inset-0 bg-gradient-radial from-white/50 via-slate-50/20 to-transparent"></div>
+                
+                {/* Subtle floating elements for continuity */}
+                <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-r from-slate-100/20 to-blue-100/15 rounded-full blur-2xl animate-pulse"></div>
+                <div className="absolute bottom-20 left-20 w-40 h-40 bg-gradient-to-r from-blue-100/15 to-slate-100/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
             </div>
 
-            <div className="container mx-auto px-6 py-8 relative z-10">
+            <div className="container mx-auto px-6 relative z-10">
+                {/* Header Section */}
+                <div className="text-center mb-16 animate-fade-in-up">
+                    <div className="inline-flex items-center text-slate-600 text-sm font-medium mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                        <CheckCircle className="h-4 w-4 mr-2 text-blue-600" />
+                        Get Quote • Expert Consultation • 24/7 Support
+                    </div>
+
+                    <h2 className="font-poppins font-bold text-3xl md:text-4xl text-slate-900 mb-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+                        Get In{" "}
+                        <span className="text-blue-600">
+                            Touch
+                        </span>
+                    </h2>
+
+                    <div className="w-12 h-0.5 bg-blue-600 mx-auto mb-8 animate-expand" style={{ animationDelay: '0.6s' }}></div>
+
+                    <p className="text-slate-600 max-w-2xl mx-auto text-sm leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+                        Ready to start your nutraceutical manufacturing journey? Contact our experts for personalized consultation and competitive quotes.
+                    </p>
+                </div>
+
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 
                     {/* Left Side - Contact Form */}
                     <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                        <Card className="bg-white/95 backdrop-blur-sm border-gray-200 shadow-xl">
+                        <Card className="bg-white border border-slate-100 hover:border-blue-200 shadow-sm hover:shadow-md transition-all duration-300">
                             <CardHeader className="pb-5">
                                 <CardTitle className="font-poppins text-xl text-slate-700 text-center">
                                     GET IN TOUCH NOW
@@ -313,7 +332,7 @@ const GetInTouchSection = () => {
                                             placeholder="Message"
                                             value={formData.message}
                                             onChange={(e) => handleInputChange('message', e.target.value)}
-                                            rows={7}
+                                            rows={4}
                                             className="bg-gray-50 border-gray-300 text-slate-700 placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500"
                                             required
                                         />
@@ -373,7 +392,7 @@ const GetInTouchSection = () => {
                                     Why Choose Us for Nutraceuticals Range?
                                 </h2>
                                 <p className="text-base leading-relaxed text-slate-600 mb-5">
-                                    United Laboratories being the top nutraceutical manufacturing company in
+                                    United Laboratories being a growing nutraceutical manufacturing company in
                                     Nepal is working together to make this world a healthier place. Having years
                                     of experience in the nutraceutical industry, the company understands the
                                     requirements of the clients, thus, deliver the exclusive range of best quality
@@ -399,42 +418,80 @@ const GetInTouchSection = () => {
                 </div>
             </div>
 
-            {/* Custom CSS for animations */}
+            {/* Enhanced CSS for creative animations */}
             <style>{`
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-        
-        .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out forwards;
-          opacity: 0;
-        }
-        
-        .animate-fade-in {
-          animation: fade-in 0.8s ease-out forwards;
-          opacity: 0;
-        }
-        
-        .bg-gradient-radial {
-          background: radial-gradient(circle, var(--tw-gradient-stops));
-        }
-      `}</style>
+                @keyframes gradient-shift {
+                  0%, 100% { background-position: 0% 50%; }
+                  50% { background-position: 100% 50%; }
+                }
+                
+                @keyframes spin-slow {
+                  from { transform: rotate(0deg); }
+                  to { transform: rotate(360deg); }
+                }
+                
+                @keyframes bounce-slow {
+                  0%, 100% { transform: translateY(0); }
+                  50% { transform: translateY(-10px); }
+                }
+                
+                @keyframes expand {
+                  0% { width: 0; }
+                  100% { width: 3rem; }
+                }
+                
+                @keyframes fade-in-up {
+                  from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                  }
+                  to {
+                    opacity: 1;
+                    transform: translateY(0);
+                  }
+                }
+                
+                @keyframes fade-in {
+                  from {
+                    opacity: 0;
+                  }
+                  to {
+                    opacity: 1;
+                  }
+                }
+                
+                .animate-gradient-shift {
+                  background-size: 200% 200%;
+                  animation: gradient-shift 8s ease infinite;
+                }
+                
+                .animate-spin-slow {
+                  animation: spin-slow 20s linear infinite;
+                }
+                
+                .animate-bounce-slow {
+                  animation: bounce-slow 4s ease-in-out infinite;
+                }
+                
+                .animate-expand {
+                  animation: expand 1s ease-out forwards;
+                  width: 0;
+                }
+                
+                .animate-fade-in-up {
+                  animation: fade-in-up 0.8s ease-out forwards;
+                  opacity: 0;
+                }
+                
+                .animate-fade-in {
+                  animation: fade-in 0.8s ease-out forwards;
+                  opacity: 0;
+                }
+                
+                .bg-gradient-radial {
+                  background: radial-gradient(circle, var(--tw-gradient-stops));
+                }
+            `}</style>
         </section>
     );
 };

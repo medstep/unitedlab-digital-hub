@@ -2,41 +2,36 @@ import { Users, MapPin, Calendar, Award, Building2, Target } from "lucide-react"
 
 const CompanyOverview = () => {
   return (
-    <section id="about" className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
+    <section id="about" className="relative py-20 bg-gradient-to-br from-blue-50 via-white to-slate-50">
 
-      {/* Dynamic Background Elements */}
+      {/* Extended Hero Background Blend */}
       <div className="absolute inset-0">
-        {/* Animated gradient mesh */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-100/20 via-transparent to-cyan-100/15 animate-gradient-shift"></div>
+        {/* Seamless gradient continuation from Hero */}
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-50/40 via-white/60 to-slate-50/30"></div>
+        <div className="absolute inset-0 bg-gradient-radial from-white/50 via-blue-50/20 to-transparent"></div>
 
-        {/* Floating geometric elements */}
-        <div className="absolute top-20 right-20 w-32 h-32 border-2 border-blue-200/30 rounded-full animate-spin-slow"></div>
-        <div className="absolute bottom-32 left-16 w-24 h-24 bg-gradient-to-r from-cyan-200/20 to-blue-200/20 rounded-lg rotate-45 animate-pulse"></div>
-        <div className="absolute top-1/2 right-1/4 w-16 h-16 bg-blue-100/40 rounded-full animate-bounce-slow"></div>
-
-        {/* Subtle pattern overlay */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23334155' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3Ccircle cx='10' cy='10' r='1'/%3E%3Ccircle cx='50' cy='10' r='1'/%3E%3Ccircle cx='10' cy='50' r='1'/%3E%3Ccircle cx='50' cy='50' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}></div>
+        {/* Subtle floating elements for continuity */}
+        <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-r from-blue-100/20 to-cyan-100/15 rounded-full blur-2xl animate-pulse"></div>
+        <div className="absolute bottom-20 left-20 w-40 h-40 bg-gradient-to-r from-cyan-100/15 to-blue-100/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
 
         {/* Header Section */}
         <div className="text-center mb-16 animate-fade-in-up">
-          <div className="inline-flex items-center bg-white/80 backdrop-blur-sm border border-blue-200/50 text-blue-700 px-6 py-3 rounded-full text-sm font-medium shadow-lg mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <Building2 className="h-4 w-4 mr-2" />
+          <div className="inline-flex items-center text-slate-600 text-sm font-medium mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <Building2 className="h-4 w-4 mr-2 text-blue-600" />
             Est. 2025 • Birgunj, Nepal • WHO-GMP Certified
           </div>
 
-          <h2 className="font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-slate-900 mb-6 animate-fade-in-up tracking-tight" style={{ animationDelay: '0.4s' }}>
+          <h2 className="font-poppins font-bold text-3xl md:text-4xl text-slate-900 mb-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             About United Laboratories{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+            <span className="text-blue-600">
               Nepal
             </span>
           </h2>
 
-          <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full mx-auto mb-8 animate-expand" style={{ animationDelay: '0.6s' }}></div>
+          <div className="w-12 h-0.5 bg-blue-600 mx-auto mb-8 animate-expand" style={{ animationDelay: '0.6s' }}></div>
         </div>
 
         {/* Main Content - Creative Timeline Layout */}
@@ -45,7 +40,7 @@ const CompanyOverview = () => {
           {/* Company Story Timeline */}
           <div className="relative mb-20">
             {/* Central Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-200 via-cyan-200 to-blue-200 rounded-full hidden lg:block"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-slate-200 hidden lg:block"></div>
 
             {/* Timeline Items */}
             <div className="space-y-16 lg:space-y-24">
@@ -53,22 +48,22 @@ const CompanyOverview = () => {
               {/* Mission Statement */}
               <div className="flex flex-col lg:flex-row items-center animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
                 <div className="lg:w-1/2 lg:pr-12 mb-8 lg:mb-0">
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-blue-100/50 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-                    <div className="flex items-center mb-6">
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mr-4">
-                        <Target className="h-6 w-6 text-white" />
+                  <div className="bg-white rounded-xl p-6 border border-slate-100 hover:border-blue-200 transition-all duration-300">
+                    <div className="flex items-center mb-4">
+                      <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                        <Target className="h-5 w-5 text-blue-600" />
                       </div>
-                      <h3 className="font-bold text-xl text-slate-900">Our Mission</h3>
+                      <h3 className="font-semibold text-lg text-slate-900">Our Mission</h3>
                     </div>
-                    <p className="text-slate-600 leading-relaxed">
-                      United Laboratories <span className="text-slate-900 font-semibold">Nepal</span> was founded in 2025 with a clear mission: to provide
+                    <p className="text-slate-600 leading-relaxed text-sm">
+                      United Laboratories <span className="text-slate-900 font-medium">Nepal</span> was founded in 2025 with a clear mission: to provide
                       Nepal and the region with access to high-quality, affordable nutraceutical products that meet international standards.
                     </p>
                   </div>
                 </div>
 
                 {/* Timeline Dot */}
-                <div className="hidden lg:flex w-6 h-6 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full border-4 border-white shadow-lg z-10 flex-shrink-0"></div>
+                <div className="hidden lg:flex w-4 h-4 bg-blue-600 rounded-full border-2 border-white z-10 flex-shrink-0"></div>
 
                 <div className="lg:w-1/2 lg:pl-12">
                   <div className="flex items-center space-x-4 text-slate-600">
@@ -81,22 +76,22 @@ const CompanyOverview = () => {
               {/* Location & Facility */}
               <div className="flex flex-col lg:flex-row-reverse items-center animate-fade-in-up" style={{ animationDelay: '1s' }}>
                 <div className="lg:w-1/2 lg:pl-12 mb-8 lg:mb-0">
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-cyan-100/50 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-                    <div className="flex items-center mb-6">
-                      <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center mr-4">
-                        <MapPin className="h-6 w-6 text-white" />
+                  <div className="bg-white rounded-xl p-6 border border-slate-100 hover:border-blue-200 transition-all duration-300">
+                    <div className="flex items-center mb-4">
+                      <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                        <MapPin className="h-5 w-5 text-blue-600" />
                       </div>
-                      <h3 className="font-bold text-xl text-slate-900">Strategic Location</h3>
+                      <h3 className="font-semibold text-lg text-slate-900">Strategic Location</h3>
                     </div>
-                    <p className="text-slate-600 leading-relaxed">
-                      Located in the strategic industrial hub of <span className="text-slate-900 font-semibold">Birgunj</span>, our facility is designed to
+                    <p className="text-slate-600 leading-relaxed text-sm">
+                      Located in the strategic industrial hub of <span className="text-slate-900 font-medium">Birgunj</span>, our facility is designed to
                       meet international GMP standards while serving the growing wellness needs of Nepal and the broader South Asian region.
                     </p>
                   </div>
                 </div>
 
                 {/* Timeline Dot */}
-                <div className="hidden lg:flex w-6 h-6 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full border-4 border-white shadow-lg z-10 flex-shrink-0"></div>
+                <div className="hidden lg:flex w-4 h-4 bg-blue-600 rounded-full border-2 border-white z-10 flex-shrink-0"></div>
 
                 <div className="lg:w-1/2 lg:pr-12">
                   <div className="flex items-center space-x-4 text-slate-600">
@@ -111,10 +106,10 @@ const CompanyOverview = () => {
           {/* Leadership Team - Creative Card Layout */}
           <div className="animate-fade-in-up" style={{ animationDelay: '1.2s' }}>
             <div className="text-center mb-12">
-              <h3 className="font-poppins font-bold text-2xl md:text-3xl text-slate-900 mb-4">
+              <h3 className="font-poppins font-semibold text-2xl text-slate-900 mb-4">
                 Leadership Team
               </h3>
-              <p className="text-slate-600 max-w-2xl mx-auto">
+              <p className="text-slate-600 max-w-2xl mx-auto text-sm">
                 Our experienced founders bring decades of expertise in nutraceutical manufacturing and business development.
               </p>
             </div>
@@ -122,70 +117,46 @@ const CompanyOverview = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
 
               {/* Founder 1 - LB Gupta */}
-              <div className="group relative">
-                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-blue-100/50 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:rotate-1">
-
-                  {/* Decorative corner */}
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-500/10 to-transparent rounded-bl-3xl rounded-tr-2xl"></div>
-
-                  <div className="relative z-10">
-                    <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <Users className="h-10 w-10 text-white" />
+              <div className="group">
+                <div className="bg-white rounded-xl p-6 border border-slate-100 hover:border-blue-200 transition-all duration-300">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                      <Users className="h-8 w-8 text-blue-600" />
                     </div>
 
-                    <div className="text-center">
-                      <h4 className="font-poppins font-bold text-xl text-slate-900 mb-2">
-                        LB Gupta
-                      </h4>
-                      <p className="text-blue-600 font-semibold mb-4">Co-Founder & Managing Director</p>
-                      <p className="text-slate-600 text-sm leading-relaxed">
-                        Decades of experience in pharmaceutical manufacturing and quality assurance, leading our strategic vision and operations with unwavering commitment to excellence.
-                      </p>
-                    </div>
+                    <h4 className="font-poppins font-semibold text-lg text-slate-900 mb-2">
+                      LB Gupta
+                    </h4>
+                    <p className="text-blue-600 font-medium mb-3 text-sm">Co-Founder & Managing Director</p>
+                    <p className="text-slate-600 text-xs leading-relaxed">
+                      Decades of experience in pharmaceutical manufacturing and quality assurance, leading our strategic vision and operations.
+                    </p>
                   </div>
-
-                  {/* Glow effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                 </div>
               </div>
 
               {/* Founder 2 - Munish Goyel */}
-              <div className="group relative">
-                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-cyan-100/50 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:-rotate-1">
-
-                  {/* Decorative corner */}
-                  <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-bl from-cyan-500/10 to-transparent rounded-br-3xl rounded-tl-2xl"></div>
-
-                  <div className="relative z-10">
-                    <div className="w-20 h-20 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <Users className="h-10 w-10 text-white" />
+              <div className="group">
+                <div className="bg-white rounded-xl p-6 border border-slate-100 hover:border-blue-200 transition-all duration-300">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                      <Users className="h-8 w-8 text-blue-600" />
                     </div>
 
-                    <div className="text-center">
-                      <h4 className="font-poppins font-bold text-xl text-slate-900 mb-2">
-                        Munish Goyel
-                      </h4>
-                      <p className="text-cyan-600 font-semibold mb-4">Co-Founder & Director</p>
-                      <p className="text-slate-600 text-sm leading-relaxed">
-                        Expert in business development and market expansion, driving our growth strategy and partnership initiatives across Nepal and international markets.
-                      </p>
-                    </div>
+                    <h4 className="font-poppins font-semibold text-lg text-slate-900 mb-2">
+                      Munish Goyel
+                    </h4>
+                    <p className="text-blue-600 font-medium mb-3 text-sm">Co-Founder & Director</p>
+                    <p className="text-slate-600 text-xs leading-relaxed">
+                      Expert in business development and market expansion, driving our growth strategy and partnership initiatives.
+                    </p>
                   </div>
-
-                  {/* Glow effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Company Values Badge */}
-          <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
-            <div className="inline-flex items-center bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-4 rounded-2xl shadow-xl">
-              <Award className="h-6 w-6 mr-3" />
-              <span className="font-semibold">Committed to Excellence • Innovation • Quality</span>
-            </div>
-          </div>
+         
         </div>
       </div>
 
@@ -208,7 +179,7 @@ const CompanyOverview = () => {
         
         @keyframes expand {
           0% { width: 0; }
-          100% { width: 4rem; }
+          100% { width: 3rem; }
         }
         
         @keyframes fade-in-up {
@@ -257,6 +228,10 @@ const CompanyOverview = () => {
         .animate-fade-in {
           animation: fade-in 0.8s ease-out forwards;
           opacity: 0;
+        }
+        
+        .bg-gradient-radial {
+          background: radial-gradient(circle, var(--tw-gradient-stops));
         }
       `}</style>
     </section>

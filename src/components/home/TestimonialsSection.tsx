@@ -1,7 +1,11 @@
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useState, useEffect } from "react";
 
 const TestimonialsSection = () => {
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
     const testimonials = [
         {
             name: "Dr. Rajesh Sharma",
@@ -59,155 +63,232 @@ const TestimonialsSection = () => {
         },
     ];
 
+    // Auto-play functionality
+    useEffect(() => {
+        if (!isAutoPlaying) return;
+        
+        const interval = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % testimonials.length);
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, [isAutoPlaying, testimonials.length]);
+
+    const nextSlide = () => {
+        setCurrentSlide((prev) => (prev + 1) % testimonials.length);
+        setIsAutoPlaying(false);
+    };
+
+    const prevSlide = () => {
+        setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+        setIsAutoPlaying(false);
+    };
+
+    const goToSlide = (index: number) => {
+        setCurrentSlide(index);
+        setIsAutoPlaying(false);
+    };
+
     return (
-        <section className="relative py-20 bg-white">
-            {/* Professional Background Pattern */}
+        <section className="relative py-20 bg-gradient-to-br from-blue-50 via-white to-slate-50">
+
+            {/* Extended Hero Background Blend */}
             <div className="absolute inset-0">
-                <div className="absolute inset-0 opacity-[0.015]">
-                    <div className="absolute top-0 left-0 w-full h-full" style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23334155' fill-opacity='0.6'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                    }}></div>
-                </div>
+                {/* Seamless gradient continuation from Hero */}
+                <div className="absolute inset-0 bg-gradient-to-b from-blue-50/40 via-white/60 to-slate-50/30"></div>
+                <div className="absolute inset-0 bg-gradient-radial from-white/50 via-blue-50/20 to-transparent"></div>
                 
-                {/* Subtle accent lines */}
-                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+                {/* Subtle floating elements for continuity */}
+                <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-blue-100/20 to-slate-100/15 rounded-full blur-2xl animate-pulse"></div>
+                <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-slate-100/15 to-blue-100/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
-                <div className="text-center mb-18 animate-fade-in-up">
-                    {/* Professional Badge */}
-                    <div className="inline-flex items-center bg-slate-100 border border-slate-200 text-slate-700 px-6 py-3 rounded-lg text-sm font-medium shadow-sm mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                {/* Header Section */}
+                <div className="text-center mb-16 animate-fade-in-up">
+                    <div className="inline-flex items-center text-slate-600 text-sm font-medium mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
                         <Star className="h-4 w-4 mr-2 text-blue-600" />
                         Trusted Partners • 500+ Satisfied Clients • Excellence Delivered
                     </div>
 
-                    <h2 className="font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-slate-900 mb-7 animate-fade-in-up tracking-tight" style={{ animationDelay: '0.4s' }}>
+                    <h2 className="font-poppins font-bold text-3xl md:text-4xl text-slate-900 mb-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                         What Our{" "}
                         <span className="text-blue-600">
                             Partners Say
                         </span>
                     </h2>
                     
-                    <div className="w-14 h-0.5 bg-blue-600 mx-auto mb-7 animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
+                    <div className="w-12 h-0.5 bg-blue-600 mx-auto mb-8 animate-expand" style={{ animationDelay: '0.6s' }}></div>
                     
-                    <p className="text-base text-slate-600 max-w-4xl mx-auto leading-relaxed font-light animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+                    <p className="text-slate-600 max-w-2xl mx-auto text-sm leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
                         Hear from our valued partners across India and Nepal who trust United Laboratories
                         for their nutraceutical manufacturing needs.
                     </p>
                 </div>
 
-                {/* Testimonials Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-7xl mx-auto">
-                    {testimonials.map((testimonial, index) => (
-                        <Card key={index} className="bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300 animate-fade-in-up group" style={{ animationDelay: testimonial.delay }}>
-                            <CardContent className="p-7">
-                                {/* Quote Icon and Rating */}
-                                <div className="flex justify-between items-start mb-5">
-                                    <Quote className="h-5 w-5 text-slate-300" />
-                                    <div className="flex space-x-1">
-                                        {[...Array(5)].map((_, i) => (
-                                            <Star key={i} className={`h-4 w-4 ${i < testimonial.rating ? 'fill-blue-600 text-blue-600' : 'text-slate-200'}`} />
-                                        ))}
-                                    </div>
+                {/* Testimonials Slideshow */}
+                <div className="relative max-w-4xl mx-auto animate-fade-in-up" style={{ animationDelay: '1s' }}>
+                    {/* Main Testimonial Card */}
+                    <div className="relative overflow-hidden">
+                        <div 
+                            className="flex transition-transform duration-500 ease-in-out"
+                            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                        >
+                            {testimonials.map((testimonial, index) => (
+                                <div key={index} className="w-full flex-shrink-0">
+                                    <Card className="bg-white border border-slate-100 hover:border-blue-200 shadow-sm hover:shadow-md transition-all duration-300 mx-4">
+                                        <CardContent className="p-8 text-center">
+                                            {/* Quote Icon */}
+                                            <div className="mb-6">
+                                                <Quote className="h-8 w-8 text-blue-200 mx-auto" />
+                                            </div>
+
+                                            {/* Rating */}
+                                            <div className="flex justify-center space-x-1 mb-6">
+                                                {[...Array(5)].map((_, i) => (
+                                                    <Star key={i} className={`h-5 w-5 ${i < testimonial.rating ? 'fill-blue-600 text-blue-600' : 'text-slate-200'}`} />
+                                                ))}
+                                            </div>
+
+                                            {/* Testimonial Text */}
+                                            <p className="text-slate-600 leading-relaxed mb-8 text-lg italic">
+                                                "{testimonial.testimonial}"
+                                            </p>
+
+                                            {/* Author Info */}
+                                            <div className="flex items-center justify-center space-x-4">
+                                                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                                    <span className="text-blue-600 font-semibold">
+                                                        {testimonial.name.split(' ').map(n => n[0]).join('')}
+                                                    </span>
+                                                </div>
+                                                <div className="text-left">
+                                                    <h4 className="font-poppins font-semibold text-slate-900 text-lg">
+                                                        {testimonial.name}
+                                                    </h4>
+                                                    <p className="text-sm text-slate-600 font-medium">
+                                                        {testimonial.title}
+                                                    </p>
+                                                    <p className="text-xs text-slate-500">
+                                                        {testimonial.company}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </CardContent>
+                                    </Card>
                                 </div>
-
-                                {/* Testimonial Text */}
-                                <p className="text-slate-600 leading-relaxed mb-7 text-sm">
-                                    "{testimonial.testimonial}"
-                                </p>
-
-                                {/* Author Info */}
-                                <div className="flex items-start space-x-3 pt-5 border-t border-slate-100">
-                                    <div className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <span className="text-slate-600 font-semibold text-sm">
-                                            {testimonial.name.split(' ').map(n => n[0]).join('')}
-                                        </span>
-                                    </div>
-                                    <div className="min-w-0 flex-1">
-                                        <h4 className="font-poppins font-semibold text-slate-900 text-base mb-1">
-                                            {testimonial.name}
-                                        </h4>
-                                        <p className="text-sm text-slate-600 font-medium mb-1">
-                                            {testimonial.title}
-                                        </p>
-                                        <p className="text-xs text-slate-500 leading-tight">
-                                            {testimonial.company}
-                                        </p>
-                                    </div>
-                                </div>
-                            </CardContent>
-                        </Card>
-                    ))}
-                </div>
-
-                {/* Bottom CTA */}
-                <div className="text-center mt-20 animate-fade-in-up" style={{ animationDelay: '1.4s' }}>
-                    <div className="bg-slate-50 rounded-2xl p-12 max-w-4xl mx-auto border border-slate-200">
-                        <h3 className="font-poppins font-semibold text-2xl text-slate-900 mb-4">
-                            Ready to Partner with Us?
-                        </h3>
-                        <p className="text-slate-600 mb-8 leading-relaxed text-lg">
-                            Join hundreds of satisfied partners who trust United Laboratories Nepal
-                            for their nutraceutical manufacturing needs.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button
-                                onClick={() => {
-                                    const element = document.querySelector('#home');
-                                    if (element) {
-                                        element.scrollIntoView({ behavior: 'smooth' });
-                                    }
-                                }}
-                                className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
-                            >
-                                Get Started Today
-                            </button>
-                            <button
-                                onClick={() => {
-                                    window.location.href = 'tel:+977-9851112329';
-                                }}
-                                className="border border-slate-300 text-slate-700 hover:bg-slate-100 font-medium px-8 py-4 rounded-lg transition-all duration-300"
-                            >
-                                Call: +977-9851112329
-                            </button>
+                            ))}
                         </div>
                     </div>
+
+                    {/* Navigation Arrows */}
+                    <button
+                        onClick={prevSlide}
+                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 bg-white border border-slate-200 rounded-full flex items-center justify-center shadow-md hover:shadow-lg hover:border-blue-200 transition-all duration-300 group"
+                    >
+                        <ChevronLeft className="h-5 w-5 text-slate-600 group-hover:text-blue-600" />
+                    </button>
+                    
+                    <button
+                        onClick={nextSlide}
+                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 bg-white border border-slate-200 rounded-full flex items-center justify-center shadow-md hover:shadow-lg hover:border-blue-200 transition-all duration-300 group"
+                    >
+                        <ChevronRight className="h-5 w-5 text-slate-600 group-hover:text-blue-600" />
+                    </button>
+
+                    {/* Dots Indicator */}
+                    <div className="flex justify-center space-x-2 mt-8">
+                        {testimonials.map((_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => goToSlide(index)}
+                                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                                    index === currentSlide 
+                                        ? 'bg-blue-600 scale-110' 
+                                        : 'bg-slate-300 hover:bg-slate-400'
+                                }`}
+                            />
+                        ))}
+                    </div>
                 </div>
+
+               
             </div>
 
-            {/* Custom CSS for animations */}
+            {/* Enhanced CSS for creative animations */}
             <style>{`
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-        
-        .animate-fade-in-up {
-          animation: fade-in-up 0.6s ease-out forwards;
-          opacity: 0;
-        }
-        
-        .animate-fade-in {
-          animation: fade-in 0.6s ease-out forwards;
-          opacity: 0;
-        }
-      `}</style>
+                @keyframes gradient-shift {
+                  0%, 100% { background-position: 0% 50%; }
+                  50% { background-position: 100% 50%; }
+                }
+                
+                @keyframes spin-slow {
+                  from { transform: rotate(0deg); }
+                  to { transform: rotate(360deg); }
+                }
+                
+                @keyframes bounce-slow {
+                  0%, 100% { transform: translateY(0); }
+                  50% { transform: translateY(-10px); }
+                }
+                
+                @keyframes expand {
+                  0% { width: 0; }
+                  100% { width: 3rem; }
+                }
+                
+                @keyframes fade-in-up {
+                  from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                  }
+                  to {
+                    opacity: 1;
+                    transform: translateY(0);
+                  }
+                }
+                
+                @keyframes fade-in {
+                  from {
+                    opacity: 0;
+                  }
+                  to {
+                    opacity: 1;
+                  }
+                }
+                
+                .animate-gradient-shift {
+                  background-size: 200% 200%;
+                  animation: gradient-shift 8s ease infinite;
+                }
+                
+                .animate-spin-slow {
+                  animation: spin-slow 20s linear infinite;
+                }
+                
+                .animate-bounce-slow {
+                  animation: bounce-slow 4s ease-in-out infinite;
+                }
+                
+                .animate-expand {
+                  animation: expand 1s ease-out forwards;
+                  width: 0;
+                }
+                
+                .animate-fade-in-up {
+                  animation: fade-in-up 0.8s ease-out forwards;
+                  opacity: 0;
+                }
+                
+                .animate-fade-in {
+                  animation: fade-in 0.8s ease-out forwards;
+                  opacity: 0;
+                }
+                
+                .bg-gradient-radial {
+                  background: radial-gradient(circle, var(--tw-gradient-stops));
+                }
+            `}</style>
         </section>
     );
 };

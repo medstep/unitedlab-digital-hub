@@ -42,38 +42,34 @@ const PackagingSection = () => {
   ];
 
   return (
-    <section className="relative py-18 bg-gradient-to-b from-white to-slate-50">
-      {/* Professional Background Pattern */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 opacity-[0.02]">
-          <div className="absolute top-0 left-0 w-full h-full" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23334155' fill-opacity='0.8'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E")`,
-          }}></div>
-        </div>
+    <section className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50">
 
-        {/* Subtle accent lines */}
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+      {/* Extended Hero Background Blend */}
+      <div className="absolute inset-0">
+        {/* Seamless gradient continuation from Hero */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-50/40 via-white/60 to-blue-50/30"></div>
+        <div className="absolute inset-0 bg-gradient-radial from-white/50 via-slate-50/20 to-transparent"></div>
+        
+        {/* Subtle floating elements for continuity */}
+        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-slate-100/20 to-blue-100/15 rounded-full blur-2xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-blue-100/15 to-slate-100/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
       <div className="container mx-auto px-6 py-8 relative z-10">
-        <div className="text-center mb-18 animate-fade-in-up">
-          {/* Professional Badge */}
-          <div className="inline-flex items-center bg-slate-100 border border-slate-200 text-slate-700 px-6 py-3 rounded-lg text-sm font-medium shadow-sm mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <Package className="h-4 w-4 mr-2 text-blue-600" />
-            Premium Packaging • Quality Assured • International Standards
-          </div>
+        {/* Header Section */}
+        <div className="text-center mb-16 animate-fade-in-up">
+          
 
-          <h2 className="font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-slate-900 mb-7 animate-fade-in-up tracking-tight" style={{ animationDelay: '0.4s' }}>
+          <h2 className="font-poppins font-bold text-3xl md:text-4xl text-slate-900 mb-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             Professional{" "}
             <span className="text-blue-600">
               Packaging Solutions
             </span>
           </h2>
 
-          <div className="w-14 h-0.5 bg-blue-600 mx-auto mb-7 animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
+          <div className="w-12 h-0.5 bg-blue-600 mx-auto mb-8 animate-expand" style={{ animationDelay: '0.6s' }}></div>
 
-          <p className="text-base text-slate-600 max-w-4xl mx-auto leading-relaxed font-light animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+          <p className="text-slate-600 max-w-2xl mx-auto text-sm leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
             We offer comprehensive packaging solutions tailored to each dosage form, ensuring product integrity,
             shelf stability, and compliance with international packaging standards in <span className="text-slate-900 font-medium">Nepal</span>.
           </p>
@@ -114,7 +110,7 @@ const PackagingSection = () => {
                     <div className="hidden lg:block absolute top-1/2 -left-8 w-8 h-0.5 bg-gradient-to-r from-slate-300 to-transparent transform -translate-y-1/2 group-hover:from-blue-400 transition-colors duration-300"></div>
 
                     {/* Category Card */}
-                    <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-200 hover:shadow-2xl hover:border-blue-300 transition-all duration-500 transform hover:-translate-y-3 hover:rotate-1 relative overflow-hidden">
+                    <div className="bg-white rounded-xl p-6 border border-slate-100 hover:border-blue-200 shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden">
 
                       {/* Background Pattern */}
                       <div className="absolute top-0 right-0 w-20 h-20 opacity-5">
@@ -179,30 +175,35 @@ const PackagingSection = () => {
 
 
         {/* Call to Action */}
-        <div className="text-center animate-fade-in-up bg-slate-50 rounded-2xl p-10 max-w-4xl mx-auto border border-slate-200" style={{ animationDelay: '1s' }}>
-          <h3 className="font-poppins font-semibold text-xl text-slate-900 mb-3">
-            Need Custom Packaging Solutions?
-          </h3>
-          <p className="text-slate-600 mb-7 text-base">
-            Our packaging experts can design custom solutions tailored to your specific product requirements and market needs.
-          </p>
-          <div className="inline-flex flex-col sm:flex-row gap-3">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 text-sm">
-              Request Custom Packaging
-            </button>
-            <button className="border border-slate-300 text-slate-700 hover:bg-slate-100 font-medium px-6 py-3 rounded-lg transition-all duration-300 text-sm">
-              Download Packaging Guide
-            </button>
-          </div>
-        </div>
+        
       </div>
 
-      {/* Custom CSS for animations */}
+      {/* Enhanced CSS for creative animations */}
       <style>{`
+        @keyframes gradient-shift {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        
+        @keyframes bounce-slow {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes expand {
+          0% { width: 0; }
+          100% { width: 3rem; }
+        }
+        
         @keyframes fade-in-up {
           from {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(30px);
           }
           to {
             opacity: 1;
@@ -219,27 +220,36 @@ const PackagingSection = () => {
           }
         }
         
-        @keyframes spin-slow {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
+        .animate-gradient-shift {
+          background-size: 200% 200%;
+          animation: gradient-shift 8s ease infinite;
+        }
+        
+        .animate-spin-slow {
+          animation: spin-slow 20s linear infinite;
+        }
+        
+        .animate-bounce-slow {
+          animation: bounce-slow 4s ease-in-out infinite;
+        }
+        
+        .animate-expand {
+          animation: expand 1s ease-out forwards;
+          width: 0;
         }
         
         .animate-fade-in-up {
-          animation: fade-in-up 0.6s ease-out forwards;
+          animation: fade-in-up 0.8s ease-out forwards;
           opacity: 0;
         }
         
         .animate-fade-in {
-          animation: fade-in 0.6s ease-out forwards;
+          animation: fade-in 0.8s ease-out forwards;
           opacity: 0;
         }
-
-        .animate-spin-slow {
-          animation: spin-slow 8s linear infinite;
+        
+        .bg-gradient-radial {
+          background: radial-gradient(circle, var(--tw-gradient-stops));
         }
       `}</style>
     </section>

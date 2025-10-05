@@ -40,21 +40,21 @@ const DosageForm = () => {
         },
         {
             icon: Package,
-            title: "Sachet Powder",
+            title: "Powder Sachets",
             description: "Convenient single-dose powder sachets for easy mixing and consumption.",
             color: "bg-yellow-100 text-yellow-600",
             delay: "0.7s",
         },
         {
             icon: Wind,
-            title: "Oral Spray",
+            title: "Oral Sprays",
             description: "Convenient spray formulations for quick absorption and ease of use.",
             color: "bg-pink-100 text-pink-600",
             delay: "0.8s",
         },
         {
             icon: Wheat,
-            title: "Fiber Supplement",
+            title: "Fiber Supplements",
             description: "High-quality dietary fiber supplements for digestive health and wellness.",
             color: "bg-orange-100 text-orange-600",
             delay: "0.9s",
@@ -62,33 +62,34 @@ const DosageForm = () => {
     ];
 
     return (
-        <section id="products" className="relative py-20 bg-gradient-to-b from-white to-slate-50">
-            {/* Professional Background Pattern */}
-            <div className="absolute inset-0">
-                <div className="absolute inset-0 opacity-[0.02]">
-                    <div className="absolute top-0 left-0 w-full h-full" style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23334155' fill-opacity='0.6'%3E%3Ccircle cx='25' cy='25' r='2'/%3E%3Ccircle cx='10' cy='10' r='1'/%3E%3Ccircle cx='40' cy='10' r='1'/%3E%3Ccircle cx='10' cy='40' r='1'/%3E%3Ccircle cx='40' cy='40' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                    }}></div>
-                </div>
+        <section id="products" className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50">
 
-                {/* Subtle accent lines */}
-                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+            {/* Extended Hero Background Blend */}
+            <div className="absolute inset-0">
+                {/* Seamless gradient continuation from Hero */}
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-50/40 via-white/60 to-blue-50/30"></div>
+                <div className="absolute inset-0 bg-gradient-radial from-white/50 via-slate-50/20 to-transparent"></div>
+                
+                {/* Subtle floating elements for continuity */}
+                <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-slate-100/20 to-blue-100/15 rounded-full blur-2xl animate-pulse"></div>
+                <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-blue-100/15 to-slate-100/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
-                <div className="text-center mb-18 animate-fade-in-up">
+                {/* Header Section */}
+                <div className="text-center mb-16 animate-fade-in-up">
+                    
 
-                    <h2 className="font-poppins font-bold text-3xl md:text-4xl lg:text-5xl text-slate-900 mb-7 animate-fade-in-up tracking-tight" style={{ animationDelay: '0.4s' }}>
+                    <h2 className="font-poppins font-bold text-3xl md:text-4xl text-slate-900 mb-6 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                         Products & Dosage{" "}
                         <span className="text-blue-600">
                             Forms
                         </span>
                     </h2>
 
-                    <div className="w-14 h-0.5 bg-blue-600 mx-auto mb-7 animate-fade-in" style={{ animationDelay: '0.6s' }}></div>
-
-                    <p className="text-base text-slate-600 max-w-4xl mx-auto leading-relaxed font-light animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+                    <div className="w-12 h-0.5 bg-blue-600 mx-auto mb-8 animate-expand" style={{ animationDelay: '0.6s' }}></div>
+                    
+                    <p className="text-slate-600 max-w-2xl mx-auto text-sm leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
                         We manufacture a comprehensive range of dosage forms to meet diverse therapeutic needs and patient preferences across <span className="text-slate-900 font-medium">Nepal</span>.
                     </p>
                 </div>
@@ -98,7 +99,7 @@ const DosageForm = () => {
                     {dosageForms.map((form, index) => {
                         const Icon = form.icon;
                         return (
-                            <Card key={index} className="bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300 animate-fade-in-up group" style={{ animationDelay: form.delay }}>
+                            <Card key={index} className="bg-white border border-slate-100 hover:border-blue-200 shadow-sm hover:shadow-md transition-all duration-300 animate-fade-in-up group" style={{ animationDelay: form.delay }}>
                                 <CardContent className="p-5 text-center">
                                     {form.title === "Tablets" ? (
                                         <div className="w-50 h-50 mx-auto mb-6 rounded-2xl overflow-hidden shadow-sm group-hover:shadow-md transition-shadow duration-300">
@@ -140,7 +141,7 @@ const DosageForm = () => {
                                                 className="w-full h-full object-cover"
                                             />
                                         </div>
-                                    ) : form.title === "Sachet Powder" ? (
+                                    ) : form.title === "Powder Sachets" ? (
                                         <div className="w-50 h-50 mx-auto mb-6 rounded-2xl overflow-hidden shadow-sm group-hover:shadow-md transition-shadow duration-300">
                                             <img
                                                 src="/Sachet.png"
@@ -148,7 +149,7 @@ const DosageForm = () => {
                                                 className="w-full h-full object-cover"
                                             />
                                         </div>
-                                    ) : form.title === "Oral Spray" ? (
+                                    ) : form.title === "Oral Sprays" ? (
                                         <div className="w-50 h-50 mx-auto mb-6 rounded-2xl overflow-hidden shadow-sm group-hover:shadow-md transition-shadow duration-300">
                                             <img
                                                 src="/Spray.png"
@@ -156,7 +157,7 @@ const DosageForm = () => {
                                                 className="w-full h-full object-cover"
                                             />
                                         </div>
-                                    ) : form.title === "Fiber Supplement" ? (
+                                    ) : form.title === "Fiber Supplements" ? (
                                         <div className="w-50 h-50 mx-auto mb-6 rounded-2xl overflow-hidden shadow-sm group-hover:shadow-md transition-shadow duration-300">
                                             <img
                                                 src="/Fiber.png"
@@ -184,38 +185,80 @@ const DosageForm = () => {
                 
             </div>
 
-            {/* Custom CSS for animations */}
+            {/* Enhanced CSS for creative animations */}
             <style>{`
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-        
-        .animate-fade-in-up {
-          animation: fade-in-up 0.6s ease-out forwards;
-          opacity: 0;
-        }
-        
-        .animate-fade-in {
-          animation: fade-in 0.6s ease-out forwards;
-          opacity: 0;
-        }
-      `}</style>
+                @keyframes gradient-shift {
+                  0%, 100% { background-position: 0% 50%; }
+                  50% { background-position: 100% 50%; }
+                }
+                
+                @keyframes spin-slow {
+                  from { transform: rotate(0deg); }
+                  to { transform: rotate(360deg); }
+                }
+                
+                @keyframes bounce-slow {
+                  0%, 100% { transform: translateY(0); }
+                  50% { transform: translateY(-10px); }
+                }
+                
+                @keyframes expand {
+                  0% { width: 0; }
+                  100% { width: 3rem; }
+                }
+                
+                @keyframes fade-in-up {
+                  from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                  }
+                  to {
+                    opacity: 1;
+                    transform: translateY(0);
+                  }
+                }
+                
+                @keyframes fade-in {
+                  from {
+                    opacity: 0;
+                  }
+                  to {
+                    opacity: 1;
+                  }
+                }
+                
+                .animate-gradient-shift {
+                  background-size: 200% 200%;
+                  animation: gradient-shift 8s ease infinite;
+                }
+                
+                .animate-spin-slow {
+                  animation: spin-slow 20s linear infinite;
+                }
+                
+                .animate-bounce-slow {
+                  animation: bounce-slow 4s ease-in-out infinite;
+                }
+                
+                .animate-expand {
+                  animation: expand 1s ease-out forwards;
+                  width: 0;
+                }
+                
+                .animate-fade-in-up {
+                  animation: fade-in-up 0.8s ease-out forwards;
+                  opacity: 0;
+                }
+                
+                .animate-fade-in {
+                  animation: fade-in 0.8s ease-out forwards;
+                  opacity: 0;
+                }
+                
+                .bg-gradient-radial {
+                  background: radial-gradient(circle, var(--tw-gradient-stops));
+                }
+            `}</style>
         </section>
     );
 };
