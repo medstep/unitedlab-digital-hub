@@ -11,9 +11,9 @@ const ManufacturingProcess = () => {
             color: "bg-blue-100 text-blue-600",
             points: [
                 "Choose formulas and composition",
-                "5,000-10,000 boxes = 1 lac tablets/capsules",
-                "Minimum syrup order: 3,000-5,000 units",
-                "Compliance with Nepal FDA guidelines"
+                "MOQ is 500 Boxes",
+                "Minimum syrup order: 2000 units",
+                "Compliance with GMP guidelines"
             ],
             delay: "0.2s",
         },
@@ -38,10 +38,10 @@ const ManufacturingProcess = () => {
             icon: CheckCircle,
             color: "bg-cyan-100 text-cyan-600",
             points: [
-                "Drug License & GST Number",
-                "PAN, Aadhaar, Canceled Cheque",
-                "Originals must be available for verification",
-                "Nepal regulatory compliance documents"
+                "Company Registration Certificate",
+                "PAN/VAT No. Certificate",
+                "Agreement Letter",
+                "Self-Declaration Letter For Brand Name"
             ],
             delay: "0.6s",
         },
@@ -82,9 +82,9 @@ const ManufacturingProcess = () => {
             points: [
                 "Every batch is counted and checked",
                 "Dispatched by our logistics team",
-                "Delivery within 5-6 days (location based)",
+                "Delivery as per Planned Time ",
                 "Coverage across all 7 provinces of Nepal"
-            ],
+            ],  
             delay: "1.2s",
         },
     ];
