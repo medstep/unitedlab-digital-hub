@@ -114,10 +114,12 @@ const Navigation = () => {
       {/* ─── Main Header ─── */}
       <div
         className={`sticky top-0 z-50 w-full transition-all duration-500 ${scrolled
-            ? "bg-white/95 backdrop-blur-xl shadow-lg shadow-slate-900/5 border-b border-slate-100"
-            : "bg-white border-b border-slate-200"
+          ? "bg-white/95 backdrop-blur-xl shadow-lg shadow-slate-900/5"
+          : "bg-white"
           }`}
       >
+        {/* Bottom accent border */}
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-70" />
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-[72px]">
 
@@ -126,10 +128,10 @@ const Navigation = () => {
               <img
                 src="/logonew.png"
                 alt="United Laboratories Nepal"
-                className="h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
               <div className="hidden sm:block font-poppins leading-tight">
-                <div className="font-bold text-[15px] text-slate-900 tracking-tight">
+                <div className="font-bold text-[18px] text-slate-900 tracking-tight">
                   United Laboratories
                 </div>
                 <div className="text-[11px] font-medium text-blue-600 uppercase tracking-widest">
@@ -247,8 +249,8 @@ const Navigation = () => {
                   key={item.name}
                   onClick={() => handleNavClick(item)}
                   className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${active
-                      ? "bg-blue-50 text-blue-700"
-                      : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                    ? "bg-blue-50 text-blue-700"
+                    : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
                     }`}
                 >
                   {item.name}
@@ -260,8 +262,8 @@ const Navigation = () => {
                   to={item.path}
                   onClick={() => setIsOpen(false)}
                   className={`flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${active
-                      ? "bg-blue-50 text-blue-700"
-                      : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                    ? "bg-blue-50 text-blue-700"
+                    : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
                     }`}
                 >
                   {item.name}
