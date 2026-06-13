@@ -75,9 +75,9 @@ const Navigation = () => {
                 {/* Glow effect behind logo */}
                 <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-lg scale-150 group-hover:bg-blue-500/30 transition-all duration-500"></div>
                 <img
-                  src="/fav.png"
+                  src="/logonew.png"
                   alt="United Laboratories Nepal"
-                  className="relative h-10 w-auto object-contain transition-all duration-500 group-hover:scale-110 group-hover:rotate-3"
+                  className="relative h-20 w-auto object-contain transition-all duration-500 group-hover:scale-110 group-hover:rotate-3"
                 />
               </div>
               <div className="font-poppins hidden sm:block">
@@ -98,8 +98,8 @@ const Navigation = () => {
                     <button
                       onClick={() => handleNavClick(item)}
                       className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 group ${location.pathname === '/' && location.hash === item.path
-                          ? "text-white bg-gradient-to-r from-blue-600 to-cyan-600 shadow-lg"
-                          : "text-slate-700 hover:text-blue-600 hover:bg-white/80"
+                        ? "text-white bg-gradient-to-r from-blue-600 to-cyan-600 shadow-lg"
+                        : "text-slate-700 hover:text-blue-600 hover:bg-white/80"
                         }`}
                     >
                       {/* Active background glow */}
@@ -117,8 +117,8 @@ const Navigation = () => {
                     <Link
                       to={item.path}
                       className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 group ${isActive(item.path)
-                          ? "text-white bg-gradient-to-r from-blue-600 to-cyan-600 shadow-lg"
-                          : "text-slate-700 hover:text-blue-600 hover:bg-white/80"
+                        ? "text-white bg-gradient-to-r from-blue-600 to-cyan-600 shadow-lg"
+                        : "text-slate-700 hover:text-blue-600 hover:bg-white/80"
                         }`}
                     >
                       {/* Active background glow */}
@@ -140,8 +140,8 @@ const Navigation = () => {
               <Link
                 to="/contact"
                 className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 group ${isActive("/contact")
-                    ? "text-white bg-gradient-to-r from-blue-600 to-cyan-600 shadow-lg"
-                    : "text-slate-700 hover:text-blue-600 hover:bg-white/80"
+                  ? "text-white bg-gradient-to-r from-blue-600 to-cyan-600 shadow-lg"
+                  : "text-slate-700 hover:text-blue-600 hover:bg-white/80"
                   }`}
               >
                 {/* Active background glow */}
@@ -206,8 +206,8 @@ const Navigation = () => {
                         setIsOpen(false);
                       }}
                       className={`w-full text-left px-4 py-3 rounded-xl font-medium transition-all duration-300 ${location.pathname === '/' && location.hash === item.path
-                          ? "text-white bg-gradient-to-r from-blue-600 to-cyan-600 shadow-lg"
-                          : "text-slate-700 hover:text-blue-600 hover:bg-blue-50"
+                        ? "text-white bg-gradient-to-r from-blue-600 to-cyan-600 shadow-lg"
+                        : "text-slate-700 hover:text-blue-600 hover:bg-blue-50"
                         }`}
                     >
                       {item.name}
@@ -217,8 +217,8 @@ const Navigation = () => {
                       to={item.path}
                       onClick={() => setIsOpen(false)}
                       className={`block px-4 py-3 rounded-xl font-medium transition-all duration-300 ${isActive(item.path)
-                          ? "text-white bg-gradient-to-r from-blue-600 to-cyan-600 shadow-lg"
-                          : "text-slate-700 hover:text-blue-600 hover:bg-blue-50"
+                        ? "text-white bg-gradient-to-r from-blue-600 to-cyan-600 shadow-lg"
+                        : "text-slate-700 hover:text-blue-600 hover:bg-blue-50"
                         }`}
                     >
                       {item.name}
@@ -231,8 +231,8 @@ const Navigation = () => {
                 to="/contact"
                 onClick={() => setIsOpen(false)}
                 className={`block px-4 py-3 rounded-xl font-medium transition-all duration-300 ${isActive("/contact")
-                    ? "text-white bg-gradient-to-r from-blue-600 to-cyan-600 shadow-lg"
-                    : "text-slate-700 hover:text-blue-600 hover:bg-blue-50"
+                  ? "text-white bg-gradient-to-r from-blue-600 to-cyan-600 shadow-lg"
+                  : "text-slate-700 hover:text-blue-600 hover:bg-blue-50"
                   }`}
               >
                 Contact

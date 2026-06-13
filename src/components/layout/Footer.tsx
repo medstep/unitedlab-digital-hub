@@ -37,10 +37,10 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <img 
-                src="/fav.png" 
-                alt="United Laboratories Nepal" 
-                className="h-10 w-auto object-contain"
+              <img
+                src="/logonew.png"
+                alt="United Laboratories Nepal"
+                className="h-20 w-auto object-contain"
               />
               <div className="font-poppins">
                 <div className="font-semibold text-base">United Laboratories</div>
@@ -48,7 +48,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Leading nutraceutical manufacturer in Nepal, committed to producing 
+              Leading nutraceutical manufacturer in Nepal, committed to producing
               high-quality nutritional supplements and wellness products since 2025.
             </p>
           </div>
